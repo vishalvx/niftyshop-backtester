@@ -1,6 +1,6 @@
 # Binaries and executable files
 bin/
-backtester
+/backtester
 *.exe
 *.exe~
 *.dll
