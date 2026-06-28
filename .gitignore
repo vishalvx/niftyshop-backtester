@@ -1,0 +1,37 @@
+# Binaries and executable files
+bin/
+backtester
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Data & temporary logs
+internal/data/stocks/*
+data/stocks/*
+testdata/*
+reports/*.csv
+temp_*.log
+
+# OS metadata files
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Editor and IDE configurations
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment configurations
+.env
+.env.*
