@@ -356,7 +356,7 @@ func main() {
 		// Create CSV of grid search results
 		err = os.MkdirAll("reports", 0755)
 		if err == nil {
-			csvPath := filepath.Join("reports", "pivot_grid_search_results.csv")
+			csvPath := filepath.Join("reports", fmt.Sprintf("pivot_grid_results_%s.csv", strings.ToLower(strings.ReplaceAll(cfg.Universe, " ", "_"))))
 			csvFile, err := os.Create(csvPath)
 			if err == nil {
 				defer csvFile.Close()
