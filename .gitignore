@@ -14,6 +14,7 @@ internal/data/stocks/*
 data/stocks/*
 testdata/*
 reports/*.csv
+reports/pivot_search_trade_logs/
 temp_*.log
 
 # OS metadata files
