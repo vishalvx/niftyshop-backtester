@@ -16,15 +16,15 @@ The strategy combines traditional mean reversion (buying oversold stocks) with s
 Based on 5-year (2021-2025) and 8-year (2018-2025) historical backtesting, the following indices and configurations are recommended:
 
 ### **A. Primary Choice: Nifty 50 (Large Cap)**
-* **Recommended Pivot Config**: **Fibonacci S1 (Pool Size 5)**
-* **Performance (2021-2025)**: **24.67% CAGR** (vs. 12.78% Standard NiftyShop, and 13.11% Index Buy-and-Hold)
-* **Alpha vs. Index**: **+11.56% CAGR**
-* **Why it works**: Large-cap stocks are highly liquid and heavily traded. Setting a tight pool size of **5** ensures we only target the most oversold heavyweights, while the **Fibonacci S1** support acts as an excellent floor for quick institutional buying.
+* **Recommended Pivot Config**: **Camarilla S1 (Pool Size 5)**
+* **Performance (8-Year: 2018-2025)**: **16.01% CAGR** (vs. 7.84% Standard NiftyShop, and 12.16% Index Buy-and-Hold)
+* **Alpha vs. Index**: **+3.85% CAGR** (Outperforms Standard by **+8.17% CAGR**)
+* **Why it works**: Large-cap stocks are highly liquid. Setting a tight pool size of **5** ensures focus on the most oversold heavyweights. **Camarilla S1** is a tight support level that acts as a soft filter; it allows the strategy to stay invested during steep corrections (like the 2018 correction and 2020 COVID crash), capturing maximum returns on recovery.
 
 ### **B. Secondary Choice: Nifty Midcap 50 (Mid Cap)**
 * **Recommended Pivot Config**: **Fibonacci S1 (Pool Size 15)**
-* **Performance (2021-2025)**: **24.34% CAGR** (vs. 15.50% Standard NiftyShop, and 22.91% Index Buy-and-Hold)
-* **Why it works**: Mid-cap stocks are more volatile and prone to deep corrections. A larger pool size of **15** gives the engine the flexibility to ignore "falling knives" and find a stock that is safely resting on a support level.
+* **Performance (5-Year: 2021-2025)**: **24.34% CAGR** (vs. 15.50% Standard NiftyShop, and 22.91% Index Buy-and-Hold)
+* **Why it works**: Mid-cap stocks are more volatile. A larger pool size of **15** gives the engine the flexibility to ignore "falling knives" and find a stock that is safely resting on a support level.
 
 ---
 
@@ -38,9 +38,12 @@ Based on 5-year (2021-2025) and 8-year (2018-2025) historical backtesting, the f
    * Filter out stocks that are already in the portfolio.
    * Extract the **top $N$ candidates** (where $N = 5$ for Nifty 50, and $N = 15$ for Midcap 50).
 5. **Support Proximity Calculation**:
-   * For each of the top $N$ stocks, calculate the **Fibonacci S1** support level using the previous day's High ($H$), Low ($L$), and Close ($C$):
-     $$P = \frac{H + L + C}{3}$$
-     $$S_1 = P - 0.382 \times (H - L)$$
+   * For each of the top $N$ stocks, calculate the support level using the previous day's High ($H$), Low ($L$), and Close ($C$):
+     * **For Nifty 50 (Camarilla S1)**:
+       $$S_1 = C - (H - L) \times \frac{1.1}{12}$$
+     * **For Nifty Midcap 50 (Fibonacci S1)**:
+       $$P = \frac{H + L + C}{3}$$
+       $$S_1 = P - 0.382 \times (H - L)$$
    * Ensure $\text{Close} \ge S_1$. If a stock has fallen below its $S_1$ level, it is disqualified.
    * Calculate the percentage distance to the support line:
      $$\text{Distance (\%)} = \frac{\text{Close} - S_1}{\text{Close}} \times 100$$
