@@ -9,5 +9,11 @@
   "start_date": "2021-01-01",
   "end_date": "2025-12-31",
   "revision_period": "monthly",
-  "max_fresh_entries_per_day": 1
+  "max_fresh_entries_per_day": 1,
+  "pivot_filter": {
+    "enabled": false,
+    "system": "classic",
+    "level": "S1",
+    "pool_size": 5
+  }
 }

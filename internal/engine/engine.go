@@ -26,6 +26,16 @@ type EngineStock struct {
 	SMA20         float64
 	DiffSMA       float64
 	IsConstituent bool
+	ClassicS1     float64
+	ClassicS2     float64
+	ClassicS3     float64
+	FibS1         float64
+	FibS2         float64
+	FibS3         float64
+	CamS1         float64
+	CamS2         float64
+	CamS3         float64
+	CamS4         float64
 }
 
 // FindStock locates a stock by symbol in a slice of EngineStocks.
@@ -165,50 +175,183 @@ func RunNiftyShop(dateWiseBucket map[string][]EngineStock, cfg *config.Config) (
 		}
 
 		// 3. Fresh Entries (Priority 3) — strictly MaxFreshEntriesPerDay per day
-		var radarStocks []EngineStock
-		for _, stock := range stocks {
-			if stock.IsConstituent && stock.DiffSMA > 0 {
-				radarStocks = append(radarStocks, stock)
-			}
-		}
-
-		for _, stock := range radarStocks {
-			if freshEntriesToday >= cfg.MaxFreshEntriesPerDay {
-				break
-			}
-			if account.HasPosition(stock.Symbol) {
-				continue
-			}
-			if account.GetCapital() < slotSize {
-				fmt.Printf(">>> FRESH skipped %v: cash=%.2f < slot=%.2f\n", stock.Symbol, account.GetCapital(), slotSize)
-				break // skip all further entries — not enough capital
-			}
-
-			units := math.Floor(slotSize / stock.Close)
-			if units > 0 {
-				actualCost := units * stock.Close
-				account.SetCapital(account.GetCapital() - actualCost)
-
-				newLot := portfolio.Trade{
-					ID:        uuid.New().String(),
-					Symbol:    stock.Symbol,
-					Date:      stock.Date,
-					Lot:       int32(units),
-					Price:     stock.Close,
-					Action:    portfolio.Fresh,
-					BuyPrice:  stock.Close,
-					PnL:       0,
-					CashAfter: account.GetCapital(),
-					SlotSize:  slotSize,
+		if cfg.PivotFilter.Enabled {
+			for freshEntriesToday < cfg.MaxFreshEntriesPerDay {
+				if account.GetCapital() < slotSize {
+					break // not enough capital for any entry
 				}
-				account.AddPosition(newLot)
-				freshEntriesToday++
 
-				fmt.Printf(">>> FRESH Trade: %v @ %v (slot=%.2f, day-entry#%d)\n", newLot.Symbol, newLot.Price, slotSize, freshEntriesToday)
-				strategy.AddTrade(newLot)
+				// Find candidates: constituent, DiffSMA > 0, not in portfolio
+				var candidates []EngineStock
+				for _, stock := range stocks {
+					if stock.IsConstituent && stock.DiffSMA > 0 && !account.HasPosition(stock.Symbol) {
+						candidates = append(candidates, stock)
+					}
+				}
+
+				if len(candidates) == 0 {
+					break // no candidates left
+				}
+
+				// Take top N candidates
+				poolSize := cfg.PivotFilter.PoolSize
+				if poolSize <= 0 {
+					poolSize = 5 // fallback default
+				}
+				if len(candidates) > poolSize {
+					candidates = candidates[:poolSize]
+				}
+
+				// Find the candidate with the minimum valid distance
+				var bestStock EngineStock
+				bestDist := math.MaxFloat64
+				foundBest := false
+
+				for _, stock := range candidates {
+					dist, ok := getPivotDistance(stock, cfg.PivotFilter.System, cfg.PivotFilter.Level)
+					if ok && dist < bestDist {
+						bestDist = dist
+						bestStock = stock
+						foundBest = true
+					}
+				}
+
+				if !foundBest {
+					break // none of the candidates in the pool had a valid support level below their Close price
+				}
+
+				// Buy bestStock
+				units := math.Floor(slotSize / bestStock.Close)
+				if units > 0 {
+					actualCost := units * bestStock.Close
+					account.SetCapital(account.GetCapital() - actualCost)
+
+					newLot := portfolio.Trade{
+						ID:        uuid.New().String(),
+						Symbol:    bestStock.Symbol,
+						Date:      bestStock.Date,
+						Lot:       int32(units),
+						Price:     bestStock.Close,
+						Action:    portfolio.Fresh,
+						BuyPrice:  bestStock.Close,
+						PnL:       0,
+						CashAfter: account.GetCapital(),
+						SlotSize:  slotSize,
+					}
+					account.AddPosition(newLot)
+					freshEntriesToday++
+
+					fmt.Printf(">>> FRESH Trade: %v @ %v (slot=%.2f, day-entry#%d, pivot-dist=%.2f%%)\n", newLot.Symbol, newLot.Price, slotSize, freshEntriesToday, bestDist)
+					strategy.AddTrade(newLot)
+				} else {
+					break // couldn't buy any units (price too high for slot size)
+				}
+			}
+		} else {
+			var radarStocks []EngineStock
+			for _, stock := range stocks {
+				if stock.IsConstituent && stock.DiffSMA > 0 {
+					radarStocks = append(radarStocks, stock)
+				}
+			}
+
+			for _, stock := range radarStocks {
+				if freshEntriesToday >= cfg.MaxFreshEntriesPerDay {
+					break
+				}
+				if account.HasPosition(stock.Symbol) {
+					continue
+				}
+				if account.GetCapital() < slotSize {
+					fmt.Printf(">>> FRESH skipped %v: cash=%.2f < slot=%.2f\n", stock.Symbol, account.GetCapital(), slotSize)
+					break // skip all further entries — not enough capital
+				}
+
+				units := math.Floor(slotSize / stock.Close)
+				if units > 0 {
+					actualCost := units * stock.Close
+					account.SetCapital(account.GetCapital() - actualCost)
+
+					newLot := portfolio.Trade{
+						ID:        uuid.New().String(),
+						Symbol:    stock.Symbol,
+						Date:      stock.Date,
+						Lot:       int32(units),
+						Price:     stock.Close,
+						Action:    portfolio.Fresh,
+						BuyPrice:  stock.Close,
+						PnL:       0,
+						CashAfter: account.GetCapital(),
+						SlotSize:  slotSize,
+					}
+					account.AddPosition(newLot)
+					freshEntriesToday++
+
+					fmt.Printf(">>> FRESH Trade: %v @ %v (slot=%.2f, day-entry#%d)\n", newLot.Symbol, newLot.Price, slotSize, freshEntriesToday)
+					strategy.AddTrade(newLot)
+				}
 			}
 		}
 	}
 
 	return account, strategy
+}
+
+// getPivotDistance calculates the percentage distance from Close to the configured support level.
+// Returns (distance, isValid). If Close < support, isValid is false.
+func getPivotDistance(stock EngineStock, system, level string) (float64, bool) {
+	var supports []float64
+
+	switch system {
+	case "classic":
+		switch level {
+		case "S1":
+			supports = []float64{stock.ClassicS1}
+		case "S2":
+			supports = []float64{stock.ClassicS2}
+		case "S3":
+			supports = []float64{stock.ClassicS3}
+		case "closest":
+			supports = []float64{stock.ClassicS1, stock.ClassicS2, stock.ClassicS3}
+		}
+	case "fibonacci":
+		switch level {
+		case "S1":
+			supports = []float64{stock.FibS1}
+		case "S2":
+			supports = []float64{stock.FibS2}
+		case "S3":
+			supports = []float64{stock.FibS3}
+		case "closest":
+			supports = []float64{stock.FibS1, stock.FibS2, stock.FibS3}
+		}
+	case "camarilla":
+		switch level {
+		case "S1":
+			supports = []float64{stock.CamS1}
+		case "S2":
+			supports = []float64{stock.CamS2}
+		case "S3":
+			supports = []float64{stock.CamS3}
+		case "S4":
+			supports = []float64{stock.CamS4}
+		case "closest":
+			supports = []float64{stock.CamS1, stock.CamS2, stock.CamS3, stock.CamS4}
+		}
+	}
+
+	minDist := math.MaxFloat64
+	hasValid := false
+
+	for _, s := range supports {
+		if s > 0 && stock.Close >= s {
+			dist := ((stock.Close - s) / stock.Close) * 100.0
+			if dist < minDist {
+				minDist = dist
+				hasValid = true
+			}
+		}
+	}
+
+	return minDist, hasValid
 }

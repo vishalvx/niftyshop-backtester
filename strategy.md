@@ -25,8 +25,8 @@ The strategy exploits temporary market oversold conditions in fundamentally stro
 2. **Setup Condition**: The stock's current price must be below its 20DMA.
 3. **Portfolio Limit**: Maximum of 5 unique stocks held simultaneously.
 4. **Ranking & Selection**:
-   * Rank all eligible stocks below their 20DMA from the largest percentage deviation to the smallest.
-   * Enter a fresh buy in the top-ranked stock that is **not** already in the portfolio.
+   * **Standard Strategy**: Rank all eligible stocks below their 20DMA from the largest percentage deviation to the smallest. Enter a fresh buy in the top-ranked stock that is **not** already in the portfolio.
+   * **Pivot Support Filter Variant**: Take the top $N$ (e.g. 5, 10, 15) eligible stocks ranked by SMA deviation. For each stock in this pool, calculate the distance from Close to the configured pivot support line (Classic, Fibonacci, or Camarilla). Enter the stock that is closest to its support level (i.e. smallest distance percentage), ensuring we enter near strong support.
 
 ---
 

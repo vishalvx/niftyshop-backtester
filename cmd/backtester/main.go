@@ -19,6 +19,7 @@ func main() {
 	universeFlag := flag.String("universe", "", "Override universe in config")
 	startDateFlag := flag.String("start-date", "", "Override start date in config (YYYY-MM-DD)")
 	endDateFlag := flag.String("end-date", "", "Override end date in config (YYYY-MM-DD)")
+	findBestPivotFlag := flag.Bool("find-best-pivot", false, "Run grid-search over all pivot combinations on selected index")
 	flag.Parse()
 
 	fmt.Println("Starting NiftyShop Backtester...")
@@ -187,6 +188,8 @@ func main() {
 				}
 			}
 
+			pivots := indicators.CalculatePivotLevels(bars[i-1].High, bars[i-1].Low, bars[i-1].Close)
+
 			engineStock := engine.EngineStock{
 				EngineBar: engine.EngineBar{
 					Open:   b.Open,
@@ -200,6 +203,16 @@ func main() {
 				SMA20:         smaVal,
 				DiffSMA:       diffSMA,
 				IsConstituent: isConstituent,
+				ClassicS1:     pivots.ClassicS1,
+				ClassicS2:     pivots.ClassicS2,
+				ClassicS3:     pivots.ClassicS3,
+				FibS1:         pivots.FibS1,
+				FibS2:         pivots.FibS2,
+				FibS3:         pivots.FibS3,
+				CamS1:         pivots.CamS1,
+				CamS2:         pivots.CamS2,
+				CamS3:         pivots.CamS3,
+				CamS4:         pivots.CamS4,
 			}
 
 			// Skip bars outside the configured [StartDate, EndDate] window.
@@ -221,6 +234,118 @@ func main() {
 	}
 
 	// 5. Run Trading Engine
+	// 5. Run Trading Engine
+	if *findBestPivotFlag {
+		fmt.Println("Running Grid Search over all pivot combinations...")
+
+		type Perm struct {
+			System string
+			Levels []string
+		}
+		perms := []Perm{
+			{System: "classic", Levels: []string{"S1", "S2", "S3", "closest"}},
+			{System: "fibonacci", Levels: []string{"S1", "S2", "S3", "closest"}},
+			{System: "camarilla", Levels: []string{"S1", "S2", "S3", "S4", "closest"}},
+		}
+		poolSizes := []int{5, 10, 15}
+
+		// Extract the last known prices
+		currentPrices := make(map[string]float64)
+		var dates []string
+		for d := range dateWiseBucket {
+			dates = append(dates, d)
+		}
+		sort.Strings(dates)
+		for _, date := range dates {
+			stocks := dateWiseBucket[date]
+			for _, s := range stocks {
+				currentPrices[s.Symbol] = s.Close
+			}
+		}
+
+		type GridResult struct {
+			System      string
+			Level       string
+			PoolSize    int
+			TotalReturn float64
+			CAGR        float64
+			WinRate     float64
+			Trades      int
+		}
+		var results []GridResult
+
+		// Mute stdout to avoid cluttering console during simulation runs
+		oldStdout := os.Stdout
+		devNull, err := os.OpenFile(os.DevNull, os.O_WRONLY, 0)
+		hasDevNull := err == nil
+
+		for _, poolSize := range poolSizes {
+			for _, p := range perms {
+				for _, lvl := range p.Levels {
+					// Prepare config copy
+					runCfg := *cfg
+					runCfg.PivotFilter = config.PivotFilterConfig{
+						Enabled:  true,
+						System:   p.System,
+						Level:    lvl,
+						PoolSize: poolSize,
+					}
+
+					if hasDevNull {
+						os.Stdout = devNull
+					}
+
+					acc, strat := engine.RunNiftyShop(dateWiseBucket, &runCfg)
+
+					if hasDevNull {
+						os.Stdout = oldStdout
+					}
+
+					if acc != nil && strat != nil {
+						// Temporarily redirect stdout again to avoid print statements from Generate
+						if hasDevNull {
+							os.Stdout = devNull
+						}
+						rep := metrics.Generate(acc, strat, &runCfg, currentPrices)
+						if hasDevNull {
+							os.Stdout = oldStdout
+						}
+
+						results = append(results, GridResult{
+							System:      p.System,
+							Level:       lvl,
+							PoolSize:    poolSize,
+							TotalReturn: rep.TotalReturn,
+							CAGR:        rep.CAGR,
+							WinRate:     rep.WinRate,
+							Trades:      rep.NumTrades,
+						})
+					}
+				}
+			}
+		}
+
+		if hasDevNull {
+			devNull.Close()
+		}
+
+		// Sort results by CAGR descending
+		sort.Slice(results, func(i, j int) bool {
+			return results[i].CAGR > results[j].CAGR
+		})
+
+		// Print the Markdown table
+		fmt.Println("\n## Grid Search Results (Sorted by CAGR descending)")
+		fmt.Println()
+		fmt.Println("| Rank | System | Level | Pool Size | Total Return | CAGR | Win Rate | Total Trades |")
+		fmt.Println("|------|--------|-------|-----------|--------------|------|----------|--------------|")
+		for idx, r := range results {
+			fmt.Printf("| %d | %s | %s | %d | %.2f%% | **%.2f%%** | %.2f%% | %d |\n",
+				idx+1, r.System, r.Level, r.PoolSize, r.TotalReturn, r.CAGR, r.WinRate, r.Trades)
+		}
+		return
+	}
+
 	fmt.Println("Running Engine...")
 	account, strategy := engine.RunNiftyShop(dateWiseBucket, cfg)
 
