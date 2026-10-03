@@ -56,7 +56,7 @@ func main() {
 		universeName = "NIFTY 50" // Exact name expected by NSE API
 	}
 	fmt.Printf("Fetching symbols for index: %s\n", universeName)
-	
+
 	var stocksList []string
 	var monthConstituents map[string]map[string]bool
 	var useRebalancing bool
@@ -101,7 +101,7 @@ func main() {
 		if universeName == "NIFTY 50" {
 			stocksList = []string{"RELIANCE", "TCS", "HDFCBANK", "INFY", "ICICIBANK", "SBIN", "BHARTIARTL", "ITC"}
 		}
-		
+
 		fetched, err := data.FetchIndexSymbols(universeName)
 		if err == nil && len(fetched) > 0 {
 			stocksList = fetched

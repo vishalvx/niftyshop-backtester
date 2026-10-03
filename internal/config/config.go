@@ -12,7 +12,6 @@ import (
 var validate *validator.Validate
 
 func init() {
-	fmt.Println(">>> config init() called!!")
 	validate = validator.New(validator.WithRequiredStructEnabled())
 }
 
@@ -24,18 +23,18 @@ type PivotFilterConfig struct {
 }
 
 type Config struct {
-	Universe               string            `json:"universe"                  validate:"required"`
-	MAWindow               int32             `json:"ma_window"                 validate:"required,gt=0"`
-	ProfitTargetPct        float64           `json:"profit_target_pct"         validate:"required,gt=0,lte=100"`
-	AvgTriggerPct          float64           `json:"avg_trigger_pct"           validate:"required,gt=0,lte=100"`
-	MaxStocks              int32             `json:"max_stocks"                validate:"required,gt=0"`
-	CapitalDivider         float64           `json:"capital_divider"           validate:"required,gt=0"`
-	StartCapital           int32             `json:"start_capital"             validate:"required,gt=0"`
-	StartDate              string            `json:"start_date"                validate:"required,datetime=2006-01-02"`
-	EndDate                string            `json:"end_date"                  validate:"required,datetime=2006-01-02"`
-	RevisionPeriod         string            `json:"revision_period"           validate:"required,oneof=monthly quarterly yearly"`
-	MaxFreshEntriesPerDay  int               `json:"max_fresh_entries_per_day" validate:"required,gt=0"`
-	PivotFilter            PivotFilterConfig `json:"pivot_filter"`
+	Universe              string            `json:"universe"                  validate:"required"`
+	MAWindow              int32             `json:"ma_window"                 validate:"required,gt=0"`
+	ProfitTargetPct       float64           `json:"profit_target_pct"         validate:"required,gt=0,lte=100"`
+	AvgTriggerPct         float64           `json:"avg_trigger_pct"           validate:"required,gt=0,lte=100"`
+	MaxStocks             int32             `json:"max_stocks"                validate:"required,gt=0"`
+	CapitalDivider        float64           `json:"capital_divider"           validate:"required,gt=0"`
+	StartCapital          int32             `json:"start_capital"             validate:"required,gt=0"`
+	StartDate             string            `json:"start_date"                validate:"required,datetime=2006-01-02"`
+	EndDate               string            `json:"end_date"                  validate:"required,datetime=2006-01-02"`
+	RevisionPeriod        string            `json:"revision_period"           validate:"required,oneof=monthly quarterly yearly"`
+	MaxFreshEntriesPerDay int               `json:"max_fresh_entries_per_day" validate:"required,gt=0"`
+	PivotFilter           PivotFilterConfig `json:"pivot_filter"`
 }
 
 func Load(path string) (*Config, error) {
