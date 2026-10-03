@@ -1,12 +1,13 @@
 # NiftyShop Backtester
 
-A Go-based historical backtesting engine for the mechanical **NiftyShop** mean-reversion equity strategy on Indian stock indices.
+A Go backtester for the mechanical **NiftyShop** mean-reversion equity strategy on Indian stock indices.
 
 ## Features
-* **Rebalancing Support**: Tracks historical index constituents dynamically over time.
-* **Averaging Engine**: Automatically handles multiple levels of average-down entries when positions drop.
-* **Pre-inception Protection**: Gracefully restricts backtest windows according to historical index launch dates.
-* **Consolidated Reporting**: Evaluates multi-index metrics, calculating CAGR, Win Rate, holding periods, and outputting trade logs.
+* **Point-in-time index membership**: trades only stocks that were in the index that month, with an optional one-month lag (`-lag 1`) so no membership is known before it was published.
+* **Confirmed rule set**: the `nsx` presets follow the rules the maintainer confirmed in October 2026; other presets cover the written spec, V-Pivot entry filters and exit variants.
+* **Costs and tax**: dated Indian brokerage, STT, stamp duty and capital-gains tax, reported in stages (`gross`, `cost`, `tax-dated`, `tax-today`).
+* **Total-return benchmarks**: every result is compared with the index's total-return series (TRI), not its price series.
+* **Robustness checks**: start-date lotteries, capital jitter, walk-forward tests and the deflated Sharpe ratio.
 
 ---
 
@@ -14,29 +15,35 @@ A Go-based historical backtesting engine for the mechanical **NiftyShop** mean-r
 
 ### Prerequisites
 * Go 1.24.0 or higher.
-* Python 3 (for executing consolidated reports).
+* Python 3 and `curl` (for downloading price and index data).
 
-### Usage
-
-#### Run a Single Backtest
-Run a backtest for a specific index universe with CLI overrides:
+### Download data
+Prices and index series are not in the repository. Download them into `.research-data/` (gitignored):
 ```bash
-go run cmd/backtester/main.go -universe nifty50 -start-date 2021-01-01 -end-date 2025-12-31
+python3 research/py/fetch_yahoo.py $(tr '\n' ' ' < research/symbols_literal.txt) TMPV.NS LTF.NS UNITDSPR.NS INDUSTOWER.NS SAMMAANCAP.NS BAJAJ-AUTO.NS
+python3 research/py/fetch_tri.py "NIFTY 50" "NIFTY MIDCAP 50" "NIFTY SMALLCAP 50" "NIFTY500 MOMENTUM 50" "NIFTY 500"
 ```
 
-#### Run All Index Universes
-Run backtests for all supported indices (Nifty 50, Midcap 50, Smallcap 50, Nifty500 Momentum 50) and output a consolidated summary report:
+### Run a backtest
+Score the confirmed rules on the Nifty 50 from its first membership snapshot, against the Nifty 50 TRI:
 ```bash
-./run_all.sh
+go run ./cmd/research score -universe nifty50 -start 2008-02-01 -end 2025-08-31 -lag 1 -variants nsx,nsx-lot
 ```
-All outputs (consolidated `report.md` and CSV trade logs) will be saved in the `reports/` directory.
+`-universe` is one of `nifty50`, `niftymidcap50`, `niftysmallcap50` or `nifty500momentum50`. Other subcommands (`lottery`, `jitter`, `wfvariants`, `sweep`, ...) are listed in [cmd/research/main.go](cmd/research/main.go).
+
+### Reproduce the long-run study
+```bash
+go build -o /tmp/research_final ./cmd/research
+zsh research/run_complete.sh        # all tables in reports/long-run-findings.md
+zsh research/py/verify_sim.sh       # Go simulator against the independent Python reference
+```
 
 ---
 
 ## Documentation
 * **Strategy Rules**: See [strategy.md](strategy.md) for details on entry, exit, and averaging criteria.
 * **Long-run findings**: See [reports/long-run-findings.md](reports/long-run-findings.md). The complete backtest from the start of each index finds that no variant clears 15% a year after costs and tax and none reliably beats its own index after tax; earlier figures in `reports/report.md`, `reports/pivot_comparison_report.md` and `nifty-shop-v-pivot.md` do not reproduce and are marked as superseded.
-* **Research tooling**: `cmd/research` (second simulator, dated Indian costs and tax, total-return benchmarks, start-date windows, walk-forward and deflated Sharpe) and `research/` (study scripts and an independent Python reference simulator). See [CONTEXT.md](CONTEXT.md) section 5.
+* **Architecture**: See [CONTEXT.md](CONTEXT.md) for the packages and the data each index has. The original engine (`cmd/backtester`) was retired in October 2026: it did not follow the written rules and its published numbers came from a data-loader bug.
 * **Contributing**: Check [CONTRIBUTING.md](CONTRIBUTING.md) to set up development and submit code changes.
 
 ---

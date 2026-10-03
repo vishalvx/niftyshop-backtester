@@ -6,17 +6,18 @@ We welcome contributions to improve the backtester's performance, indicators, an
 
 ### Prerequisites
 * Go 1.24 or higher installed.
-* Python 3 (for running consolidated reports).
+* Python 3 and `curl` (for downloading data and the Python reference simulator).
 
 ### Run the Backtester
-1. Download historical stock datasets and save them in CSV format under `internal/data`.
-2. Run a specific backtest using the command line:
+1. Download price and index data into `.research-data/` as described in the [README](README.md#download-data).
+2. Run a backtest with the research CLI:
    ```bash
-   go run cmd/backtester/main.go -universe nifty50 -start-date 2021-01-01 -end-date 2025-12-31
+   go run ./cmd/research score -universe nifty50 -start 2008-02-01 -end 2025-08-31 -lag 1 -variants nsx
    ```
-3. Run all index backtests and generate a markdown report:
+3. Regenerate the long-run study tables:
    ```bash
-   ./run_all.sh
+   go build -o /tmp/research_final ./cmd/research
+   zsh research/run_complete.sh
    ```
 
 ### Running Tests

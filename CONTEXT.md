@@ -4,7 +4,7 @@ This project is a Go-based backtester evaluating mechanical mean-reversion strat
 
 ## 1. Supported Indices & Data Gates
 
-The backtest engine handles historical data restrictions dynamically. If a configured backtest `start_date` is prior to the launch or available data start of the selected index, the engine automatically adjusts `start_date` to the index data inception date and prints a warning.
+`go run ./cmd/research <subcommand> -universe <id> -start <date> -end <date>` picks the index with `-universe`. Membership comes from the constituents CSVs in `internal/data/`; the window must sit inside a CSV's range, because the CLI does not move `-start` for you.
 
 | Index Name | CLI Universe Identifier | Actual Index Inception | Backtest Inception Date (Data Gate) | Historical Constituents CSV | Minimum Backtest Year (CSV Boundary) | Rebalancing Schedule |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -14,33 +14,23 @@ The backtest engine handles historical data restrictions dynamically. If a confi
 | **Nifty500 Momentum 50** | `nifty500momentum50` | June 4, 2024 | **2024-06-04** (Inception) | `nifty500momentum50_weights.csv` | **2024** | Semi-annual (June/Dec) |
 
 > [!NOTE]
-> Even though **Nifty Midcap 50** and **Nifty Smallcap 50** have inception dates in 2004 and 2016, historical constituent weights CSVs are only available from **2019-01-31** onwards. Therefore, running backtests prior to 2019 for these indices will not find any active constituents and will skip trades.
+> Even though **Nifty Midcap 50** and **Nifty Smallcap 50** have inception dates in 2004 and 2016, historical constituent weights CSVs are only available from **2019-01-31** onwards. Therefore, backtests before 2019 for these indices find no constituents and make no trades.
 
 ---
 
 ## 2. Core Architecture & Key Packages
 
-The codebase is modularized into several internal packages:
+* **`cmd/research`** ([main.go](cmd/research/main.go)): the command-line entrypoint. Each subcommand (`score`, `lottery`, `jitter`, `wfvariants`, `sweep`, `audit`, `repro`, ...) builds a data panel for one universe and window, runs named rule presets and prints tables.
+* **`internal/panel`** ([panel.go](internal/panel/panel.go)): loads one canonical Yahoo CSV per ticker with dividends, applies symbol aliases and quarantines, and builds month-by-month index membership from the constituents CSVs.
+* **`internal/sim`** ([sim.go](internal/sim/sim.go)): the day-by-day NiftyShop simulator. `Rules` holds every rule variant; `LegacyRules()` reproduces the retired original engine, `SpecRules()` the written strategy.
+* **`internal/experiment`**: rule presets, cost and tax stages, start-date lotteries, walk-forward and the deflated Sharpe ratio.
+* **`internal/costs`**: dated Indian brokerage, STT, stamp duty and capital-gains tax.
+* **`internal/bench`**: total-return index (TRI) benchmarks.
+* **`internal/analytics`**: strategy metrics (CAGR, drawdown, Sharpe, Sortino, alpha and more).
+* **`internal/indicators`**: Simple Moving Average and pivot support levels (Classic, Fibonacci, Camarilla).
+* **`research/`**: study scripts, rule files and an independent Python reference simulator (`research/py/ref_sim.py`).
 
-* **`cmd/backtester`** ([main.go](cmd/backtester/main.go)):
-  - Main entrypoint of the simulation engine.
-  - Handles command-line arguments (`-universe`, `-start-date`, `-end-date`, `-find-best-pivot`).
-  - Precomputes technical indicators (SMA, Pivot Levels) and coordinates simulation or parameter grid-search runs.
-* **`internal/config`** ([config.go](internal/config/config.go)):
-  - Defines and validates configuration parameters (`Config` and `PivotFilterConfig`).
-  - Configuration files: `config.json` (runtime defaults) and `universe.json` (supported universes).
-* **`internal/data`** ([loader.go](internal/data/loader.go)):
-  - Fetches index symbols dynamically from NSE or falls back to standard constituents.
-  - Downloads daily historical OHLCV data from Yahoo Finance API.
-  - Loads historical constituent weights from CSV to handle index rebalancing.
-* **`internal/engine`** ([engine.go](internal/engine/engine.go)):
-  - Executes EOD strategy logic: exit processing, averaging down, candidate pool selection, and fresh entries.
-* **`internal/portfolio`** ([portfolio.go](internal/portfolio/portfolio.go)):
-  - Manages portfolio ledger, cash remaining, open positions, averaging units, and purchase lot details.
-* **`internal/indicators`**:
-  - Implements indicator calculation logic, such as Simple Moving Average (SMA) and Pivot Support Lines (Classic, Fibonacci, Camarilla).
-* **`internal/metrics`** ([report.go](internal/metrics/report.go)):
-  - Aggregates trade results and computes metrics: CAGR, Win Rate, total trades, average holding period, and exports CSV trade logs.
+The original engine (`cmd/backtester`, `internal/engine`, `internal/metrics`, `internal/portfolio`, `internal/config`, the `internal/data` loader, `run_all.sh` and `run_pivot_comparison.py`) was deleted in October 2026. It did not follow the written rules, counted every sale as a win, and its published numbers came from a data-loader bug.
 
 ---
 
@@ -61,19 +51,16 @@ This project supports two core strategy modes:
 
 ---
 
-## 4. Run Scripts & Grid-Search Flag
+## 4. Pivot Grid Search
 
-* **Consolidated Runner** ([run_all.sh](run_all.sh)): Runs simulations for all indices.
-* **Comparison Script** ([run_pivot_comparison.py](run_pivot_comparison.py)): Performs comparative backtesting (Standard vs. Best Pivot Permutations) and generates `reports/pivot_comparison_report.md`.
-* **Grid-Search Command**:
-  ```bash
-  go run cmd/backtester/main.go -universe nifty50 -find-best-pivot
-  ```
-  Runs a simulation loop across all 39 pivot permutations (Systems: Classic, Fibonacci, Camarilla; Levels: S1-S4, closest; Pools: 5, 10, 15) to identify the optimal configuration.
+The `grid` subcommand runs the standard rules and all 39 pivot permutations (Systems: Classic, Fibonacci, Camarilla; Levels: S1-S3 (S4 for Camarilla) and closest; Pools: 5, 10, 15) over every start month that fits a `-horizon`-year window (default 5), and reports the median, 10th and 90th percentile CAGR of each:
+```bash
+go run ./cmd/research grid -universe nifty50 -start 2008-02-01 -end 2025-08-31
+```
 
 ---
 
-## 5. Long-run research (`cmd/research`, `internal/sim`, `internal/panel`, `research/`)
+## 5. Long-run research
 
-A second, parameterised simulator and a clean data panel sit beside the original engine. They model the confirmed rule set (`nsx` presets), dated Indian costs and tax (`internal/costs`), total-return benchmarks (`internal/bench`), the standard strategy metrics (`internal/analytics`), start-date lotteries, capital jitter, walk-forward over variants and the deflated Sharpe ratio (`internal/experiment`). Findings: [`reports/long-run-findings.md`](reports/long-run-findings.md). Reproduce with `research/run_complete.sh`; check the simulator against the independent Python implementation with `research/py/verify_sim.sh`.
+`cmd/research` and the packages above model the confirmed rule set (`nsx` presets), dated Indian costs and tax (`internal/costs`), total-return benchmarks (`internal/bench`), the standard strategy metrics (`internal/analytics`), start-date lotteries, capital jitter, walk-forward over variants and the deflated Sharpe ratio (`internal/experiment`). Findings: [`reports/long-run-findings.md`](reports/long-run-findings.md). Reproduce with `research/run_complete.sh`; check the simulator against the independent Python implementation with `research/py/verify_sim.sh`.
 

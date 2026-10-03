@@ -1,6 +1,6 @@
 // Package panel loads a clean, reproducible price panel for research runs.
 //
-// Differences from internal/data (the production loader), all deliberate:
+// Differences from internal/data (the original engine's loader, since deleted), all deliberate:
 //   - one canonical CSV per Yahoo ticker (no date-range file names, so no glob collisions);
 //   - dividends are loaded so total-return accounting is possible;
 //   - symbol aliases map index-constituent symbols to current Yahoo tickers;

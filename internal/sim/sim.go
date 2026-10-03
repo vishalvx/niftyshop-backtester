@@ -1,6 +1,7 @@
-// Package sim is a parameterised re-implementation of the NiftyShop day loop (internal/engine.RunNiftyShop).
+// Package sim is a parameterised re-implementation of the NiftyShop day loop (the retired
+// original engine, internal/engine.RunNiftyShop, deleted once this package replaced it).
 //
-// With LegacyRules() it reproduces the production engine trade for trade (see sim_equiv_test.go). Every other
+// With LegacyRules() it reproduces that engine trade for trade (see legacy_fingerprint_test.go). Every other
 // field is a rule variant: documented-spec semantics, stops, time exits, trailing exits, costs, dividends, tax.
 package sim
 
@@ -25,7 +26,7 @@ type PivotRule struct {
 type Rules struct {
 	Name string `json:"name"`
 
-	// Parameters present in config.json.
+	// Parameters present in the original engine's config.json.
 	MAWindow       int        `json:"ma_window"`
 	ProfitTarget   float64    `json:"profit_target"`   // 0.05 = sell at +5%
 	AvgTrigger     float64    `json:"avg_trigger"`     // 0.03 = add when 3% below reference
@@ -37,7 +38,7 @@ type Rules struct {
 	// Rotation, when set, replaces the whole pullback strategy with a momentum rotation (see rotation.go).
 	Rotation *RotationRule `json:"rotation,omitempty"`
 
-	// Semantics the production engine hard-codes (legacy value first).
+	// Semantics the original engine hard-coded (legacy value first).
 	// "apptarget": each lot carries its own sell-at price fixed at purchase, as the app stores it: a fresh lot at fill*(1+target),
 	// an averaged lot at the new weighted average cost*(1+target); with SyncTargets every lot of the stock takes the new price.
 	ExitBasis   string `json:"exit_basis"`   // "lot": every lot sells at its own +target (engine). "avgcost": whole position at avg cost +target (documented spec, the app uses lot).
@@ -72,7 +73,7 @@ type Rules struct {
 	Tax       *costs.TaxBook `json:"-"`          // nil = no tax
 }
 
-// LegacyRules returns the exact behaviour of the production engine with config.json defaults.
+// LegacyRules returns the exact behaviour of the original engine with its config.json defaults.
 func LegacyRules() Rules {
 	return Rules{
 		Name: "standard-legacy", MAWindow: 20, ProfitTarget: 0.05, AvgTrigger: 0.03, CapitalDivider: 10,
