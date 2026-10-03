@@ -20,10 +20,10 @@ func presetByName(n string) (experiment.Spec, error) {
 		fmt.Sscanf(parts[3], "%d", &pool)
 		return experiment.VPivot(sys, lvl, pool), nil
 	}
-	// spec-cap3 / spec-lot3 [-ix] [:<system>:<level>:<pool>] - the written rules with the 3-lots-per-stock cap the captain named.
+	// spec-cap3 / spec-lot3 [-ix] [:<system>:<level>:<pool>] - the written rules with the 3-lots-per-stock cap the maintainer named.
 	//   cap3: sell the whole position at +5% over average cost (written exit)
-	//   lot3: every lot has its own +5% target from its own entry price (captain's variant, 2026-10-02)
-	//   -ix:  also sell the whole position when the stock leaves the index (captain's rule, 2026-10-03)
+	//   lot3: every lot has its own +5% target from its own entry price (maintainer's variant, 2026-10-02)
+	//   -ix:  also sell the whole position when the stock leaves the index (maintainer's rule, 2026-10-03)
 	if strings.HasPrefix(n, "spec-cap3") || strings.HasPrefix(n, "spec-lot3") {
 		parts := strings.Split(n, ":")
 		base := parts[0]
@@ -48,7 +48,7 @@ func presetByName(n string) (experiment.Spec, error) {
 		r.Name = n
 		return experiment.Spec{ID: n, Rules: r}, nil
 	}
-	// nsx / nsx-lot [:<system>:<level>:<pool>] - the rule set the captain confirmed on 2026-10-03 (strategy-flow review, round 6):
+	// nsx / nsx-lot [:<system>:<level>:<pool>] - the rule set the maintainer confirmed on 2026-10-03 (strategy-flow review, round 6):
 	//   no cap on how many stocks are held (cash only), at most 3 open lots per stock, one purchase a day in all (an add comes
 	//   before a new stock), a stock that leaves the index is sold, capital for the slot size refreshed after every sale, no stop.
 	//   nsx: the whole position sells at +5% over average cost. nsx-lot: every lot sells at +5% over its own entry price.

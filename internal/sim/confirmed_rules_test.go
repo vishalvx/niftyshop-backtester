@@ -1,6 +1,6 @@
 package sim
 
-// Verification of the confirmed rule set (captain, 2026-10-03) for the presets nsx and nsx-lot, with and without a pivot suffix.
+// Verification of the confirmed rule set (maintainer, 2026-10-03) for the presets nsx and nsx-lot, with and without a pivot suffix.
 //
 // The rules under test (R1-R8):
 //   R1 universe: members of the index, checked once a day at the close.

@@ -18,7 +18,7 @@ import csv, sys, math, collections
 path, mode, capital = sys.argv[1], sys.argv[2], float(sys.argv[3])
 parts = mode.split(':')
 base = parts[0]
-index_exit = base.endswith('-ix')          # captain's rule: sell the whole position when the stock leaves the index
+index_exit = base.endswith('-ix')          # maintainer's rule: sell the whole position when the stock leaves the index
 base = base[:-3] if index_exit else base
 pivot = tuple(parts[1:]) if len(parts) == 4 else None  # system, level, pool
 
@@ -33,7 +33,7 @@ if base in ('spec', 'spec-pivot'):
     target, divisor, max_stocks, lot_cap, buy_cap, per_lot = 0.05, 10.0, 5, 0, 0, False
 elif base in ('cap3', 'cap3-pivot'):     # written rules plus a cap of 3 lots per stock
     target, divisor, max_stocks, lot_cap, buy_cap, per_lot = 0.05, 10.0, 5, 3, 0, False
-elif base in ('nsx', 'nsx-lot'):         # the captain's confirmed rule set (2026-10-03)
+elif base in ('nsx', 'nsx-lot'):         # the maintainer's confirmed rule set (2026-10-03)
     target, divisor, max_stocks, lot_cap, buy_cap, per_lot = 0.05, 10.0, 10 ** 9, 3, 1, base == 'nsx-lot'
     own_target = base == 'nsx-lot'
     index_exit = True

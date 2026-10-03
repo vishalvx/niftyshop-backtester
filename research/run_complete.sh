@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Complete backtest of the rule set the captain confirmed (round 6), from the first tradable month of each index.
+# Complete backtest of the rule set the maintainer confirmed (round 6), from the first tradable month of each index.
 #   lag 1 (headline): trades in month M use the membership snapshot of month M-1, so nothing is known before it could be.
 #   lag 0 (engine convention): a month-end snapshot is applied to the whole month it is dated in (up to a month of look-ahead).
 # Windows: Nifty 50 2008-02-01..2025-08-31 (first snapshot Jan 2008, last Aug 2025); Midcap list 2019-02-01..2026-06-30.

@@ -1,5 +1,5 @@
 #!/bin/zsh
-# The rule set the captain confirmed on 2026-10-03 (nsx = whole-position exit; nsx-lot = every lot has its own +5% exit):
+# The rule set the maintainer confirmed on 2026-10-03 (nsx = whole-position exit; nsx-lot = every lot has its own +5% exit):
 # no cap on stocks held, 3 open lots per stock, one purchase a day, a stock leaving the index is sold, capital refreshed after every sale.
 set -e
 R=/tmp/research

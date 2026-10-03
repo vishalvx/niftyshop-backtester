@@ -22,24 +22,24 @@ The backtest engine handles historical data restrictions dynamically. If a confi
 
 The codebase is modularized into several internal packages:
 
-* **`cmd/backtester`** ([main.go](file:///Users/vishalprajapati/Developer/GROW/Projects/Stocks/BackTester/nifty-shop-backtesting/cmd/backtester/main.go)):
+* **`cmd/backtester`** ([main.go](cmd/backtester/main.go)):
   - Main entrypoint of the simulation engine.
   - Handles command-line arguments (`-universe`, `-start-date`, `-end-date`, `-find-best-pivot`).
   - Precomputes technical indicators (SMA, Pivot Levels) and coordinates simulation or parameter grid-search runs.
-* **`internal/config`** ([config.go](file:///Users/vishalprajapati/Developer/GROW/Projects/Stocks/BackTester/nifty-shop-backtesting/internal/config/config.go)):
+* **`internal/config`** ([config.go](internal/config/config.go)):
   - Defines and validates configuration parameters (`Config` and `PivotFilterConfig`).
   - Configuration files: `config.json` (runtime defaults) and `universe.json` (supported universes).
-* **`internal/data`** ([loader.go](file:///Users/vishalprajapati/Developer/GROW/Projects/Stocks/BackTester/nifty-shop-backtesting/internal/data/loader.go)):
+* **`internal/data`** ([loader.go](internal/data/loader.go)):
   - Fetches index symbols dynamically from NSE or falls back to standard constituents.
   - Downloads daily historical OHLCV data from Yahoo Finance API.
   - Loads historical constituent weights from CSV to handle index rebalancing.
-* **`internal/engine`** ([engine.go](file:///Users/vishalprajapati/Developer/GROW/Projects/Stocks/BackTester/nifty-shop-backtesting/internal/engine/engine.go)):
+* **`internal/engine`** ([engine.go](internal/engine/engine.go)):
   - Executes EOD strategy logic: exit processing, averaging down, candidate pool selection, and fresh entries.
-* **`internal/portfolio`** ([portfolio.go](file:///Users/vishalprajapati/Developer/GROW/Projects/Stocks/BackTester/nifty-shop-backtesting/internal/portfolio/portfolio.go)):
+* **`internal/portfolio`** ([portfolio.go](internal/portfolio/portfolio.go)):
   - Manages portfolio ledger, cash remaining, open positions, averaging units, and purchase lot details.
 * **`internal/indicators`**:
   - Implements indicator calculation logic, such as Simple Moving Average (SMA) and Pivot Support Lines (Classic, Fibonacci, Camarilla).
-* **`internal/metrics`** ([report.go](file:///Users/vishalprajapati/Developer/GROW/Projects/Stocks/BackTester/nifty-shop-backtesting/internal/metrics/report.go)):
+* **`internal/metrics`** ([report.go](internal/metrics/report.go)):
   - Aggregates trade results and computes metrics: CAGR, Win Rate, total trades, average holding period, and exports CSV trade logs.
 
 ---
@@ -63,8 +63,8 @@ This project supports two core strategy modes:
 
 ## 4. Run Scripts & Grid-Search Flag
 
-* **Consolidated Runner** ([run_all.sh](file:///Users/vishalprajapati/Developer/GROW/Projects/Stocks/BackTester/nifty-shop-backtesting/run_all.sh)): Runs simulations for all indices.
-* **Comparison Script** ([run_pivot_comparison.py](file:///Users/vishalprajapati/Developer/GROW/Projects/Stocks/BackTester/nifty-shop-backtesting/run_pivot_comparison.py)): Performs comparative backtesting (Standard vs. Best Pivot Permutations) and generates `reports/pivot_comparison_report.md`.
+* **Consolidated Runner** ([run_all.sh](run_all.sh)): Runs simulations for all indices.
+* **Comparison Script** ([run_pivot_comparison.py](run_pivot_comparison.py)): Performs comparative backtesting (Standard vs. Best Pivot Permutations) and generates `reports/pivot_comparison_report.md`.
 * **Grid-Search Command**:
   ```bash
   go run cmd/backtester/main.go -universe nifty50 -find-best-pivot

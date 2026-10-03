@@ -37,12 +37,12 @@ check niftymidcap50 2019-02-01 2026-06-30 spec-cap3 cap3
 check niftymidcap50 2019-02-01 2026-06-30 spec-lot3 lot3
 check niftymidcap50 2019-02-01 2026-06-30 spec-cap3:fibonacci:S1:15 cap3:fibonacci:S1:15
 check niftymidcap50 2019-02-01 2026-06-30 spec-lot3:fibonacci:S1:15 lot3:fibonacci:S1:15
-# captain's rule (2026-10-03): a stock that leaves the index is sold. Real removals exist only in the point-in-time Nifty 50.
+# maintainer's rule (2026-10-03): a stock that leaves the index is sold. Real removals exist only in the point-in-time Nifty 50.
 check nifty50 2008-01-01 2025-08-31 spec-cap3-ix cap3-ix
 check nifty50 2008-01-01 2025-08-31 spec-lot3-ix lot3-ix
 check nifty50 2008-01-01 2025-08-31 spec-cap3-ix:camarilla:S1:5 cap3-ix:camarilla:S1:5
 check nifty50 2008-01-01 2025-08-31 spec-lot3-ix:fibonacci:S1:15 lot3-ix:fibonacci:S1:15
-# the captain's confirmed rule set (2026-10-03): no stock cap, 3 open lots, one purchase a day, index exit, capital refreshed after every sale
+# the maintainer's confirmed rule set (2026-10-03): no stock cap, 3 open lots, one purchase a day, index exit, capital refreshed after every sale
 check nifty50 2008-01-01 2025-08-31 nsx nsx
 check nifty50 2008-01-01 2025-08-31 nsx-lot nsx-lot
 check nifty50 2008-01-01 2025-08-31 nsx:camarilla:S1:5 nsx:camarilla:S1:5

@@ -46,7 +46,7 @@ type Rules struct {
 	MaxStocks   int    `json:"max_stocks"`   // 0 = not enforced (engine ignores config max_stocks). 5 = documented spec.
 	MaxLots     int    `json:"max_lots"`     // lots per stock, 0 = unlimited (engine). the app uses 3.
 	// ExitOnIndexRemoval sells the whole position of a stock on the first day it is no longer a member of the index
-	// (captain's rule, 2026-10-03). It only has an effect on universes with real removals (the point-in-time Nifty 50).
+	// (maintainer's rule, 2026-10-03). It only has an effect on universes with real removals (the point-in-time Nifty 50).
 	ExitOnIndexRemoval bool `json:"exit_on_index_removal"`
 	// MaxBuysPerDay caps fresh+average buys per day across the whole portfolio: 0 = engine (one fresh entry plus one
 	// average per stock), 1 = the app ("maximum 1 buy action per day").
@@ -291,7 +291,7 @@ func (s *state) sell(l *Lot, d panel.Day, reason string, firstOfScripToday bool)
 	s.cash += value - ch.Total
 	pnl := value - ch.Total - (l.BuyPrice*float64(l.Qty) + l.BuyCharge.Total)
 	s.realized += pnl
-	if s.r.Revision == "sale" { // captain's rule (2026-10-03): capital for the slot size is refreshed after every sale
+	if s.r.Revision == "sale" { // maintainer's rule (2026-10-03): capital for the slot size is refreshed after every sale
 		s.slot = (s.r.StartCapital + s.realized) / s.r.CapitalDivider
 	}
 	s.res.CostsPaid += ch.Total

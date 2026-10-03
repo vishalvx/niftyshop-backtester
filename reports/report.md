@@ -1,5 +1,7 @@
 # NiftyShop Strategy — Multi-Index Backtest Report
 
+> **Superseded, 2026-10-03.** This consolidated report was produced by the original engine before its data-loader fix, with no costs and no tax. The figures do not reproduce, and the 100% win rate follows from the rules (trades close only at the +5% target while losers are averaged down). See [long-run-findings.md](long-run-findings.md).
+
 **Period:** Jan 2021 – Dec 2025 (5 Years)
 **Parameters:** 20-Day SMA, 5% Profit Target, 3% Average Down Trigger, Max 5 Stocks, Capital Divider 10
 

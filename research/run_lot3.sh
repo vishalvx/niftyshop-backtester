@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Captain's variant (2026-10-02): max 3 lots per stock, and every lot has its own +5% target from its own entry price.
+# Maintainer's variant (2026-10-02): max 3 lots per stock, and every lot has its own +5% target from its own entry price.
 # Compared with the written rules (whole position at +5% over average cost) and with the written rules plus the 3-lot cap.
 set -e
 R=/tmp/research

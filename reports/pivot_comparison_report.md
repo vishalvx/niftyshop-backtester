@@ -111,8 +111,11 @@
 > [!TIP]
 > **Support Clustering**: The results show that pivot filters consistently outperform standard mean-reversion. Selecting candidates closest to support levels prevents entering stocks in full capitulation, reducing holding times and increasing transaction volume.
 
+> [!WARNING]
+> **Withdrawn.** The settings below were picked per index from a grid search on one five-year window and do not reproduce; see the note at the top of this report.
+
 > [!IMPORTANT]
-> **Recommended Settings**:
+> **Recommended Settings (withdrawn)**:
 > * **Nifty 50**: Use **Fibonacci S1 (Pool 5)**, yielding **24.67% CAGR** (+11.89% vs Standard).
 > * **Nifty Midcap 50**: Use **Fibonacci S1 (Pool 15)**, yielding **24.34% CAGR** (+8.84% vs Standard).
 > * **Nifty Smallcap 50**: Use **Camarilla S2 (Pool 5)**, yielding **18.57% CAGR** (-0.62% vs Standard).

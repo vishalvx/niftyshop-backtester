@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Captain's rules, 2026-10-03: a stock that leaves the index is sold (suffix -ix). Point-in-time Nifty 50 only: the Midcap list
+# Maintainer's rules, 2026-10-03: a stock that leaves the index is sold (suffix -ix). Point-in-time Nifty 50 only: the Midcap list
 # in the dataset never removes a member, so the rule changes nothing there.
 set -e
 R=/tmp/research

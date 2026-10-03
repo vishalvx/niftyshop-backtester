@@ -626,7 +626,7 @@ func TestLotCapOwnTargetPerLot(t *testing.T) {
 
 // Pins down how the cap counts. sim.go counts OPEN lots: after one lot of a stock has sold, the stock may buy again until
 // it has 3 open lots again. So over the life of one continuous position a stock can be bought more than 3 times
-// (1 fresh + 3 averaging here) while never holding more than 3 at once. If the captain means "at most 3 buys per
+// (1 fresh + 3 averaging here) while never holding more than 3 at once. If the maintainer means "at most 3 buys per
 // position, sold lots included", this test (and sim.go:574-584) must change.
 func TestLotCapCountsOpenLotsNotLotsEverBought(t *testing.T) {
 	//                     A    B    C      C sells  AVG vs latest open lot B (96 x 0.97 = 93.12)
