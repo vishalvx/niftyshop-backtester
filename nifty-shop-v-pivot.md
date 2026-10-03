@@ -11,20 +11,14 @@ The strategy combines traditional mean reversion (buying oversold stocks) with s
 
 ---
 
-## 2. Core Index & Configuration Recommendations
+## 2. Core Index & Configuration (performance claims withdrawn)
 
-Based on 5-year (2021-2025) and 8-year (2018-2025) historical backtesting, the following indices and configurations are recommended:
+> **Correction, 2026-10-03.** An earlier version of this section recommended Camarilla S1 (pool 5) for the Nifty 50 at 16.01% CAGR (+3.85% over the index) and Fibonacci S1 (pool 15) for the Nifty Midcap 50 at 24.34% CAGR. Those figures do not reproduce: they came from an engine whose data loader kept only one price file per stock (31 Nifty 50 stocks had prices from April 2024 only), with no costs and no tax. The complete long-run backtest ([`reports/long-run-findings.md`](reports/long-run-findings.md)) finds that no variant clears 15% a year after costs and tax, and none reliably beats its own index after tax.
 
-### **A. Primary Choice: Nifty 50 (Large Cap)**
-* **Recommended Pivot Config**: **Camarilla S1 (Pool Size 5)**
-* **Performance (8-Year: 2018-2025)**: **16.01% CAGR** (vs. 7.84% Standard NiftyShop, and 12.16% Index Buy-and-Hold)
-* **Alpha vs. Index**: **+3.85% CAGR** (Outperforms Standard by **+8.17% CAGR**)
-* **Why it works**: Large-cap stocks are highly liquid. Setting a tight pool size of **5** ensures focus on the most oversold heavyweights. **Camarilla S1** is a tight support level that acts as a soft filter; it allows the strategy to stay invested during steep corrections (like the 2018 correction and 2020 COVID crash), capturing maximum returns on recovery.
+Configurations studied (not recommended as an edge):
 
-### **B. Secondary Choice: Nifty Midcap 50 (Mid Cap)**
-* **Recommended Pivot Config**: **Fibonacci S1 (Pool Size 15)**
-* **Performance (5-Year: 2021-2025)**: **24.34% CAGR** (vs. 15.50% Standard NiftyShop, and 22.91% Index Buy-and-Hold)
-* **Why it works**: Mid-cap stocks are more volatile. A larger pool size of **15** gives the engine the flexibility to ignore "falling knives" and find a stock that is safely resting on a support level.
+* **Nifty 50**: Camarilla S1, pool size 5. Typical 5-year result after costs and tax 6.3% to 8.2% a year for the six variants of the study, against 13.0% for the Nifty 50 total-return index.
+* **Nifty Midcap 50 list**: Fibonacci S1, pool size 15. Typical 5-year result 15.2% to 18.9% against 26.0% for the Midcap 50 total-return index (the list in the dataset is mostly Nifty 50 names and the period is one bull market).
 
 ---
 
@@ -32,7 +26,7 @@ Based on 5-year (2021-2025) and 8-year (2018-2025) historical backtesting, the f
 
 1. **Universe Filter**: Only trade stocks belonging to the active Nifty 50 or Nifty Midcap 50 index.
 2. **Setup Condition**: The stock's EOD Close price must be below its 20-day Simple Moving Average (20DMA).
-3. **Portfolio Limit**: Maximum of 5 unique stocks held simultaneously.
+3. **Portfolio Limit**: None on the number of stocks held; only cash limits it (capital / 10 per buy). See `strategy.md` section 7 for the confirmed rule set.
 4. **Candidate Selection**:
    * Rank all eligible stocks below their 20DMA by distance descending (`DiffSMA` descending).
    * Filter out stocks that are already in the portfolio.

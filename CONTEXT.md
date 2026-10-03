@@ -70,3 +70,10 @@ This project supports two core strategy modes:
   go run cmd/backtester/main.go -universe nifty50 -find-best-pivot
   ```
   Runs a simulation loop across all 39 pivot permutations (Systems: Classic, Fibonacci, Camarilla; Levels: S1-S4, closest; Pools: 5, 10, 15) to identify the optimal configuration.
+
+---
+
+## 5. Long-run research (`cmd/research`, `internal/sim`, `internal/panel`, `research/`)
+
+A second, parameterised simulator and a clean data panel sit beside the original engine. They model the confirmed rule set (`nsx` presets), dated Indian costs and tax (`internal/costs`), total-return benchmarks (`internal/bench`), the standard strategy metrics (`internal/analytics`), start-date lotteries, capital jitter, walk-forward over variants and the deflated Sharpe ratio (`internal/experiment`). Findings: [`reports/long-run-findings.md`](reports/long-run-findings.md). Reproduce with `research/run_complete.sh`; check the simulator against the independent Python implementation with `research/py/verify_sim.sh`.
+

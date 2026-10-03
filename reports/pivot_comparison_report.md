@@ -1,5 +1,7 @@
 # NiftyShop Strategy: Pivot Entry Filter Analysis Report
 
+> **Superseded, 2026-10-03.** These figures were produced by the engine before its data-loader fix, with no costs and no tax, and do not reproduce. See [`long-run-findings.md`](long-run-findings.md) for the complete backtest from the start of each index.
+
 **Backtest Timeframe:** Jan 2021 – Dec 2025 (5 Years)
 *Note: Nifty500 Momentum 50 timeframe is manually restricted to June 4, 2024 onwards due to inception date.*
 
