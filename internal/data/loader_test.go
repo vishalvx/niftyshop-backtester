@@ -132,4 +132,32 @@ func TestLoadHistoricalConstituentsNewIndices(t *testing.T) {
 	}
 }
 
-
+func TestGetAllStockMergesFilesOfTheSameSymbol(t *testing.T) {
+	dir := t.TempDir()
+	hdr := "Date,Open,High,Low,Close,AdjClose,Volume\n"
+	// An old wide-range file and a newer narrow-range file whose name sorts later: the old code kept only the latter.
+	wide := hdr + "2020-01-01,1,1,1,10,10,1\n2020-01-02,1,1,1,11,11,1\n2020-01-03,1,1,1,12,12,1\n"
+	narrow := hdr + "2020-01-03,1,1,1,13,13,1\n2020-01-04,1,1,1,14,14,1\n"
+	if err := os.WriteFile(filepath.Join(dir, "ABC.NS_2018-01-01_to_2025-12-31.csv"), []byte(wide), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(dir, "ABC.NS_2024-06-04_to_2025-12-31.csv"), []byte(narrow), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	got, err := GetAllStock(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	bars := got["ABC.NS"]
+	if len(bars) != 4 {
+		t.Fatalf("want union of 4 dates, got %d", len(bars))
+	}
+	if bars[2].Close != 13 {
+		t.Fatalf("on a clash the lexically later file must win: got %v", bars[2].Close)
+	}
+	for i := 1; i < len(bars); i++ {
+		if !bars[i-1].Date.Before(bars[i].Date) {
+			t.Fatal("bars must be sorted and unique")
+		}
+	}
+}

@@ -35,6 +35,8 @@ All outputs (consolidated `report.md` and CSV trade logs) will be saved in the `
 
 ## Documentation
 * **Strategy Rules**: See [strategy.md](strategy.md) for details on entry, exit, and averaging criteria.
+* **Long-run findings**: See [reports/long-run-findings.md](reports/long-run-findings.md). The complete backtest from the start of each index finds that no variant clears 15% a year after costs and tax and none reliably beats its own index after tax; earlier figures in `reports/report.md`, `reports/pivot_comparison_report.md` and `nifty-shop-v-pivot.md` do not reproduce and are marked as superseded.
+* **Research tooling**: `cmd/research` (second simulator, dated Indian costs and tax, total-return benchmarks, start-date windows, walk-forward and deflated Sharpe) and `research/` (study scripts and an independent Python reference simulator). See [CONTEXT.md](CONTEXT.md) section 5.
 * **Contributing**: Check [CONTRIBUTING.md](CONTRIBUTING.md) to set up development and submit code changes.
 
 ---

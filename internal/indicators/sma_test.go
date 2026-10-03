@@ -7,10 +7,10 @@ import (
 
 func TestCalculateSMA(t *testing.T) {
 	tests := []struct {
-		name    string
-		values  []float64
-		window  int
-		want    []float64
+		name   string
+		values []float64
+		window int
+		want   []float64
 	}{
 		{
 			name:   "empty values",
@@ -39,7 +39,7 @@ func TestCalculateSMA(t *testing.T) {
 			// index 2: (10+20+30)/3 = 20.0
 			// index 3: (20+30+40)/3 = 30.0
 			// index 4: (30+40+50)/3 = 40.0
-			want:   []float64{0.0, 0.0, 20.0, 30.0, 40.0},
+			want: []float64{0.0, 0.0, 20.0, 30.0, 40.0},
 		},
 	}
 

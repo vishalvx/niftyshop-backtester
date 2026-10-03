@@ -1,0 +1,10 @@
+{
+  "id": "exit-grid",
+  "base": "spec",
+  "fixed": {"dividends": true},
+  "grid": {
+    "stop_loss": [0, 0.15, 0.25],
+    "profit_target": [0.05, 0.08, 0.12],
+    "time_stop_days": [0, 180]
+  }
+}

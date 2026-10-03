@@ -1,0 +1,45 @@
+
+=== NIFTY_50 | 2019-02-01 .. 2026-06-30 | compared with NIFTY_50 ===
+buy-and-hold: gross CAGR  12.50% | after tax (dated rates)  11.43% | final Rs 2393892 -> Rs 2228936 (tax Rs 164956)
+buy-and-hold: gross CAGR  12.50% | after tax (today rates)  11.43% | final Rs 2393892 -> Rs 2228936 (tax Rs 164956)
+annual vol  17.53%  Sharpe 0.43  Sortino 0.59  Calmar 0.33  Ulcer 7.4%  max drawdown -38.27% (peak 2020-01-14 trough 2020-03-23, 297 days underwater)  longest underwater 1.1 years
+best year 2021  25.59%  worst year 2022   5.69%  positive months  60.67% of 89 | skew -1.11 kurt 18.4 VaR95   1.52%
+vs NIFTY_50: beta 1.00 alpha  -0.00% corr 1.00 TE   0.00% IR -0.11 up-capture 100% down-capture 100%
+calendar years: 2019:13.1%* 2020:16.1% 2021:25.6% 2022:5.7% 2023:21.3% 2024:10.1% 2025:11.9% 2026:-8.1%*
+stress: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -38.3% (worst fall -38.3%) | 2022: +4.1% (worst fall -15.8%)
+
+| horizon | windows | median (after tax, dated) | p10 | p90 | share >= 15% | share beating comparison | comparison median |
+|---|---|---|---|---|---|---|---|
+| 3y | 53 |  14.77% |  10.49% |  19.10% | 42% | 0% |  14.77% |
+| 5y | 29 |  14.96% |  10.65% |  19.23% | 48% | 0% |  14.96% |
+| 10y | 0 | n/a | n/a | n/a | n/a | n/a | n/a |
+
+=== NIFTY_MIDCAP_50 | 2019-02-01 .. 2026-06-30 | compared with NIFTY_50 ===
+buy-and-hold: gross CAGR  20.51% | after tax (dated rates)  18.93% | final Rs 3983587 -> Rs 3611970 (tax Rs 371616)
+buy-and-hold: gross CAGR  20.51% | after tax (today rates)  18.93% | final Rs 3983587 -> Rs 3611970 (tax Rs 371616)
+annual vol  21.41%  Sharpe 0.72  Sortino 0.95  Calmar 0.49  Ulcer 9.0%  max drawdown -42.23% (peak 2019-04-02 trough 2020-03-23, 588 days underwater)  longest underwater 1.6 years
+best year 2023  51.42%  worst year 2022   5.35%  positive months  61.80% of 89 | skew -1.33 kurt 11.6 VaR95   2.15%
+vs NIFTY_50: beta 1.17 alpha   6.84% corr 0.89 TE  10.94% IR 0.74 up-capture 127% down-capture 104%
+calendar years: 2019:0.6%* 2020:26.3% 2021:44.9% 2022:5.3% 2023:51.4% 2024:22.2% 2025:8.6% 2026:2.2%*
+stress: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -40.0% (worst fall -42.0%) | 2022: +3.9% (worst fall -20.5%)
+
+| horizon | windows | median (after tax, dated) | p10 | p90 | share >= 15% | share beating comparison | comparison median |
+|---|---|---|---|---|---|---|---|
+| 3y | 53 |  23.31% |  19.10% |  32.77% | 98% | 100% |  14.77% |
+| 5y | 29 |  25.96% |  18.62% |  31.07% | 100% | 100% |  14.96% |
+| 10y | 0 | n/a | n/a | n/a | n/a | n/a | n/a |
+
+=== NIFTY_500 | 2019-02-01 .. 2026-06-30 | compared with NIFTY_50 ===
+buy-and-hold: gross CAGR  14.60% | after tax (dated rates)  13.37% | final Rs 2744992 -> Rs 2534393 (tax Rs 210599)
+buy-and-hold: gross CAGR  14.60% | after tax (today rates)  13.37% | final Rs 2744992 -> Rs 2534393 (tax Rs 210599)
+annual vol  17.38%  Sharpe 0.54  Sortino 0.72  Calmar 0.38  Ulcer 7.6%  max drawdown -38.11% (peak 2020-01-17 trough 2020-03-23, 294 days underwater)  longest underwater 1.8 years
+best year 2021  31.60%  worst year 2022   4.25%  positive months  64.04% of 89 | skew -1.37 kurt 17.0 VaR95   1.60%
+vs NIFTY_50: beta 1.03 alpha   1.80% corr 0.98 TE   3.33% IR 0.61 up-capture 107% down-capture 101%
+calendar years: 2019:10.3%* 2020:17.9% 2021:31.6% 2022:4.2% 2023:26.9% 2024:16.2% 2025:7.8% 2026:-3.2%*
+stress: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -37.8% (worst fall -38.1%) | 2022: +2.8% (worst fall -17.4%)
+
+| horizon | windows | median (after tax, dated) | p10 | p90 | share >= 15% | share beating comparison | comparison median |
+|---|---|---|---|---|---|---|---|
+| 3y | 53 |  16.76% |  12.76% |  21.39% | 70% | 100% |  14.77% |
+| 5y | 29 |  17.54% |  12.78% |  21.62% | 83% | 100% |  14.96% |
+| 10y | 0 | n/a | n/a | n/a | n/a | n/a | n/a |

@@ -14,6 +14,7 @@ internal/data/stocks/*
 data/stocks/*
 testdata/*
 reports/*.csv
+reports/pivot_search_trade_logs/
 temp_*.log
 
 # OS metadata files
@@ -35,3 +36,13 @@ Thumbs.db
 # Environment configurations
 .env
 .env.*
+# research scratch data (re-downloadable)
+.research-data/
+
+research/out/verify/
+research/out/*.jsonl
+research/out/final/nifty50_2008_2025/
+research/out/final/harsh/
+research/out/final/verify/
+research/out/final/*/export/
+research/out/rerun/

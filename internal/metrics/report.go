@@ -58,12 +58,12 @@ func Generate(account *portfolio.Account, strategy *portfolio.Strategy, cfg *con
 	if err != nil {
 		end = time.Now() // fallback
 	}
-	
+
 	years := end.Sub(start).Hours() / (24 * 365.25)
 	if years <= 0 {
 		years = 1.0 // avoid division by zero
 	}
-	
+
 	cagr := math.Pow(finalValue/startCapital, 1/years) - 1
 
 	freshBuys := 0

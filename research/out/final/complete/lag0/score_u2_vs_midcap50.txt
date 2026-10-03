@@ -1,0 +1,432 @@
+
+=== nsx | stage gross | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 4096814 (start 1000000)  total return 309.68%  CAGR  20.97%  tax paid+terminal Rs 0  charges Rs 0  dividends Rs 118884
+annual vol  21.64%  Sharpe 0.73  Sortino 1.00  Calmar 0.46  Ulcer 8.8%  UPI 1.70
+daily return distribution: skew -1.03, excess kurtosis 10.6, 1-day VaR95   1.99%, CVaR95   3.26%, best day   8.16%, worst day -13.75% | average drawdown  -6.14% | longest run of losing months 4
+max drawdown -45.94%: peak 2020-02-20 -> trough 2020-03-23 (32 days), recovered 2020-07-08 (107 days after trough); underwater 139 days
+longest underwater stretch 622 days (1.7 years): peak 2024-10-16, NOT recovered by 2026-06-30, deepest point inside -24.09%
+best year 2023  63.93%  worst year 2022 -11.75%  positive months  60.67% of 89
+rolling 1y CAGR: windows 1587  min -36.77%  median  16.79%  max 147.16%  share>=15%  52.55%  share<0  22.43%
+rolling 3y CAGR: windows 1091  min  12.60%  median  22.32%  max  43.93%  share>=15%  97.43%  share<0   0.00%
+rolling 5y CAGR: windows 597  min  12.74%  median  23.96%  max  36.41%  share>=15%  90.28%  share<0   0.00%
+lots: closed 260 open 10 | win rate closed  94.23%, all-with-open-MTM  91.48% | avg win   7.12% (Rs 15963) avg loss  -7.69% (Rs -11839) | win/loss ratio 0.93
+profit factor closed 22.02 all 3.78 | expectancy per closed lot   6.27% (Rs 14359)
+holding days: avg(closed lots) 94, avg(all lots incl. open) 103, max closed 970 | longest-held losing lot 882 days | open underwater lots 8 (longest 726 days) | worst single-lot drawdown -78.27% | open unrealised -18.44% of equity
+exposure: days with a position 100.00%, avg invested  92.00%, max invested  99.89%, avg stocks held 5.1 | turnover 3.54x/yr | charges drag   0.00%/yr
+vs benchmark TRI (89 months): beta 0.87 alpha   2.64% corr 0.83 TE  13.71% IR 0.04 up-capture 82% down-capture 65% bench CAGR  20.51%
+calendar years: 2019:22.1%* 2020:34.2% 2021:32.9% 2022:-11.7% 2023:63.9% 2024:20.6% 2025:5.9% 2026:1.8%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -44.5% (worst fall -45.9%) | 2022: -12.6% (worst fall -21.4%)
+
+=== nsx | stage cost | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 3227176 (start 1000000)  total return 222.72%  CAGR  17.13%  tax paid+terminal Rs 0  charges Rs 123649  dividends Rs 143561
+annual vol  20.14%  Sharpe 0.61  Sortino 0.83  Calmar 0.43  Ulcer 8.6%  UPI 1.29
+daily return distribution: skew -1.19, excess kurtosis 12.3, 1-day VaR95   1.85%, CVaR95   2.96%, best day   6.38%, worst day -13.90% | average drawdown  -5.89% | longest run of losing months 5
+max drawdown -40.30%: peak 2020-02-19 -> trough 2020-03-23 (33 days), recovered 2020-06-24 (93 days after trough); underwater 126 days
+longest underwater stretch 638 days (1.7 years): peak 2024-09-30, NOT recovered by 2026-06-30, deepest point inside -25.42%
+best year 2023  51.18%  worst year 2025  -4.43%  positive months  62.92% of 89
+rolling 1y CAGR: windows 1587  min -31.88%  median  15.86%  max 109.58%  share>=15%  51.35%  share<0  21.68%
+rolling 3y CAGR: windows 1091  min  10.88%  median  21.22%  max  37.91%  share>=15%  87.35%  share<0   0.00%
+rolling 5y CAGR: windows 597  min  10.47%  median  21.87%  max  32.97%  share>=15%  80.90%  share<0   0.00%
+lots: closed 248 open 10 | win rate closed  93.55%, all-with-open-MTM  90.70% | avg win   6.63% (Rs 13625) avg loss  -5.19% (Rs -8710) | win/loss ratio 1.28
+profit factor closed 22.68 all 2.76 | expectancy per closed lot   5.86% (Rs 12185)
+holding days: avg(closed lots) 95, avg(all lots incl. open) 107, max closed 970 | longest-held losing lot 834 days | open underwater lots 8 (longest 698 days) | worst single-lot drawdown -60.08% | open unrealised -29.07% of equity
+exposure: days with a position 100.00%, avg invested  92.07%, max invested  99.91%, avg stocks held 5.1 | turnover 3.28x/yr | charges drag   0.75%/yr
+vs benchmark TRI (89 months): beta 0.75 alpha   0.54% corr 0.80 TE  13.97% IR -0.24 up-capture 71% down-capture 60% bench CAGR  20.51%
+calendar years: 2019:19.6%* 2020:22.9% 2021:24.4% 2022:10.4% 2023:51.2% 2024:11.9% 2025:-4.4% 2026:-1.2%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -39.1% (worst fall -40.3%) | 2022: +8.7% (worst fall -17.6%)
+
+=== nsx | stage tax-dated | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2302177 (start 1000000)  total return 130.22%  CAGR  11.91%  tax paid+terminal Rs 409574  charges Rs 93228  dividends Rs 105378
+annual vol  20.49%  Sharpe 0.37  Sortino 0.50  Calmar 0.29  Ulcer 11.3%  UPI 0.53
+daily return distribution: skew -1.27, excess kurtosis 13.1, 1-day VaR95   1.85%, CVaR95   3.07%, best day   6.38%, worst day -13.87% | average drawdown  -8.44% | longest run of losing months 5
+max drawdown -41.33%: peak 2020-02-19 -> trough 2020-03-23 (33 days), recovered 2020-07-03 (102 days after trough); underwater 135 days
+longest underwater stretch 645 days (1.8 years): peak 2021-10-14, recovered 2023-07-21, deepest point inside -22.59%
+best year 2023  53.40%  worst year 2022 -11.61%  positive months  58.43% of 89
+rolling 1y CAGR: windows 1587  min -32.98%  median   8.13%  max 109.98%  share>=15%  42.28%  share<0  36.93%
+rolling 3y CAGR: windows 1091  min   6.57%  median  14.05%  max  26.70%  share>=15%  36.39%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   4.66%  median  15.39%  max  26.47%  share>=15%  56.45%  share<0   0.00%
+lots: closed 221 open 10 | win rate closed  92.76%, all-with-open-MTM  89.61% | avg win   6.86% (Rs 11887) avg loss  -5.73% (Rs -8688) | win/loss ratio 1.20
+profit factor closed 17.53 all 2.73 | expectancy per closed lot   5.94% (Rs 10397)
+holding days: avg(closed lots) 104, avg(all lots incl. open) 118, max closed 970 | longest-held losing lot 861 days | open underwater lots 8 (longest 698 days) | worst single-lot drawdown -60.08% | open unrealised -30.59% of equity
+exposure: days with a position 100.00%, avg invested  92.11%, max invested 102.33%, avg stocks held 5.0 | turnover 3.06x/yr | charges drag   0.70%/yr
+vs benchmark TRI (89 months): beta 0.71 alpha  -3.72% corr 0.81 TE  13.45% IR -0.61 up-capture 62% down-capture 66% bench CAGR  20.51%
+calendar years: 2019:17.6%* 2020:18.8% 2021:25.2% 2022:-11.6% 2023:53.4% 2024:8.8% 2025:-8.5% 2026:-2.6%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -39.2% (worst fall -41.3%) | 2022: -12.1% (worst fall -19.9%)
+
+=== nsx | stage tax-today | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2241014 (start 1000000)  total return 124.10%  CAGR  11.51%  tax paid+terminal Rs 518487  charges Rs 91347  dividends Rs 145511
+annual vol  21.09%  Sharpe 0.35  Sortino 0.47  Calmar 0.28  Ulcer 10.8%  UPI 0.51
+daily return distribution: skew -1.19, excess kurtosis 10.3, 1-day VaR95   1.98%, CVaR95   3.21%, best day   7.05%, worst day -12.64% | average drawdown  -8.05% | longest run of losing months 6
+max drawdown -40.70%: peak 2019-09-24 -> trough 2020-03-23 (181 days), recovered 2020-08-20 (150 days after trough); underwater 331 days
+longest underwater stretch 638 days (1.7 years): peak 2024-09-30, NOT recovered by 2026-06-30, deepest point inside -28.33%
+best year 2023  57.24%  worst year 2025  -8.98%  positive months  58.43% of 89
+rolling 1y CAGR: windows 1587  min -35.17%  median   5.57%  max 108.04%  share>=15%  39.76%  share<0  40.77%
+rolling 3y CAGR: windows 1091  min   4.58%  median  15.59%  max  26.13%  share>=15%  54.72%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   5.89%  median  16.46%  max  26.70%  share>=15%  64.49%  share<0   0.00%
+lots: closed 222 open 10 | win rate closed  91.89%, all-with-open-MTM  88.79% | avg win   7.04% (Rs 11851) avg loss  -5.51% (Rs -7879) | win/loss ratio 1.28
+profit factor closed 17.05 all 2.80 | expectancy per closed lot   6.03% (Rs 10251)
+holding days: avg(closed lots) 107, avg(all lots incl. open) 120, max closed 970 | longest-held losing lot 848 days | open underwater lots 8 (longest 698 days) | worst single-lot drawdown -60.08% | open unrealised -30.08% of equity
+exposure: days with a position 100.00%, avg invested  93.52%, max invested 104.77%, avg stocks held 5.0 | turnover 3.11x/yr | charges drag   0.71%/yr
+vs benchmark TRI (89 months): beta 0.76 alpha  -4.56% corr 0.82 TE  13.18% IR -0.63 up-capture 67% down-capture 77% bench CAGR  20.51%
+calendar years: 2019:15.0%* 2020:13.8% 2021:21.4% 2022:-4.6% 2023:57.2% 2024:6.1% 2025:-9.0% 2026:-2.5%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -39.8% (worst fall -40.3%) | 2022: -5.5% (worst fall -18.6%)
+
+=== nsx-lot | stage gross | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 4447895 (start 1000000)  total return 344.79%  CAGR  22.32%  tax paid+terminal Rs 0  charges Rs 0  dividends Rs 272530
+annual vol  20.80%  Sharpe 0.80  Sortino 1.13  Calmar 0.60  Ulcer 8.4%  UPI 1.95
+daily return distribution: skew -0.52, excess kurtosis 6.7, 1-day VaR95   2.01%, CVaR95   3.03%, best day   7.54%, worst day -10.47% | average drawdown  -5.77% | longest run of losing months 4
+max drawdown -37.24%: peak 2020-02-19 -> trough 2020-03-23 (33 days), recovered 2020-07-07 (106 days after trough); underwater 139 days
+longest underwater stretch 593 days (1.6 years): peak 2021-10-14, recovered 2023-05-30, deepest point inside -15.10%
+best year 2023  59.02%  worst year 2022  -8.31%  positive months  65.17% of 89
+rolling 1y CAGR: windows 1587  min -27.37%  median  18.63%  max 110.99%  share>=15%  56.90%  share<0  20.98%
+rolling 3y CAGR: windows 1091  min  10.91%  median  23.13%  max  34.16%  share>=15%  95.60%  share<0   0.00%
+rolling 5y CAGR: windows 597  min  14.81%  median  23.48%  max  31.68%  share>=15%  99.83%  share<0   0.00%
+lots: closed 261 open 11 | win rate closed 100.00%, all-with-open-MTM  96.69% | avg win   6.42% (Rs 14863) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 5.39 | expectancy per closed lot   6.42% (Rs 14863)
+holding days: avg(closed lots) 102, avg(all lots incl. open) 110, max closed 1477 | longest-held losing lot 725 days | open underwater lots 9 (longest 725 days) | worst single-lot drawdown -56.32% | open unrealised -15.82% of equity
+exposure: days with a position 100.00%, avg invested  94.40%, max invested 100.00%, avg stocks held 5.7 | turnover 3.70x/yr | charges drag   0.00%/yr
+vs benchmark TRI (89 months): beta 0.81 alpha   4.23% corr 0.82 TE  13.44% IR 0.10 up-capture 87% down-capture 69% bench CAGR  20.51%
+calendar years: 2019:22.1%* 2020:18.8% 2021:45.7% 2022:-8.3% 2023:59.0% 2024:12.6% 2025:16.8% 2026:9.8%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -36.2% (worst fall -37.2%) | 2022: -8.6% (worst fall -15.0%)
+
+=== nsx-lot | stage cost | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2886616 (start 1000000)  total return 188.66%  CAGR  15.38%  tax paid+terminal Rs 0  charges Rs 102055  dividends Rs 224085
+annual vol  19.90%  Sharpe 0.53  Sortino 0.73  Calmar 0.40  Ulcer 9.2%  UPI 1.02
+daily return distribution: skew -0.80, excess kurtosis 9.3, 1-day VaR95   1.79%, CVaR95   2.97%, best day   7.14%, worst day -11.31% | average drawdown  -6.57% | longest run of losing months 6
+max drawdown -38.29%: peak 2019-06-03 -> trough 2020-03-23 (294 days), recovered 2020-07-02 (101 days after trough); underwater 395 days
+longest underwater stretch 641 days (1.8 years): peak 2024-09-27, NOT recovered by 2026-06-30, deepest point inside -29.89%
+best year 2021  38.73%  worst year 2025  -3.52%  positive months  60.67% of 89
+rolling 1y CAGR: windows 1587  min -31.91%  median  15.74%  max 106.81%  share>=15%  51.23%  share<0  19.85%
+rolling 3y CAGR: windows 1091  min   7.23%  median  19.54%  max  37.59%  share>=15%  69.66%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   9.14%  median  19.66%  max  29.60%  share>=15%  78.22%  share<0   0.00%
+lots: closed 221 open 11 | win rate closed 100.00%, all-with-open-MTM  95.26% | avg win   5.87% (Rs 10954) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 3.19 | expectancy per closed lot   5.87% (Rs 10954)
+holding days: avg(closed lots) 107, avg(all lots incl. open) 126, max closed 1477 | longest-held losing lot 762 days | open underwater lots 11 (longest 762 days) | worst single-lot drawdown -55.89% | open unrealised -26.27% of equity
+exposure: days with a position 100.00%, avg invested  93.47%, max invested  99.87%, avg stocks held 5.8 | turnover 2.87x/yr | charges drag   0.66%/yr
+vs benchmark TRI (89 months): beta 0.71 alpha  -0.53% corr 0.79 TE  14.38% IR -0.35 up-capture 66% down-capture 58% bench CAGR  20.51%
+calendar years: 2019:12.4%* 2020:26.7% 2021:38.7% 2022:4.0% 2023:33.9% 2024:8.6% 2025:-3.5% 2026:0.1%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -35.4% (worst fall -36.3%) | 2022: +3.9% (worst fall -12.5%)
+
+=== nsx-lot | stage tax-dated | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2569377 (start 1000000)  total return 156.94%  CAGR  13.58%  tax paid+terminal Rs 407973  charges Rs 92851  dividends Rs 226147
+annual vol  19.54%  Sharpe 0.46  Sortino 0.62  Calmar 0.36  Ulcer 8.7%  UPI 0.87
+daily return distribution: skew -0.94, excess kurtosis 9.9, 1-day VaR95   1.84%, CVaR95   2.96%, best day   7.31%, worst day -11.14% | average drawdown  -6.58% | longest run of losing months 6
+max drawdown -37.78%: peak 2019-06-03 -> trough 2020-03-23 (294 days), recovered 2020-07-06 (105 days after trough); underwater 399 days
+longest underwater stretch 638 days (1.7 years): peak 2024-09-30, NOT recovered by 2026-06-30, deepest point inside -20.98%
+best year 2023  36.55%  worst year 2025  -3.11%  positive months  58.43% of 89
+rolling 1y CAGR: windows 1587  min -32.49%  median  11.74%  max  97.79%  share>=15%  42.72%  share<0  22.18%
+rolling 3y CAGR: windows 1091  min   8.82%  median  15.38%  max  30.60%  share>=15%  55.18%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   9.86%  median  16.30%  max  25.73%  share>=15%  64.99%  share<0   0.00%
+lots: closed 221 open 11 | win rate closed 100.00%, all-with-open-MTM  95.26% | avg win   5.86% (Rs 9959) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 4.69 | expectancy per closed lot   5.86% (Rs 9959)
+holding days: avg(closed lots) 114, avg(all lots incl. open) 124, max closed 1477 | longest-held losing lot 726 days | open underwater lots 11 (longest 726 days) | worst single-lot drawdown -55.89% | open unrealised -18.25% of equity
+exposure: days with a position 100.00%, avg invested  93.38%, max invested 104.39%, avg stocks held 5.7 | turnover 2.98x/yr | charges drag   0.69%/yr
+vs benchmark TRI (89 months): beta 0.61 alpha  -0.97% corr 0.76 TE  14.90% IR -0.47 up-capture 58% down-capture 49% bench CAGR  20.51%
+calendar years: 2019:10.7%* 2020:23.0% 2021:30.2% 2022:-1.8% 2023:36.5% 2024:7.5% 2025:-3.1% 2026:3.8%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -35.0% (worst fall -35.9%) | 2022: -1.9% (worst fall -14.8%)
+
+=== nsx-lot | stage tax-today | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2488672 (start 1000000)  total return 148.87%  CAGR  13.10%  tax paid+terminal Rs 509160  charges Rs 94154  dividends Rs 190786
+annual vol  19.97%  Sharpe 0.43  Sortino 0.58  Calmar 0.35  Ulcer 9.2%  UPI 0.77
+daily return distribution: skew -0.97, excess kurtosis 10.1, 1-day VaR95   1.81%, CVaR95   3.06%, best day   7.44%, worst day -11.17% | average drawdown  -7.14% | longest run of losing months 6
+max drawdown -37.87%: peak 2019-06-03 -> trough 2020-03-23 (294 days), recovered 2020-07-07 (106 days after trough); underwater 400 days
+longest underwater stretch 641 days (1.8 years): peak 2024-09-27, NOT recovered by 2026-06-30, deepest point inside -23.64%
+best year 2023  38.60%  worst year 2025  -6.53%  positive months  56.18% of 89
+rolling 1y CAGR: windows 1587  min -32.98%  median   9.37%  max 101.66%  share>=15%  40.71%  share<0  24.95%
+rolling 3y CAGR: windows 1091  min   9.41%  median  14.87%  max  28.68%  share>=15%  47.85%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   7.82%  median  15.69%  max  25.67%  share>=15%  59.80%  share<0   0.00%
+lots: closed 226 open 11 | win rate closed 100.00%, all-with-open-MTM  95.78% | avg win   5.90% (Rs 9963) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 4.94 | expectancy per closed lot   5.90% (Rs 9963)
+holding days: avg(closed lots) 109, avg(all lots incl. open) 121, max closed 1477 | longest-held losing lot 726 days | open underwater lots 10 (longest 726 days) | worst single-lot drawdown -55.89% | open unrealised -18.30% of equity
+exposure: days with a position 100.00%, avg invested  93.45%, max invested 105.54%, avg stocks held 5.7 | turnover 3.10x/yr | charges drag   0.72%/yr
+vs benchmark TRI (89 months): beta 0.63 alpha  -1.71% corr 0.77 TE  14.64% IR -0.50 up-capture 61% down-capture 58% bench CAGR  20.51%
+calendar years: 2019:10.0%* 2020:25.7% 2021:22.7% 2022:-3.8% 2023:38.6% 2024:11.5% 2025:-6.5% 2026:5.5%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -35.1% (worst fall -35.9%) | 2022: -3.7% (worst fall -13.2%)
+
+=== nsx:camarilla:S1:5 | stage gross | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 3044077 (start 1000000)  total return 204.41%  CAGR  16.21%  tax paid+terminal Rs 0  charges Rs 0  dividends Rs 125150
+annual vol  20.31%  Sharpe 0.56  Sortino 0.78  Calmar 0.42  Ulcer 12.7%  UPI 0.80
+daily return distribution: skew -0.70, excess kurtosis 8.7, 1-day VaR95   1.83%, CVaR95   2.99%, best day   8.78%, worst day -12.22% | average drawdown  -9.32% | longest run of losing months 4
+max drawdown -38.97%: peak 2020-01-16 -> trough 2020-03-23 (67 days), recovered 2020-08-28 (158 days after trough); underwater 225 days
+longest underwater stretch 651 days (1.8 years): peak 2021-10-14, recovered 2023-07-27, deepest point inside -26.50%
+best year 2023  59.18%  worst year 2022 -20.44%  positive months  62.92% of 89
+rolling 1y CAGR: windows 1587  min -22.79%  median  10.18%  max 112.89%  share>=15%  46.57%  share<0  34.85%
+rolling 3y CAGR: windows 1091  min   5.13%  median  17.68%  max  33.79%  share>=15%  62.33%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   5.52%  median  20.35%  max  26.74%  share>=15%  77.55%  share<0   0.00%
+lots: closed 228 open 11 | win rate closed  93.86%, all-with-open-MTM  89.96% | avg win   7.12% (Rs 14697) avg loss  -5.53% (Rs -9696) | win/loss ratio 1.29
+profit factor closed 23.17 all 2.56 | expectancy per closed lot   6.35% (Rs 13199)
+holding days: avg(closed lots) 94, avg(all lots incl. open) 113, max closed 868 | longest-held losing lot 807 days | open underwater lots 10 (longest 715 days) | worst single-lot drawdown -62.58% | open unrealised -35.82% of equity
+exposure: days with a position 100.00%, avg invested  91.39%, max invested  99.93%, avg stocks held 5.0 | turnover 3.03x/yr | charges drag   0.00%/yr
+vs benchmark TRI (89 months): beta 0.77 alpha  -0.18% corr 0.77 TE  15.30% IR -0.24 up-capture 74% down-capture 69% bench CAGR  20.51%
+calendar years: 2019:36.0%* 2020:16.2% 2021:52.9% 2022:-20.4% 2023:59.2% 2024:3.9% 2025:1.9% 2026:-6.0%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -38.6% (worst fall -39.0%) | 2022: -21.2% (worst fall -22.0%)
+
+=== nsx:camarilla:S1:5 | stage cost | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2622347 (start 1000000)  total return 162.23%  CAGR  13.90%  tax paid+terminal Rs 0  charges Rs 106230  dividends Rs 121690
+annual vol  19.60%  Sharpe 0.47  Sortino 0.65  Calmar 0.35  Ulcer 12.3%  UPI 0.64
+daily return distribution: skew -0.39, excess kurtosis 5.4, 1-day VaR95   1.94%, CVaR95   2.94%, best day   7.69%, worst day  -8.60% | average drawdown  -8.64% | longest run of losing months 4
+max drawdown -39.29%: peak 2020-02-06 -> trough 2020-03-30 (53 days), recovered 2020-12-03 (248 days after trough); underwater 301 days
+longest underwater stretch 641 days (1.8 years): peak 2024-09-27, NOT recovered by 2026-06-30, deepest point inside -32.64%
+best year 2021  52.93%  worst year 2025  -8.56%  positive months  59.55% of 89
+rolling 1y CAGR: windows 1587  min -30.21%  median  10.75%  max 103.56%  share>=15%  44.74%  share<0  27.79%
+rolling 3y CAGR: windows 1091  min   4.53%  median  18.96%  max  35.75%  share>=15%  64.80%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   7.49%  median  19.67%  max  27.09%  share>=15%  76.21%  share<0   0.00%
+lots: closed 223 open 11 | win rate closed  93.72%, all-with-open-MTM  89.32% | avg win   6.83% (Rs 13060) avg loss  -7.91% (Rs -12168) | win/loss ratio 0.86
+profit factor closed 16.02 all 2.22 | expectancy per closed lot   5.90% (Rs 11477)
+holding days: avg(closed lots) 95, avg(all lots incl. open) 117, max closed 860 | longest-held losing lot 730 days | open underwater lots 11 (longest 715 days) | worst single-lot drawdown -62.62% | open unrealised -40.37% of equity
+exposure: days with a position 100.00%, avg invested  91.42%, max invested  99.97%, avg stocks held 5.0 | turnover 3.05x/yr | charges drag   0.69%/yr
+vs benchmark TRI (89 months): beta 0.78 alpha  -2.37% corr 0.79 TE  14.69% IR -0.39 up-capture 66% down-capture 63% bench CAGR  20.51%
+calendar years: 2019:21.6%* 2020:11.6% 2021:52.9% 2022:4.2% 2023:32.5% 2024:2.4% 2025:-8.6% 2026:-2.2%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -35.6% (worst fall -36.3%) | 2022: +3.9% (worst fall -14.9%)
+
+=== nsx:camarilla:S1:5 | stage tax-dated | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2332408 (start 1000000)  total return 133.24%  CAGR  12.11%  tax paid+terminal Rs 444095  charges Rs 96124  dividends Rs 181467
+annual vol  19.62%  Sharpe 0.39  Sortino 0.53  Calmar 0.29  Ulcer 11.8%  UPI 0.52
+daily return distribution: skew -0.46, excess kurtosis 5.6, 1-day VaR95   1.97%, CVaR95   2.97%, best day   7.69%, worst day  -8.59% | average drawdown  -8.67% | longest run of losing months 5
+max drawdown -42.01%: peak 2020-02-06 -> trough 2020-04-01 (55 days), recovered 2020-12-07 (250 days after trough); underwater 305 days
+longest underwater stretch 638 days (1.7 years): peak 2024-09-30, NOT recovered by 2026-06-30, deepest point inside -25.14%
+best year 2021  49.46%  worst year 2022  -5.11%  positive months  58.43% of 89
+rolling 1y CAGR: windows 1587  min -33.62%  median   7.42%  max 102.32%  share>=15%  43.48%  share<0  33.71%
+rolling 3y CAGR: windows 1091  min   4.56%  median  16.06%  max  33.26%  share>=15%  59.67%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   6.90%  median  18.73%  max  27.13%  share>=15%  75.88%  share<0   0.00%
+lots: closed 222 open 10 | win rate closed  94.59%, all-with-open-MTM  90.95% | avg win   6.85% (Rs 12062) avg loss  -8.56% (Rs -12612) | win/loss ratio 0.80
+profit factor closed 16.74 all 2.67 | expectancy per closed lot   6.01% (Rs 10729)
+holding days: avg(closed lots) 100, avg(all lots incl. open) 116, max closed 860 | longest-held losing lot 770 days | open underwater lots 9 (longest 770 days) | worst single-lot drawdown -62.62% | open unrealised -34.11% of equity
+exposure: days with a position 100.00%, avg invested  91.37%, max invested 100.60%, avg stocks held 5.0 | turnover 2.98x/yr | charges drag   0.68%/yr
+vs benchmark TRI (89 months): beta 0.73 alpha  -3.58% corr 0.79 TE  14.18% IR -0.54 up-capture 62% down-capture 64% bench CAGR  20.51%
+calendar years: 2019:19.8%* 2020:8.2% 2021:49.5% 2022:-5.1% 2023:41.4% 2024:3.0% 2025:-3.4% 2026:-9.8%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -35.6% (worst fall -36.3%) | 2022: -5.4% (worst fall -19.3%)
+
+=== nsx:camarilla:S1:5 | stage tax-today | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2256877 (start 1000000)  total return 125.69%  CAGR  11.61%  tax paid+terminal Rs 511845  charges Rs 87873  dividends Rs 127397
+annual vol  20.54%  Sharpe 0.36  Sortino 0.49  Calmar 0.27  Ulcer 14.0%  UPI 0.40
+daily return distribution: skew -0.55, excess kurtosis 6.3, 1-day VaR95   1.94%, CVaR95   3.06%, best day   7.71%, worst day  -9.58% | average drawdown -10.63% | longest run of losing months 4
+max drawdown -43.57%: peak 2020-02-06 -> trough 2020-04-01 (55 days), recovered 2020-12-08 (251 days after trough); underwater 306 days
+longest underwater stretch 652 days (1.8 years): peak 2021-10-14, recovered 2023-07-28, deepest point inside -27.47%
+best year 2023  52.14%  worst year 2022 -21.01%  positive months  61.80% of 89
+rolling 1y CAGR: windows 1587  min -35.39%  median   5.90%  max 113.08%  share>=15%  42.41%  share<0  42.66%
+rolling 3y CAGR: windows 1091  min   4.91%  median  14.41%  max  27.87%  share>=15%  44.36%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   5.59%  median  16.90%  max  25.70%  share>=15%  67.00%  share<0   0.00%
+lots: closed 215 open 10 | win rate closed  93.49%, all-with-open-MTM  90.22% | avg win   6.97% (Rs 11604) avg loss  -8.31% (Rs -12275) | win/loss ratio 0.84
+profit factor closed 13.57 all 3.23 | expectancy per closed lot   5.97% (Rs 10049)
+holding days: avg(closed lots) 97, avg(all lots incl. open) 118, max closed 860 | longest-held losing lot 750 days | open underwater lots 8 (longest 666 days) | worst single-lot drawdown -62.62% | open unrealised -23.11% of equity
+exposure: days with a position 100.00%, avg invested  92.95%, max invested  99.32%, avg stocks held 5.1 | turnover 2.96x/yr | charges drag   0.67%/yr
+vs benchmark TRI (89 months): beta 0.73 alpha  -3.78% corr 0.77 TE  15.24% IR -0.53 up-capture 61% down-capture 64% bench CAGR  20.51%
+calendar years: 2019:19.3%* 2020:6.3% 2021:47.1% 2022:-21.0% 2023:52.1% 2024:14.7% 2025:-8.9% 2026:-3.6%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -35.5% (worst fall -36.2%) | 2022: -20.8% (worst fall -25.9%)
+
+=== nsx-lot:camarilla:S1:5 | stage gross | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 3834252 (start 1000000)  total return 283.43%  CAGR  19.89%  tax paid+terminal Rs 0  charges Rs 0  dividends Rs 210374
+annual vol  20.90%  Sharpe 0.70  Sortino 1.00  Calmar 0.44  Ulcer 11.6%  UPI 1.20
+daily return distribution: skew -0.48, excess kurtosis 11.0, 1-day VaR95   1.88%, CVaR95   3.03%, best day   8.89%, worst day -12.39% | average drawdown  -8.02% | longest run of losing months 5
+max drawdown -44.91%: peak 2020-02-07 -> trough 2020-03-24 (46 days), recovered 2020-06-23 (91 days after trough); underwater 137 days
+longest underwater stretch 637 days (1.7 years): peak 2024-10-01, NOT recovered by 2026-06-30, deepest point inside -29.74%
+best year 2020  52.54%  worst year 2022  -3.89%  positive months  60.67% of 89
+rolling 1y CAGR: windows 1587  min -35.82%  median  20.76%  max 206.76%  share>=15%  53.50%  share<0  26.84%
+rolling 3y CAGR: windows 1091  min   8.10%  median  24.48%  max  53.49%  share>=15%  92.58%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   8.07%  median  28.75%  max  42.34%  share>=15%  85.26%  share<0   0.00%
+lots: closed 276 open 11 | win rate closed 100.00%, all-with-open-MTM  96.17% | avg win   6.48% (Rs 15989) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 2.47 | expectancy per closed lot   6.48% (Rs 15989)
+holding days: avg(closed lots) 84, avg(all lots incl. open) 100, max closed 1466 | longest-held losing lot 775 days | open underwater lots 11 (longest 775 days) | worst single-lot drawdown -59.30% | open unrealised -46.66% of equity
+exposure: days with a position 100.00%, avg invested  92.07%, max invested  99.96%, avg stocks held 5.8 | turnover 3.44x/yr | charges drag   0.00%/yr
+vs benchmark TRI (89 months): beta 0.91 alpha   1.20% corr 0.85 TE  13.27% IR -0.01 up-capture 84% down-capture 73% bench CAGR  20.51%
+calendar years: 2019:21.5%* 2020:52.5% 2021:49.5% 2022:-3.9% 2023:51.8% 2024:13.4% 2025:-0.2% 2026:-16.2%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -42.5% (worst fall -44.5%) | 2022: -3.9% (worst fall -19.5%)
+
+=== nsx-lot:camarilla:S1:5 | stage cost | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2785997 (start 1000000)  total return 178.60%  CAGR  14.83%  tax paid+terminal Rs 0  charges Rs 112444  dividends Rs 218356
+annual vol  20.80%  Sharpe 0.49  Sortino 0.69  Calmar 0.34  Ulcer 11.1%  UPI 0.79
+daily return distribution: skew -0.37, excess kurtosis 5.8, 1-day VaR95   2.01%, CVaR95   3.08%, best day   7.66%, worst day  -9.60% | average drawdown  -7.83% | longest run of losing months 5
+max drawdown -43.61%: peak 2020-01-15 -> trough 2020-03-24 (69 days), recovered 2020-12-02 (253 days after trough); underwater 322 days
+longest underwater stretch 641 days (1.8 years): peak 2024-09-27, NOT recovered by 2026-06-30, deepest point inside -27.82%
+best year 2021  53.94%  worst year 2022   3.55%  positive months  59.55% of 89
+rolling 1y CAGR: windows 1587  min -36.65%  median  12.66%  max 111.89%  share>=15%  45.68%  share<0  21.68%
+rolling 3y CAGR: windows 1091  min   8.24%  median  19.34%  max  41.83%  share>=15%  83.87%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   9.44%  median  21.61%  max  32.35%  share>=15%  86.77%  share<0   0.00%
+lots: closed 229 open 11 | win rate closed 100.00%, all-with-open-MTM  95.42% | avg win   6.07% (Rs 11954) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 2.34 | expectancy per closed lot   6.07% (Rs 11954)
+holding days: avg(closed lots) 106, avg(all lots incl. open) 122, max closed 1575 | longest-held losing lot 770 days | open underwater lots 11 (longest 770 days) | worst single-lot drawdown -59.63% | open unrealised -41.99% of equity
+exposure: days with a position 100.00%, avg invested  94.10%, max invested  99.92%, avg stocks held 5.8 | turnover 3.16x/yr | charges drag   0.72%/yr
+vs benchmark TRI (89 months): beta 0.89 alpha  -3.07% corr 0.87 TE  11.91% IR -0.40 up-capture 75% down-capture 78% bench CAGR  20.51%
+calendar years: 2019:18.9%* 2020:6.5% 2021:53.9% 2022:3.6% 2023:34.3% 2024:14.2% 2025:5.6% 2026:-14.8%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -42.8% (worst fall -43.1%) | 2022: +3.3% (worst fall -12.1%)
+
+=== nsx-lot:camarilla:S1:5 | stage tax-dated | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2501702 (start 1000000)  total return 150.17%  CAGR  13.18%  tax paid+terminal Rs 486880  charges Rs 107747  dividends Rs 240854
+annual vol  21.12%  Sharpe 0.42  Sortino 0.58  Calmar 0.27  Ulcer 13.3%  UPI 0.54
+daily return distribution: skew -0.51, excess kurtosis 6.9, 1-day VaR95   1.95%, CVaR95   3.19%, best day   8.08%, worst day  -9.11% | average drawdown  -9.17% | longest run of losing months 5
+max drawdown -48.20%: peak 2020-01-24 -> trough 2020-04-01 (68 days), recovered 2021-01-07 (281 days after trough); underwater 349 days
+longest underwater stretch 638 days (1.7 years): peak 2024-09-30, NOT recovered by 2026-06-30, deepest point inside -28.76%
+best year 2021  37.22%  worst year 2025 -10.26%  positive months  59.55% of 89
+rolling 1y CAGR: windows 1587  min -43.74%  median  15.43%  max 109.66%  share>=15%  50.66%  share<0  29.36%
+rolling 3y CAGR: windows 1091  min   6.75%  median  18.64%  max  42.68%  share>=15%  69.02%  share<0   0.00%
+rolling 5y CAGR: windows 597  min  10.21%  median  19.59%  max  32.88%  share>=15%  80.90%  share<0   0.00%
+lots: closed 240 open 11 | win rate closed 100.00%, all-with-open-MTM  95.62% | avg win   5.94% (Rs 10772) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 2.98 | expectancy per closed lot   5.94% (Rs 10772)
+holding days: avg(closed lots) 99, avg(all lots incl. open) 115, max closed 1575 | longest-held losing lot 715 days | open underwater lots 11 (longest 715 days) | worst single-lot drawdown -77.40% | open unrealised -34.70% of equity
+exposure: days with a position 100.00%, avg invested  93.82%, max invested 104.12%, avg stocks held 5.5 | turnover 3.41x/yr | charges drag   0.78%/yr
+vs benchmark TRI (89 months): beta 0.92 alpha  -4.70% corr 0.85 TE  13.00% IR -0.45 up-capture 73% down-capture 80% bench CAGR  20.51%
+calendar years: 2019:17.0%* 2020:-1.0% 2021:37.2% 2022:18.6% 2023:34.7% 2024:8.9% 2025:-10.3% 2026:0.9%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -45.3% (worst fall -45.6%) | 2022: +17.0% (worst fall -14.3%)
+
+=== nsx-lot:camarilla:S1:5 | stage tax-today | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2234785 (start 1000000)  total return 123.48%  CAGR  11.47%  tax paid+terminal Rs 550503  charges Rs 98645  dividends Rs 191421
+annual vol  21.14%  Sharpe 0.35  Sortino 0.47  Calmar 0.23  Ulcer 14.3%  UPI 0.38
+daily return distribution: skew -0.70, excess kurtosis 9.0, 1-day VaR95   1.97%, CVaR95   3.24%, best day   8.37%, worst day -10.86% | average drawdown  -9.86% | longest run of losing months 5
+max drawdown -49.98%: peak 2020-01-24 -> trough 2020-04-01 (68 days), recovered 2021-01-12 (286 days after trough); underwater 354 days
+longest underwater stretch 641 days (1.8 years): peak 2024-09-27, NOT recovered by 2026-06-30, deepest point inside -30.23%
+best year 2021  36.08%  worst year 2025  -9.58%  positive months  52.81% of 89
+rolling 1y CAGR: windows 1587  min -45.66%  median  14.43%  max 111.28%  share>=15%  49.21%  share<0  32.83%
+rolling 3y CAGR: windows 1091  min   5.53%  median  17.64%  max  42.23%  share>=15%  64.16%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   9.06%  median  19.13%  max  31.25%  share>=15%  81.07%  share<0   0.00%
+lots: closed 232 open 10 | win rate closed 100.00%, all-with-open-MTM  96.28% | avg win   6.00% (Rs 10352) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 2.92 | expectancy per closed lot   6.00% (Rs 10352)
+holding days: avg(closed lots) 99, avg(all lots incl. open) 118, max closed 1575 | longest-held losing lot 775 days | open underwater lots 9 (longest 775 days) | worst single-lot drawdown -77.40% | open unrealised -36.66% of equity
+exposure: days with a position 100.00%, avg invested  93.18%, max invested 103.12%, avg stocks held 6.0 | turnover 3.22x/yr | charges drag   0.74%/yr
+vs benchmark TRI (89 months): beta 0.91 alpha  -6.17% corr 0.86 TE  12.20% IR -0.62 up-capture 72% down-capture 87% bench CAGR  20.51%
+calendar years: 2019:16.3%* 2020:-2.6% 2021:36.1% 2022:16.7% 2023:35.3% 2024:12.9% 2025:-9.6% 2026:-10.0%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -45.3% (worst fall -45.7%) | 2022: +15.2% (worst fall -15.5%)
+
+=== nsx:fibonacci:S1:15 | stage gross | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2698771 (start 1000000)  total return 169.88%  CAGR  14.34%  tax paid+terminal Rs 0  charges Rs 0  dividends Rs 131550
+annual vol  20.78%  Sharpe 0.47  Sortino 0.64  Calmar 0.33  Ulcer 11.8%  UPI 0.71
+daily return distribution: skew -0.93, excess kurtosis 7.6, 1-day VaR95   2.00%, CVaR95   3.14%, best day   7.20%, worst day -11.14% | average drawdown  -7.74% | longest run of losing months 4
+max drawdown -43.36%: peak 2020-01-14 -> trough 2020-03-24 (70 days), recovered 2021-02-18 (331 days after trough); underwater 401 days
+longest underwater stretch 522 days (1.4 years): peak 2022-01-07, recovered 2023-06-13, deepest point inside -15.23%
+best year 2023  46.58%  worst year 2020 -11.62%  positive months  58.43% of 89
+rolling 1y CAGR: windows 1587  min -36.78%  median  15.87%  max  81.24%  share>=15%  51.42%  share<0  22.31%
+rolling 3y CAGR: windows 1091  min   3.16%  median  23.30%  max  32.60%  share>=15%  74.43%  share<0   0.00%
+rolling 5y CAGR: windows 597  min  12.36%  median  19.96%  max  29.32%  share>=15%  87.44%  share<0   0.00%
+lots: closed 183 open 11 | win rate closed  96.72%, all-with-open-MTM  92.27% | avg win   6.51% (Rs 11075) avg loss  -4.12% (Rs -5478) | win/loss ratio 1.58
+profit factor closed 59.64 all 4.41 | expectancy per closed lot   6.16% (Rs 10533)
+holding days: avg(closed lots) 132, avg(all lots incl. open) 145, max closed 1546 | longest-held losing lot 1546 days | open underwater lots 9 (longest 665 days) | worst single-lot drawdown -67.18% | open unrealised -13.35% of equity
+exposure: days with a position 100.00%, avg invested  92.95%, max invested  99.92%, avg stocks held 5.1 | turnover 2.74x/yr | charges drag   0.00%/yr
+vs benchmark TRI (89 months): beta 0.82 alpha  -2.69% corr 0.84 TE  12.63% IR -0.44 up-capture 78% down-capture 84% bench CAGR  20.51%
+calendar years: 2019:15.2%* 2020:-11.6% 2021:38.9% 2022:-4.4% 2023:46.6% 2024:27.7% 2025:12.9% 2026:-5.5%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -42.9% (worst fall -42.9%) | 2022: -5.1% (worst fall -15.2%)
+
+=== nsx:fibonacci:S1:15 | stage cost | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 1952009 (start 1000000)  total return  95.20%  CAGR   9.45%  tax paid+terminal Rs 0  charges Rs 54144  dividends Rs 139882
+annual vol  21.09%  Sharpe 0.26  Sortino 0.35  Calmar 0.22  Ulcer 12.0%  UPI 0.29
+daily return distribution: skew -0.83, excess kurtosis 6.9, 1-day VaR95   2.16%, CVaR95   3.15%, best day   7.29%, worst day -11.42% | average drawdown  -8.43% | longest run of losing months 4
+max drawdown -42.48%: peak 2020-01-14 -> trough 2020-03-24 (70 days), recovered 2021-02-04 (317 days after trough); underwater 387 days
+longest underwater stretch 592 days (1.6 years): peak 2021-10-14, recovered 2023-05-29, deepest point inside -20.74%
+best year 2023  46.44%  worst year 2020  -7.15%  positive months  52.81% of 89
+rolling 1y CAGR: windows 1587  min -37.38%  median   9.43%  max  72.15%  share>=15%  45.24%  share<0  35.10%
+rolling 3y CAGR: windows 1091  min  -2.71%  median  17.59%  max  26.97%  share>=15%  60.04%  share<0   3.39%
+rolling 5y CAGR: windows 597  min   7.24%  median  13.68%  max  23.55%  share>=15%  39.20%  share<0   0.00%
+lots: closed 149 open 11 | win rate closed  91.95%, all-with-open-MTM  86.25% | avg win   6.60% (Rs 9687) avg loss  -4.40% (Rs -6162) | win/loss ratio 1.50
+profit factor closed 17.95 all 2.52 | expectancy per closed lot   5.71% (Rs 8410)
+holding days: avg(closed lots) 160, avg(all lots incl. open) 181, max closed 1546 | longest-held losing lot 1546 days | open underwater lots 10 (longest 700 days) | worst single-lot drawdown -67.22% | open unrealised -22.59% of equity
+exposure: days with a position 100.00%, avg invested  94.35%, max invested  99.85%, avg stocks held 4.7 | turnover 2.27x/yr | charges drag   0.52%/yr
+vs benchmark TRI (89 months): beta 0.81 alpha  -7.05% corr 0.84 TE  12.76% IR -0.78 up-capture 72% down-capture 94% bench CAGR  20.51%
+calendar years: 2019:12.9%* 2020:-7.1% 2021:14.9% 2022:-2.8% 2023:46.4% 2024:20.8% 2025:-0.8% 2026:-5.1%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -41.6% (worst fall -41.6%) | 2022: -3.8% (worst fall -18.3%)
+
+=== nsx:fibonacci:S1:15 | stage tax-dated | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 1702953 (start 1000000)  total return  70.30%  CAGR   7.45%  tax paid+terminal Rs 202323  charges Rs 43913  dividends Rs 128717
+annual vol  21.11%  Sharpe 0.17  Sortino 0.23  Calmar 0.17  Ulcer 12.9%  UPI 0.11
+daily return distribution: skew -0.87, excess kurtosis 7.2, 1-day VaR95   2.16%, CVaR95   3.22%, best day   7.31%, worst day -11.48% | average drawdown  -9.45% | longest run of losing months 4
+max drawdown -42.63%: peak 2020-01-14 -> trough 2020-03-24 (70 days), recovered 2021-10-12 (567 days after trough); underwater 637 days
+longest underwater stretch 637 days (1.7 years): peak 2020-01-14, recovered 2021-10-12, deepest point inside -42.63%
+best year 2023  43.86%  worst year 2020 -13.78%  positive months  52.81% of 89
+rolling 1y CAGR: windows 1587  min -38.33%  median   8.13%  max  59.76%  share>=15%  34.78%  share<0  30.88%
+rolling 3y CAGR: windows 1091  min  -5.93%  median  14.36%  max  22.74%  share>=15%  45.55%  share<0  16.96%
+rolling 5y CAGR: windows 597  min   4.15%  median  10.79%  max  18.74%  share>=15%  16.75%  share<0   0.00%
+lots: closed 133 open 11 | win rate closed  92.48%, all-with-open-MTM  85.42% | avg win   6.53% (Rs 8724) avg loss  -4.83% (Rs -6310) | win/loss ratio 1.35
+profit factor closed 17.00 all 3.59 | expectancy per closed lot   5.67% (Rs 7594)
+holding days: avg(closed lots) 178, avg(all lots incl. open) 192, max closed 1546 | longest-held losing lot 1546 days | open underwater lots 11 (longest 714 days) | worst single-lot drawdown -67.22% | open unrealised -13.82% of equity
+exposure: days with a position 100.00%, avg invested  91.60%, max invested 103.55%, avg stocks held 4.7 | turnover 2.10x/yr | charges drag   0.48%/yr
+vs benchmark TRI (89 months): beta 0.78 alpha  -8.52% corr 0.84 TE  12.67% IR -0.94 up-capture 65% down-capture 92% bench CAGR  20.51%
+calendar years: 2019:11.5%* 2020:-13.8% 2021:12.3% 2022:-2.4% 2023:43.9% 2024:5.5% 2025:8.0% 2026:-1.4%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -41.8% (worst fall -41.8%) | 2022: -2.9% (worst fall -17.4%)
+
+=== nsx:fibonacci:S1:15 | stage tax-today | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 1374891 (start 1000000)  total return  37.49%  CAGR   4.39%  tax paid+terminal Rs 187536  charges Rs 35042  dividends Rs 106188
+annual vol  20.91%  Sharpe 0.03  Sortino 0.04  Calmar 0.10  Ulcer 13.8%  UPI -0.12
+daily return distribution: skew -0.88, excess kurtosis 7.3, 1-day VaR95   2.08%, CVaR95   3.17%, best day   7.33%, worst day -11.50% | average drawdown -10.64% | longest run of losing months 5
+max drawdown -42.69%: peak 2020-01-14 -> trough 2020-03-24 (70 days), recovered 2021-10-12 (567 days after trough); underwater 637 days
+longest underwater stretch 641 days (1.8 years): peak 2024-09-27, NOT recovered by 2026-06-30, deepest point inside -24.48%
+best year 2023  31.67%  worst year 2020 -14.74%  positive months  49.44% of 89
+rolling 1y CAGR: windows 1587  min -39.10%  median   5.81%  max  58.33%  share>=15%  31.38%  share<0  36.23%
+rolling 3y CAGR: windows 1091  min  -3.92%  median  11.14%  max  20.28%  share>=15%  13.75%  share<0  13.57%
+rolling 5y CAGR: windows 597  min   2.84%  median   7.88%  max  18.92%  share>=15%  10.05%  share<0   0.00%
+lots: closed 111 open 11 | win rate closed  92.79%, all-with-open-MTM  85.25% | avg win   6.97% (Rs 8855) avg loss  -3.96% (Rs -5068) | win/loss ratio 1.76
+profit factor closed 22.50 all 1.94 | expectancy per closed lot   6.18% (Rs 7852)
+holding days: avg(closed lots) 221, avg(all lots incl. open) 228, max closed 1546 | longest-held losing lot 1546 days | open underwater lots 10 (longest 700 days) | worst single-lot drawdown -67.22% | open unrealised -31.28% of equity
+exposure: days with a position 100.00%, avg invested  93.12%, max invested 102.48%, avg stocks held 4.7 | turnover 1.75x/yr | charges drag   0.40%/yr
+vs benchmark TRI (89 months): beta 0.79 alpha -11.55% corr 0.83 TE  13.11% IR -1.13 up-capture 62% down-capture 99% bench CAGR  20.51%
+calendar years: 2019:11.0%* 2020:-14.7% 2021:13.8% 2022:-0.3% 2023:31.7% 2024:6.1% 2025:2.8% 2026:-10.8%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -41.8% (worst fall -41.8%) | 2022: -0.9% (worst fall -15.1%)
+
+=== nsx-lot:fibonacci:S1:15 | stage gross | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 3516391 (start 1000000)  total return 251.64%  CAGR  18.50%  tax paid+terminal Rs 0  charges Rs 0  dividends Rs 136502
+annual vol  21.89%  Sharpe 0.63  Sortino 0.89  Calmar 0.35  Ulcer 12.7%  UPI 0.98
+daily return distribution: skew -0.49, excess kurtosis 8.3, 1-day VaR95   1.97%, CVaR95   3.23%, best day   8.16%, worst day -12.55% | average drawdown  -8.95% | longest run of losing months 5
+max drawdown -53.52%: peak 2019-10-30 -> trough 2020-03-24 (146 days), recovered 2021-01-04 (286 days after trough); underwater 432 days
+longest underwater stretch 571 days (1.6 years): peak 2024-09-27, recovered 2026-04-21, deepest point inside -22.73%
+best year 2021  67.90%  worst year 2022  -3.81%  positive months  62.92% of 89
+rolling 1y CAGR: windows 1587  min -44.55%  median  14.68%  max 151.18%  share>=15%  49.21%  share<0  20.79%
+rolling 3y CAGR: windows 1091  min   8.09%  median  19.03%  max  46.91%  share>=15%  81.94%  share<0   0.00%
+rolling 5y CAGR: windows 597  min  13.70%  median  21.40%  max  37.46%  share>=15%  96.15%  share<0   0.00%
+lots: closed 219 open 11 | win rate closed 100.00%, all-with-open-MTM  96.09% | avg win   6.52% (Rs 13005) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 5.90 | expectancy per closed lot   6.52% (Rs 13005)
+holding days: avg(closed lots) 112, avg(all lots incl. open) 129, max closed 1477 | longest-held losing lot 1693 days | open underwater lots 9 (longest 1693 days) | worst single-lot drawdown -69.03% | open unrealised -13.32% of equity
+exposure: days with a position 100.00%, avg invested  93.75%, max invested  99.89%, avg stocks held 5.4 | turnover 3.08x/yr | charges drag   0.00%/yr
+vs benchmark TRI (89 months): beta 0.91 alpha   0.20% corr 0.83 TE  13.99% IR -0.09 up-capture 86% down-capture 82% bench CAGR  20.51%
+calendar years: 2019:11.5%* 2020:12.4% 2021:67.9% 2022:-3.8% 2023:36.9% 2024:11.9% 2025:2.6% 2026:10.6%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -47.4% (worst fall -47.7%) | 2022: -6.0% (worst fall -20.6%)
+
+=== nsx-lot:fibonacci:S1:15 | stage cost | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 3172661 (start 1000000)  total return 217.27%  CAGR  16.86%  tax paid+terminal Rs 0  charges Rs 120364  dividends Rs 252825
+annual vol  18.76%  Sharpe 0.62  Sortino 0.87  Calmar 0.44  Ulcer 7.9%  UPI 1.37
+daily return distribution: skew -0.88, excess kurtosis 10.4, 1-day VaR95   1.71%, CVaR95   2.72%, best day   6.36%, worst day -11.15% | average drawdown  -5.60% | longest run of losing months 4
+max drawdown -38.49%: peak 2020-02-19 -> trough 2020-03-23 (33 days), recovered 2020-07-23 (122 days after trough); underwater 155 days
+longest underwater stretch 558 days (1.5 years): peak 2022-01-13, recovered 2023-07-25, deepest point inside -18.65%
+best year 2021  50.93%  worst year 2022  -7.23%  positive months  66.29% of 89
+rolling 1y CAGR: windows 1587  min -28.56%  median  19.04%  max 109.40%  share>=15%  56.27%  share<0  15.44%
+rolling 3y CAGR: windows 1091  min  11.24%  median  19.98%  max  34.39%  share>=15%  91.75%  share<0   0.00%
+rolling 5y CAGR: windows 597  min  11.83%  median  21.74%  max  32.34%  share>=15%  92.80%  share<0   0.00%
+lots: closed 239 open 11 | win rate closed 100.00%, all-with-open-MTM  95.60% | avg win   6.04% (Rs 12244) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 2.91 | expectancy per closed lot   6.04% (Rs 12244)
+holding days: avg(closed lots) 101, avg(all lots incl. open) 118, max closed 1477 | longest-held losing lot 1693 days | open underwater lots 11 (longest 1693 days) | worst single-lot drawdown -56.36% | open unrealised -31.72% of equity
+exposure: days with a position 100.00%, avg invested  93.30%, max invested  99.96%, avg stocks held 5.8 | turnover 3.29x/yr | charges drag   0.75%/yr
+vs benchmark TRI (89 months): beta 0.70 alpha   0.74% corr 0.83 TE  12.70% IR -0.31 up-capture 67% down-capture 54% bench CAGR  20.51%
+calendar years: 2019:16.1%* 2020:20.0% 2021:50.9% 2022:-7.2% 2023:29.1% 2024:21.6% 2025:23.3% 2026:-15.9%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -36.7% (worst fall -38.5%) | 2022: -7.6% (worst fall -15.0%)
+
+=== nsx-lot:fibonacci:S1:15 | stage tax-dated | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2769313 (start 1000000)  total return 176.93%  CAGR  14.74%  tax paid+terminal Rs 487730  charges Rs 110290  dividends Rs 178866
+annual vol  19.83%  Sharpe 0.50  Sortino 0.69  Calmar 0.38  Ulcer 10.0%  UPI 0.88
+daily return distribution: skew -0.92, excess kurtosis 9.5, 1-day VaR95   1.88%, CVaR95   2.97%, best day   6.72%, worst day -11.22% | average drawdown  -7.21% | longest run of losing months 4
+max drawdown -38.66%: peak 2020-02-19 -> trough 2020-03-23 (33 days), recovered 2020-11-24 (246 days after trough); underwater 279 days
+longest underwater stretch 524 days (1.4 years): peak 2022-01-12, recovered 2023-06-20, deepest point inside -24.78%
+best year 2023  48.00%  worst year 2022 -15.25%  positive months  60.67% of 89
+rolling 1y CAGR: windows 1587  min -29.60%  median  16.08%  max 101.79%  share>=15%  52.68%  share<0  19.47%
+rolling 3y CAGR: windows 1091  min   8.10%  median  17.35%  max  29.73%  share>=15%  66.64%  share<0   0.00%
+rolling 5y CAGR: windows 597  min  10.14%  median  18.45%  max  28.61%  share>=15%  83.58%  share<0   0.00%
+lots: closed 243 open 11 | win rate closed 100.00%, all-with-open-MTM  95.67% | avg win   5.93% (Rs 10894) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 4.62 | expectancy per closed lot   5.93% (Rs 10894)
+holding days: avg(closed lots) 97, avg(all lots incl. open) 115, max closed 1477 | longest-held losing lot 1693 days | open underwater lots 11 (longest 1693 days) | worst single-lot drawdown -58.22% | open unrealised -20.71% of equity
+exposure: days with a position 100.00%, avg invested  94.29%, max invested 101.77%, avg stocks held 5.8 | turnover 3.39x/yr | charges drag   0.78%/yr
+vs benchmark TRI (89 months): beta 0.69 alpha  -1.03% corr 0.83 TE  12.64% IR -0.46 up-capture 68% down-capture 64% bench CAGR  20.51%
+calendar years: 2019:14.7%* 2020:13.6% 2021:47.8% 2022:-15.2% 2023:48.0% 2024:10.0% 2025:14.9% 2026:-9.3%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -36.9% (worst fall -38.7%) | 2022: -15.8% (worst fall -24.8%)
+
+=== nsx-lot:fibonacci:S1:15 | stage tax-today | 2019-02-01 .. 2026-06-30 (7.41 years) ===
+final value Rs 2408814 (start 1000000)  total return 140.88%  CAGR  12.60%  tax paid+terminal Rs 524444  charges Rs 99089  dividends Rs 154316
+annual vol  20.41%  Sharpe 0.40  Sortino 0.55  Calmar 0.33  Ulcer 11.0%  UPI 0.60
+daily return distribution: skew -1.02, excess kurtosis 10.0, 1-day VaR95   1.86%, CVaR95   3.11%, best day   6.89%, worst day -11.23% | average drawdown  -8.31% | longest run of losing months 4
+max drawdown -38.69%: peak 2020-02-19 -> trough 2020-03-23 (33 days), recovered 2020-12-04 (256 days after trough); underwater 289 days
+longest underwater stretch 641 days (1.8 years): peak 2024-09-27, NOT recovered by 2026-06-30, deepest point inside -22.39%
+best year 2023  48.57%  worst year 2022 -16.58%  positive months  59.55% of 89
+rolling 1y CAGR: windows 1587  min -29.90%  median  11.12%  max  96.50%  share>=15%  44.42%  share<0  28.10%
+rolling 3y CAGR: windows 1091  min   6.14%  median  15.42%  max  28.34%  share>=15%  52.80%  share<0   0.00%
+rolling 5y CAGR: windows 597  min   7.83%  median  16.75%  max  26.51%  share>=15%  68.68%  share<0   0.00%
+lots: closed 232 open 11 | win rate closed 100.00%, all-with-open-MTM  95.88% | avg win   6.00% (Rs 10379) avg loss   0.00% (Rs 0) | win/loss ratio inf
+profit factor closed inf all 3.64 | expectancy per closed lot   6.00% (Rs 10379)
+holding days: avg(closed lots) 101, avg(all lots incl. open) 120, max closed 1477 | longest-held losing lot 1693 days | open underwater lots 10 (longest 1693 days) | worst single-lot drawdown -58.22% | open unrealised -27.37% of equity
+exposure: days with a position 100.00%, avg invested  94.40%, max invested 104.41%, avg stocks held 5.7 | turnover 3.26x/yr | charges drag   0.75%/yr
+vs benchmark TRI (89 months): beta 0.73 alpha  -3.35% corr 0.83 TE  12.61% IR -0.60 up-capture 69% down-capture 75% bench CAGR  20.51%
+calendar years: 2019:14.3%* 2020:10.3% 2021:47.5% 2022:-16.6% 2023:48.6% 2024:7.6% 2025:7.3% 2026:-9.5%*
+stress windows: 2008 crash: n/a | 2011: n/a | 2015-16: n/a | 2018-19 slump: n/a | COVID: -36.9% (worst fall -38.7%) | 2022: -17.2% (worst fall -26.0%)

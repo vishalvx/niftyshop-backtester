@@ -1,0 +1,10 @@
+{
+  "id": "execution-and-cash",
+  "base": "legacy",
+  "fixed": {"dividends": true},
+  "grid": {
+    "fill_next_open": [false, true],
+    "cash_yield": [0, 0.06],
+    "max_lots": [0, 3]
+  }
+}

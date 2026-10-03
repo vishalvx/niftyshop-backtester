@@ -1,10 +1,13 @@
 package main
 
 import (
+	"encoding/csv"
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 
@@ -13,12 +16,14 @@ import (
 	"github.com/vishalvx/back-tester/internal/engine"
 	"github.com/vishalvx/back-tester/internal/indicators"
 	"github.com/vishalvx/back-tester/internal/metrics"
+	"github.com/vishalvx/back-tester/internal/portfolio"
 )
 
 func main() {
 	universeFlag := flag.String("universe", "", "Override universe in config")
 	startDateFlag := flag.String("start-date", "", "Override start date in config (YYYY-MM-DD)")
 	endDateFlag := flag.String("end-date", "", "Override end date in config (YYYY-MM-DD)")
+	findBestPivotFlag := flag.Bool("find-best-pivot", false, "Run grid-search over all pivot combinations on selected index")
 	flag.Parse()
 
 	fmt.Println("Starting NiftyShop Backtester...")
@@ -51,7 +56,7 @@ func main() {
 		universeName = "NIFTY 50" // Exact name expected by NSE API
 	}
 	fmt.Printf("Fetching symbols for index: %s\n", universeName)
-	
+
 	var stocksList []string
 	var monthConstituents map[string]map[string]bool
 	var useRebalancing bool
@@ -96,7 +101,7 @@ func main() {
 		if universeName == "NIFTY 50" {
 			stocksList = []string{"RELIANCE", "TCS", "HDFCBANK", "INFY", "ICICIBANK", "SBIN", "BHARTIARTL", "ITC"}
 		}
-		
+
 		fetched, err := data.FetchIndexSymbols(universeName)
 		if err == nil && len(fetched) > 0 {
 			stocksList = fetched
@@ -187,6 +192,8 @@ func main() {
 				}
 			}
 
+			pivots := indicators.CalculatePivotLevels(bars[i-1].High, bars[i-1].Low, bars[i-1].Close)
+
 			engineStock := engine.EngineStock{
 				EngineBar: engine.EngineBar{
 					Open:   b.Open,
@@ -200,6 +207,16 @@ func main() {
 				SMA20:         smaVal,
 				DiffSMA:       diffSMA,
 				IsConstituent: isConstituent,
+				ClassicS1:     pivots.ClassicS1,
+				ClassicS2:     pivots.ClassicS2,
+				ClassicS3:     pivots.ClassicS3,
+				FibS1:         pivots.FibS1,
+				FibS2:         pivots.FibS2,
+				FibS3:         pivots.FibS3,
+				CamS1:         pivots.CamS1,
+				CamS2:         pivots.CamS2,
+				CamS3:         pivots.CamS3,
+				CamS4:         pivots.CamS4,
 			}
 
 			// Skip bars outside the configured [StartDate, EndDate] window.
@@ -221,6 +238,152 @@ func main() {
 	}
 
 	// 5. Run Trading Engine
+	if *findBestPivotFlag {
+		fmt.Printf("Running Grid Search over all pivot combinations...\n")
+		fmt.Printf("Timeframe: %s to %s\n\n", cfg.StartDate, cfg.EndDate)
+
+		type Perm struct {
+			System string
+			Levels []string
+		}
+		perms := []Perm{
+			{System: "classic", Levels: []string{"S1", "S2", "S3", "closest"}},
+			{System: "fibonacci", Levels: []string{"S1", "S2", "S3", "closest"}},
+			{System: "camarilla", Levels: []string{"S1", "S2", "S3", "S4", "closest"}},
+		}
+		poolSizes := []int{5, 10, 15}
+
+		// Extract the last known prices
+		currentPrices := make(map[string]float64)
+		var dates []string
+		for d := range dateWiseBucket {
+			dates = append(dates, d)
+		}
+		sort.Strings(dates)
+		for _, date := range dates {
+			stocks := dateWiseBucket[date]
+			for _, s := range stocks {
+				currentPrices[s.Symbol] = s.Close
+			}
+		}
+
+		type GridResult struct {
+			System      string
+			Level       string
+			PoolSize    int
+			TotalReturn float64
+			CAGR        float64
+			WinRate     float64
+			Trades      int
+			Note        string
+		}
+		var results []GridResult
+
+		// Mute stdout to avoid cluttering console during simulation runs
+		oldStdout := os.Stdout
+		devNull, err := os.OpenFile(os.DevNull, os.O_WRONLY, 0)
+		hasDevNull := err == nil
+
+		for _, poolSize := range poolSizes {
+			for _, p := range perms {
+				for _, lvl := range p.Levels {
+					// Prepare config copy
+					runCfg := *cfg
+					runCfg.PivotFilter = config.PivotFilterConfig{
+						Enabled:  true,
+						System:   p.System,
+						Level:    lvl,
+						PoolSize: poolSize,
+					}
+
+					if hasDevNull {
+						os.Stdout = devNull
+					}
+
+					acc, strat := engine.RunNiftyShop(dateWiseBucket, &runCfg)
+
+					if hasDevNull {
+						os.Stdout = oldStdout
+					}
+
+					if acc != nil && strat != nil {
+						// Export trade log specifically for this configuration
+						exportPivotSearchTradeLog(strat.History, cfg.Universe, p.System, lvl, poolSize)
+
+						// Temporarily redirect stdout again to avoid print statements from Generate
+						if hasDevNull {
+							os.Stdout = devNull
+						}
+						rep := metrics.Generate(acc, strat, &runCfg, currentPrices)
+						if hasDevNull {
+							os.Stdout = oldStdout
+						}
+
+						results = append(results, GridResult{
+							System:      p.System,
+							Level:       lvl,
+							PoolSize:    poolSize,
+							TotalReturn: rep.TotalReturn,
+							CAGR:        rep.CAGR,
+							WinRate:     rep.WinRate,
+							Trades:      rep.NumTrades,
+							Note:        explainConfig(p.System, lvl, poolSize),
+						})
+					}
+				}
+			}
+		}
+
+		if hasDevNull {
+			devNull.Close()
+		}
+
+		// Sort results by CAGR descending
+		sort.Slice(results, func(i, j int) bool {
+			return results[i].CAGR > results[j].CAGR
+		})
+
+		// Print the Markdown table
+		fmt.Println("## Grid Search Results (Sorted by CAGR descending)")
+		fmt.Println()
+		fmt.Println("| Rank | System | Level | Pool Size | Total Return | CAGR | Win Rate | Total Trades | Note |")
+		fmt.Println("|------|--------|-------|-----------|--------------|------|----------|--------------|------|")
+		for idx, r := range results {
+			fmt.Printf("| %d | %s | %s | %d | %.2f%% | **%.2f%%** | %.2f%% | %d | %s |\n",
+				idx+1, r.System, r.Level, r.PoolSize, r.TotalReturn, r.CAGR, r.WinRate, r.Trades, r.Note)
+		}
+
+		// Create CSV of grid search results
+		err = os.MkdirAll("reports", 0755)
+		if err == nil {
+			csvPath := filepath.Join("reports", fmt.Sprintf("pivot_grid_results_%s.csv", strings.ToLower(strings.ReplaceAll(cfg.Universe, " ", "_"))))
+			csvFile, err := os.Create(csvPath)
+			if err == nil {
+				defer csvFile.Close()
+				w := csv.NewWriter(csvFile)
+				defer w.Flush()
+
+				w.Write([]string{"Rank", "System", "Level", "Pool Size", "Total Return %", "CAGR %", "Win Rate %", "Total Trades", "Note"})
+				for idx, r := range results {
+					w.Write([]string{
+						strconv.Itoa(idx + 1),
+						r.System,
+						r.Level,
+						strconv.Itoa(r.PoolSize),
+						fmt.Sprintf("%.2f", r.TotalReturn),
+						fmt.Sprintf("%.2f", r.CAGR),
+						fmt.Sprintf("%.2f", r.WinRate),
+						strconv.Itoa(r.Trades),
+						r.Note,
+					})
+				}
+				fmt.Printf("\nGrid search results summary exported to %s\n", csvPath)
+			}
+		}
+
+		return
+	}
+
 	fmt.Println("Running Engine...")
 	account, strategy := engine.RunNiftyShop(dateWiseBucket, cfg)
 
@@ -247,4 +410,66 @@ func main() {
 	// 6. Report Metrics
 	report := metrics.Generate(account, strategy, cfg, currentPrices)
 	metrics.Print(report)
+}
+
+func explainConfig(system, level string, poolSize int) string {
+	levelName := level
+	if level == "closest" {
+		levelName = "closest valid"
+	}
+	sysName := ""
+	switch system {
+	case "classic":
+		sysName = "Classic"
+	case "fibonacci":
+		sysName = "Fibonacci"
+	case "camarilla":
+		sysName = "Camarilla"
+	}
+	return fmt.Sprintf("Picks stock closest to %s %s support from top %d candidates below 20DMA", sysName, levelName, poolSize)
+}
+
+func exportPivotSearchTradeLog(history []portfolio.Trade, universe, system, level string, poolSize int) {
+	err := os.MkdirAll("reports/pivot_search_trade_logs", 0755)
+	if err != nil {
+		return
+	}
+	filename := filepath.Join("reports/pivot_search_trade_logs", fmt.Sprintf("trade_log_%s_%s_%s_pool_%d.csv", strings.ReplaceAll(universe, " ", "_"), system, level, poolSize))
+	file, err := os.Create(filename)
+	if err != nil {
+		return
+	}
+	defer file.Close()
+
+	w := csv.NewWriter(file)
+	defer w.Flush()
+
+	w.Write([]string{"Date", "Symbol", "Action", "Quantity", "Buy Price", "Sell Price", "PnL", "Return %", "Cash Remaining", "Slot Size"})
+
+	for _, t := range history {
+		sellPrice := ""
+		buyPrice := fmt.Sprintf("%.2f", t.BuyPrice)
+		retPct := ""
+
+		if t.Action == portfolio.Sell {
+			sellPrice = fmt.Sprintf("%.2f", t.Price)
+			retPct = fmt.Sprintf("%.2f%%", ((t.Price-t.BuyPrice)/t.BuyPrice)*100)
+		} else {
+			sellPrice = "-"
+			retPct = "-"
+		}
+
+		w.Write([]string{
+			t.Date.Format("2006-01-02"),
+			t.Symbol,
+			t.Action.String(),
+			strconv.Itoa(int(t.Lot)),
+			buyPrice,
+			sellPrice,
+			fmt.Sprintf("%.2f", t.PnL),
+			retPct,
+			fmt.Sprintf("%.2f", t.CashAfter),
+			fmt.Sprintf("%.2f", t.SlotSize),
+		})
+	}
 }

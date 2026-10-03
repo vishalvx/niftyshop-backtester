@@ -178,8 +178,8 @@ func TestEngine_SkipFreshEntryWhenCapitalFullyDeployed(t *testing.T) {
 func TestEngine_SlotSizeGrowsAfterRevision(t *testing.T) {
 	cfg := baseCfg()
 	cfg.StartCapital = 100000
-	cfg.CapitalDivider = 10        // initial slot = 10000
-	cfg.ProfitTargetPct = 0.06     // 6% profit target
+	cfg.CapitalDivider = 10    // initial slot = 10000
+	cfg.ProfitTargetPct = 0.06 // 6% profit target
 	cfg.MaxFreshEntriesPerDay = 1
 	cfg.RevisionPeriod = "monthly"
 
@@ -231,9 +231,12 @@ func TestEngine_SlotSizeGrowsAfterRevision(t *testing.T) {
 //
 // Setup: StartCapital=11000, divider=10, slot=1100.
 // Day 1: buy 10 stocks at 1000 each (floor(1100/1000)=1 unit, cost=1000 each).
-//         After 10 buys: cash = 11000 - (10 * 1000) = 1000.
+//
+//	After 10 buys: cash = 11000 - (10 * 1000) = 1000.
+//
 // Day 2: A.NS drops to 960 (<=1000*0.97=970), triggers avg check.
-//         cash(1000) < slot(1100) → NO averaging.
+//
+//	cash(1000) < slot(1100) → NO averaging.
 func TestEngine_AveragingSkippedWhenCashBelowSlot(t *testing.T) {
 	cfg := baseCfg()
 	cfg.StartCapital = 11000

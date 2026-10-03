@@ -129,8 +129,14 @@ func LoadData(symbol string, startDateStr string, endDateStr string) error {
 }
 
 // GetAllStock reads historical CSV files from dir and returns a map of symbol -> sorted slice of Bars.
+//
+// The cache file name carries the requested date range (see LoadData), so one symbol can have several files after
+// runs with different windows. Earlier versions kept only the lexically last file, which silently truncated history
+// (a "2024-06-04_to_..." file sorts after a "2018-01-01_to_..." file). All files of a symbol are now merged by date;
+// where two files disagree on a date the lexically later file wins, and a warning names the symbol.
 func GetAllStock(dir string) (map[string][]Bar, error) {
-	var symbolWiseBars = make(map[string][]Bar)
+	merged := make(map[string]map[time.Time]Bar)
+	filesPerSymbol := make(map[string]int)
 
 	files, err := filepath.Glob(filepath.Join(dir, "*.csv"))
 	if err != nil {
@@ -143,7 +149,7 @@ func GetAllStock(dir string) (map[string][]Bar, error) {
 			fmt.Printf("Error opening file %s: %v\n", path, err)
 			continue
 		}
-		
+
 		symbol := strings.Split(filepath.Base(file.Name()), "_")[0]
 		reader := csv.NewReader(file)
 		reader.FieldsPerRecord = -1
@@ -186,12 +192,28 @@ func GetAllStock(dir string) (map[string][]Bar, error) {
 			})
 		}
 
-		// Sort chronologically
+		if merged[symbol] == nil {
+			merged[symbol] = make(map[time.Time]Bar)
+		}
+		for _, b := range bars {
+			merged[symbol][b.Date] = b
+		}
+		filesPerSymbol[symbol]++
+	}
+
+	symbolWiseBars := make(map[string][]Bar, len(merged))
+	for symbol, byDate := range merged {
+		bars := make([]Bar, 0, len(byDate))
+		for _, b := range byDate {
+			bars = append(bars, b)
+		}
 		sort.Slice(bars, func(i, j int) bool {
 			return bars[i].Date.Before(bars[j].Date)
 		})
-
 		symbolWiseBars[symbol] = bars
+		if filesPerSymbol[symbol] > 1 {
+			fmt.Printf("WARNING: %s has %d cache files in %s; merged by date (%d bars)\n", symbol, filesPerSymbol[symbol], dir, len(bars))
+		}
 	}
 
 	return symbolWiseBars, nil
@@ -257,4 +279,3 @@ func LoadHistoricalConstituents(path string) (map[string]map[string]bool, []stri
 
 	return monthMap, uniqueSymbols, nil
 }
-
