@@ -1,0 +1,12 @@
+{
+  "_comment": "weights-file symbol -> Yahoo ticker. Entries mapped to null have no Yahoo history (delisted/merged/non-NSE) and are survivorship holes.",
+  "BAJAJAUTO": "BAJAJ-AUTO.NS",
+  "TATAMOTORS": "TMPV.NS",
+  "MCDOWELL-N": "UNITDSPR.NS",
+  "INFRATEL": "INDUSTOWER.NS",
+  "IBULHSGFIN": "SAMMAANCAP.NS",
+  "L&TFH": "LTF.NS",
+  "HPCL": "HINDPETRO.NS",
+  "VSNL": "TATACOMM.NS",
+  "REC": "RECLTD.NS"
+}

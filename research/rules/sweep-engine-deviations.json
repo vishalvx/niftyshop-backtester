@@ -1,0 +1,10 @@
+{
+  "id": "engine-deviations",
+  "base": "legacy",
+  "fixed": {"dividends": true},
+  "grid": {
+    "exit_basis": ["lot", "avgcost"],
+    "avg_basis": ["anylot", "lastlot"],
+    "max_stocks": [0, 5]
+  }
+}
