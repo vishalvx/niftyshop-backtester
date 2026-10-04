@@ -47,6 +47,7 @@ var Harsh = Scenario{Name: "harsh", BrokerageBps: 10, SlippageBps: 25, DivTaxRat
 type Env struct {
 	Panel    *panel.Panel
 	TRI, PRI []analytics.Point
+	TRIName  string // what TRI is, e.g. "NIFTY 50 TRI"
 	Rf       float64
 	Capital  float64
 	Window   string // label, e.g. "nifty50 2008-01..2025-08"
