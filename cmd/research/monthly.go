@@ -11,7 +11,7 @@ import (
 
 // monthlyDir is where a window's month-by-month tables go: one folder per universe, window, lag, cost scenario and index.
 func monthlyDir(c common, out string, env *experiment.Env) string {
-	idx := strings.ReplaceAll(env.TRIName, " ", "_")
+	idx := strings.NewReplacer(" ", "_", "%", "pct").Replace(env.TRIName)
 	return filepath.Join(out, "monthly", fmt.Sprintf("%s_%s_%s_lag%d_%s_vs_%s", c.Universe, c.Start, c.End, c.Lag, env.Scenario.Name, idx))
 }
 

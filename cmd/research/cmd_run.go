@@ -64,6 +64,9 @@ func presetByName(n string) (experiment.Spec, error) {
 		r.Name = n
 		return experiment.Spec{ID: n, Rules: r}, nil
 	}
+	if strings.HasPrefix(n, "mom-") { // momentum rotations of research/studies/momentum-nifty50.md, see sim.Preset
+		return experiment.FromPreset(n)
+	}
 	switch n {
 	case "app-approx", "app-exact", "rotation-n50":
 		return experiment.FromPreset(n)

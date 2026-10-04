@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"sort"
+	"strconv"
+	"strings"
 )
 
 // Preset returns a named base rule set: legacy (what the engine does), spec (what strategy.md says), app-approx / app-exact (rule sets of a live screener app, see below), rotation-n50.
@@ -40,7 +42,68 @@ func Preset(name string) (Rules, error) {
 		r.Rotation = &RotationRule{LookbackMonths: []int{6, 12}, TopN: 10, RebalanceMonths: []int{1, 7}}
 		return r, nil
 	}
-	return Rules{}, fmt.Errorf("sim: unknown preset %q (want legacy|spec|app-exact|rotation-n50|app-approx)", name)
+	if strings.HasPrefix(name, "mom-") {
+		return momentumPreset(name)
+	}
+	return Rules{}, fmt.Errorf("sim: unknown preset %q (want legacy|spec|app-exact|rotation-n50|app-approx|mom-...)", name)
+}
+
+// momentumPreset parses the momentum study's names (research/studies/momentum-nifty50.md):
+//
+//	mom-<plain|nse>-top<N>-<6m|1m>[-ma<days>][-cash<pct>]
+//
+// plain or nse is the score (RotationRule.Score), top<N> the names held, 6m swaps on the first trading day of January
+// and July and 1m on that of every month, ma<days> the market filter (RotationRule.MarketMADays) and cash<pct> a yearly
+// yield in percent on idle cash. The lookbacks are always 6 and 12 months; mom-plain-top10-6m is rotation-n50.
+func momentumPreset(name string) (Rules, error) {
+	bad := func(why string) (Rules, error) {
+		return Rules{}, fmt.Errorf("sim: bad momentum preset %q: %s (want mom-<plain|nse>-top<N>-<6m|1m>[-ma<days>][-cash<pct>])", name, why)
+	}
+	parts := strings.Split(name, "-")
+	if len(parts) < 4 || len(parts) > 6 {
+		return bad("wrong number of parts")
+	}
+	rot := &RotationRule{LookbackMonths: []int{6, 12}, Score: parts[1]}
+	if rot.Score != "plain" && rot.Score != "nse" {
+		return bad("score must be plain or nse")
+	}
+	n, err := strconv.Atoi(strings.TrimPrefix(parts[2], "top"))
+	if !strings.HasPrefix(parts[2], "top") || err != nil || n <= 0 {
+		return bad("names held must be top<N>")
+	}
+	rot.TopN = n
+	switch parts[3] {
+	case "6m":
+		rot.RebalanceMonths = []int{1, 7}
+	case "1m":
+		rot.RebalanceMonths = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	default:
+		return bad("swaps must be 6m or 1m")
+	}
+	r := LegacyRules()
+	r.Name = name
+	r.Rotation = rot
+	rest := parts[4:]
+	if len(rest) > 0 && strings.HasPrefix(rest[0], "ma") {
+		d, err := strconv.Atoi(strings.TrimPrefix(rest[0], "ma"))
+		if err != nil || d <= 1 {
+			return bad("market filter must be ma<days>")
+		}
+		rot.MarketMADays = d
+		rest = rest[1:]
+	}
+	if len(rest) > 0 && strings.HasPrefix(rest[0], "cash") {
+		y, err := strconv.ParseFloat(strings.TrimPrefix(rest[0], "cash"), 64)
+		if err != nil || y < 0 {
+			return bad("cash yield must be cash<pct>")
+		}
+		r.CashYield = y / 100
+		rest = rest[1:]
+	}
+	if len(rest) > 0 {
+		return bad("unexpected " + strings.Join(rest, "-"))
+	}
+	return r, nil
 }
 
 // RulesFile is the on-disk form of one rule set: a preset plus overrides, e.g.

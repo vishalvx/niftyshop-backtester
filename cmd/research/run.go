@@ -19,12 +19,13 @@ type universe struct {
 	Name    string
 	Weights string
 	TRI     string
+	PRI     string // the index's price series, for market filters
 }
 
 var universes = map[string]universe{
-	"nifty50": {"nifty50", "internal/data/nifty50_weights.csv", ".research-data/indices/NIFTY_50_TRI.json"},
+	"nifty50": {"nifty50", "internal/data/nifty50_weights.csv", ".research-data/indices/NIFTY_50_TRI.json", ".research-data/indices/NIFTY_50_PRI.json"},
 	// Survivorship-bias probe (inbox 006): the Nifty 50 members of Aug 2025 held fixed for every month of 2018-2025.
-	"nifty50static": {"nifty50static", "research/rules/nifty50_static_2025-08_weights.csv", ".research-data/indices/NIFTY_50_TRI.json"},
+	"nifty50static": {"nifty50static", "research/rules/nifty50_static_2025-08_weights.csv", ".research-data/indices/NIFTY_50_TRI.json", ".research-data/indices/NIFTY_50_PRI.json"},
 }
 
 type common struct {
@@ -38,7 +39,8 @@ type common struct {
 	Scenario string
 	LogPath  string
 	Rf       float64
-	Bench    string // optional TRI file stem overriding the universe's own, e.g. NIFTY_50
+	Bench    string  // optional TRI file stem overriding the universe's own, e.g. NIFTY_50
+	BenchFee float64 // yearly fee taken off the benchmark, e.g. 0.002 for a fund with a 0.20% expense ratio
 }
 
 func gitSHA() string {
@@ -78,11 +80,23 @@ func buildEnv(c common) (*experiment.Env, *panel.Membership, error) {
 	if err != nil {
 		return nil, nil, err
 	}
+	name := triName(triPath)
+	if c.BenchFee != 0 {
+		tri = bench.LessFee(tri, c.BenchFee)
+		name = feeName(name, c.BenchFee)
+	}
+	// The universe's own price index, for market filters. Rules without one run without it; a rule that needs it fails
+	// in the simulator, naming the missing series.
+	if pri, err := bench.LoadPRI(u.PRI); err == nil {
+		for _, x := range pri {
+			p.Market = append(p.Market, panel.Bar{Date: x.Date, Close: x.Value})
+		}
+	}
 	sc := experiment.Base
 	if c.Scenario == "harsh" {
 		sc = experiment.Harsh
 	}
-	env := &experiment.Env{Panel: p, TRI: tri, TRIName: triName(triPath), Rf: c.Rf, Capital: c.Capital, Window: fmt.Sprintf("%s %s..%s lag%d", u.Name, c.Start, c.End, c.Lag),
+	env := &experiment.Env{Panel: p, TRI: tri, TRIName: name, Rf: c.Rf, Capital: c.Capital, Window: fmt.Sprintf("%s %s..%s lag%d", u.Name, c.Start, c.End, c.Lag),
 		LogPath: c.LogPath, GitSHA: gitSHA(), Scenario: sc}
 	return env, mem, nil
 }
@@ -90,6 +104,11 @@ func buildEnv(c common) (*experiment.Env, *panel.Membership, error) {
 // triName turns an index file path such as .research-data/indices/NIFTY_50_TRI.json into "NIFTY 50 TRI".
 func triName(path string) string {
 	return strings.ReplaceAll(strings.TrimSuffix(filepath.Base(path), ".json"), "_", " ")
+}
+
+// feeName labels an index series with a fee taken off, e.g. "NIFTY200 MOMENTUM 30 TRI less 0.20% a year".
+func feeName(name string, fee float64) string {
+	return fmt.Sprintf("%s less %.2f%% a year", name, fee*100)
 }
 
 func pct(x float64) string { return fmt.Sprintf("%6.2f%%", x*100) }
