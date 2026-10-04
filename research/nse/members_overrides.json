@@ -1,0 +1,112 @@
+{
+ "_comment": "Hand-checked inputs for research/py/nse_build.py members. skip_releases: releases to ignore; effective_dates: dates the parser cannot find; names: symbols for releases that name companies only (key 'release:name' when a name maps to different symbols over time); drop_events / extra_events: changes NSE revoked, voided or announced outside the standard tables; symbol_changes: renames missing from NSE's symbol-change file; size_exceptions: periods when the index held a different number of securities; image_only: scanned releases and what they change. Every entry cites its release.",
+ "skip_releases": {
+  "ind_prs04092009": "Superseded by ind_prs09092009, which repeats the same changes with the effective date moved to 2009-10-22."
+ },
+ "effective_dates": {
+  "ind_prs09092009": "2009-10-22"
+ },
+ "names": {
+  "Glaxosmithkline Pharmaceuticals Ltd.": "GLAXO",
+  "DLF Ltd.": "DLF",
+  "ind_prs26022008:Bajaj Auto Ltd.": "BAJAJAUTO",
+  "Power Grid Corporation of India Ltd.": "POWERGRID",
+  "Dr. Reddy’s Laboratories Ltd.": "DRREDDY",
+  "Dr. Reddy's Laboratories Ltd.": "DRREDDY",
+  "Reliance Power Ltd.": "RPOWER",
+  "Satyam Computer Services Ltd.": "SATYAMCOMP",
+  "Reliance Capital Ltd.": "RELCAPITAL",
+  "Zee Entertainment Enterprises Ltd.": "ZEEL",
+  "Axis Bank Ltd.": "AXISBANK",
+  "Reliance Petroleum Ltd.": "RPL",
+  "Jindal Steel & Power Ltd.": "JINDALSTEL",
+  "National Aluminium Co. Ltd.": "NATIONALUM",
+  "Tata Communications Ltd.": "TATACOMM",
+  "Jaiprakash Associates Ltd.": "JPASSOCIAT",
+  "Infrastructure Development Finance Co. Ltd.": "IDFC",
+  "Grasim Industries Ltd.": "GRASIM",
+  "Kotak Mahindra Bank Ltd.": "KOTAKBANK",
+  "ABB Ltd.": "ABB",
+  "Idea Cellular Ltd.": "IDEA",
+  "Unitech Ltd.": "UNITECH",
+  "ind_prs18082010:Bajaj Auto Ltd.": "BAJAJ-AUTO",
+  "Sesa Goa Ltd.": "SESAGOA",
+  "Suzlon Energy Ltd.": "SUZLON",
+  "Mahanagar Telephone Nigam Ltd.": "MTNL",
+  "Hindustan Petroleum Corporation Ltd.": "HINDPETRO",
+  "Cairn India Ltd.": "CAIRN"
+ },
+ "extra_events": [
+  {
+   "index": "niftymidcap150",
+   "date": "2024-03-28",
+   "action": "in",
+   "symbol": "BSE",
+   "name": "BSE Ltd.",
+   "release": "ind_prs19032024",
+   "why": "Revocation table (not the standard layout): BSE included in place of IREDA."
+  }
+ ],
+ "drop_events": [
+  {
+   "release": "ind_prs18022020",
+   "index": "nifty50",
+   "why": "The Yes Bank -> Shree Cement swap announced for 2020-03-27 was brought forward to 2020-03-19 by ind_prs16032020."
+  },
+  {
+   "release": "ind_prs18022020",
+   "index": "niftymidcap150",
+   "why": "ind_prs13052020: the replacements announced for 2020-03-27 were deferred (ind_prs23032020) and then declared null and void; the review was redone in ind_prs10062020 effective 2020-06-26."
+  },
+  {
+   "release": "ind_prs19032020",
+   "index": "niftymidcap150",
+   "why": "Same as ind_prs18022020: null and void per ind_prs13052020."
+  },
+  {
+   "release": "ind_prs28022024",
+   "index": "niftymidcap150",
+   "symbol": "IREDA",
+   "why": "ind_prs19032024 revoked IREDA's inclusion (impact cost) and included BSE in its place on 2024-03-28."
+  },
+  {
+   "release": "ind_prs23082024",
+   "index": "niftymidcap150",
+   "symbol": "IDEA",
+   "why": "ind_prs25092024 revoked Vodafone Idea's exclusion before it took effect."
+  },
+  {
+   "release": "ind_prs23082024",
+   "index": "niftymidcap150",
+   "symbol": "CENTRALBK",
+   "why": "ind_prs25092024 revoked Central Bank of India's inclusion (the slot vacated by IDEA no longer existed)."
+  }
+ ],
+ "symbol_changes": [
+  [
+   "WABCOINDIA",
+   "ZFCVINDIA",
+   "2022-04-01",
+   "Missing from NSE's symbolchange.csv; bhavcopy shows WABCOINDIA to 2022-03-31 and ZFCVINDIA from 2022-04-01 (same ISIN)."
+  ]
+ ],
+ "size_exceptions": [
+  {
+   "index": "nifty50",
+   "from": "2016-04-01",
+   "to": "2017-09-29",
+   "size": 51,
+   "why": "ind_prs22022016_2: Tata Motors DVR (TATAMTRDVR) was added as an additional security, so the Nifty 50 had 51 securities until ind_prs28082017 removed it."
+  }
+ ],
+ "image_only": {
+  "ind_prs10092018": "Scanned. Title: Strategy indices and the Nifty Tata Group index only; neither Nifty 50 nor Nifty Midcap 150.",
+  "ind_prs24092018": "Scanned. Title: Nifty CPSE index only.",
+  "ind_prs16062018": "Scanned. Arbitration order, no index changes.",
+  "ind_prs03122018": "Scanned. ETF conference notice, no index changes.",
+  "ind_prs16052023": "Scanned. Launch of the Nifty Core Housing index, no changes to existing indices.",
+  "ind_prs19062023": "Scanned. Nifty Next 50 methodology, no constituent changes.",
+  "ind_prs26062023": "Scanned. Passive-fund AUM note, no index changes.",
+  "ind_prs23082021": "Scanned (OCR checked). Says 'No changes are being made in NIFTY 50'. Its Nifty Midcap 150 list was replaced in full by ind_prs15092021 after the REIT/InvIT inclusions were revoked."
+ }
+}

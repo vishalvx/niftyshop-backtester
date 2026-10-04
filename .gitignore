@@ -44,3 +44,6 @@ research/out/final/verify/
 research/out/final/*/export/
 research/out/rerun/
 research/out/monthly/
+
+# Python bytecode
+__pycache__/
