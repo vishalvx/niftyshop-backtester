@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -84,9 +85,14 @@ func buildEnv(c common) (*experiment.Env, *panel.Membership, error) {
 	if c.Scenario == "harsh" {
 		sc = experiment.Harsh
 	}
-	env := &experiment.Env{Panel: p, TRI: tri, Rf: c.Rf, Capital: c.Capital, Window: fmt.Sprintf("%s %s..%s lag%d", u.Name, c.Start, c.End, c.Lag),
+	env := &experiment.Env{Panel: p, TRI: tri, TRIName: triName(triPath), Rf: c.Rf, Capital: c.Capital, Window: fmt.Sprintf("%s %s..%s lag%d", u.Name, c.Start, c.End, c.Lag),
 		LogPath: c.LogPath, GitSHA: gitSHA(), Scenario: sc}
 	return env, mem, nil
+}
+
+// triName turns an index file path such as .research-data/indices/NIFTY_50_TRI.json into "NIFTY 50 TRI".
+func triName(path string) string {
+	return strings.ReplaceAll(strings.TrimSuffix(filepath.Base(path), ".json"), "_", " ")
 }
 
 func pct(x float64) string { return fmt.Sprintf("%6.2f%%", x*100) }
