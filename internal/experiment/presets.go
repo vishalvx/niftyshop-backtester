@@ -28,7 +28,7 @@ func VPivotSpec(system, level string, pool int) Spec {
 	return Spec{ID: r.Name, Rules: r}
 }
 
-// PivotGrid is the 39-point grid the engine's -find-best-pivot flag searches.
+// PivotGrid is the 39-point grid the retired original engine's -find-best-pivot flag searched.
 func PivotGrid(base func(system, level string, pool int) Spec) []Spec {
 	var out []Spec
 	systems := []struct {

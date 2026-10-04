@@ -1,5 +1,7 @@
 # Design Specification: Pivot Point Support Filter for NiftyShop Entry
 
+> **Historical, 2026-10-03.** This design targeted the original engine (`cmd/backtester`, `internal/engine`, `internal/config`), which has been deleted. Pivot filters now live in `internal/sim` (`PivotRule`) and run through `cmd/research`; see [CONTEXT.md](../../../CONTEXT.md).
+
 This document outlines the design for incorporating a pivot-point-based support filter into the NiftyShop mean-reversion strategy. The goal is to prioritize entering stocks that are trading closest to a key support level to maximize bounce-back probability and minimize drawdown.
 
 ---
