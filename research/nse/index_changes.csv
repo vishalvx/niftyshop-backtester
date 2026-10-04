@@ -1,0 +1,741 @@
+index,effective,action,symbol,release_symbol,company,release
+nifty50,2008-03-14,in,DLF,DLF,DLF Ltd.,ind_prs31012008_2
+nifty50,2008-03-14,in,POWERGRID,POWERGRID,Power Grid Corporation of India Ltd.,ind_prs26022008
+nifty50,2008-03-14,out,BAJAJHLDNG,BAJAJAUTO,Bajaj Auto Ltd.,ind_prs26022008
+nifty50,2008-03-14,out,GLAXO,GLAXO,Glaxosmithkline Pharmaceuticals Ltd.,ind_prs31012008_2
+nifty50,2008-09-10,in,RPOWER,RPOWER,Reliance Power Ltd.,ind_prs29072008
+nifty50,2008-09-10,out,DRREDDY,DRREDDY,Dr. Reddy’s Laboratories Ltd.,ind_prs29072008
+nifty50,2009-01-12,in,RELCAPITAL,RELCAPITAL,Reliance Capital Ltd.,ind_prs07012009
+nifty50,2009-01-12,out,SATYAMCOMP,SATYAMCOMP,Satyam Computer Services Ltd.,ind_prs07012009
+nifty50,2009-03-27,in,AXISBANK,AXISBANK,Axis Bank Ltd.,ind_prs10022009
+nifty50,2009-03-27,out,ZEEL,ZEEL,Zee Entertainment Enterprises Ltd.,ind_prs10022009
+nifty50,2009-06-17,in,JINDALSTEL,JINDALSTEL,Jindal Steel & Power Ltd.,ind_prs19052009
+nifty50,2009-06-17,out,RPL,RPL,Reliance Petroleum Ltd.,ind_prs19052009
+nifty50,2009-10-22,in,IDFC,IDFC,Infrastructure Development Finance Co. Ltd.,ind_prs09092009
+nifty50,2009-10-22,in,JPASSOCIAT,JPASSOCIAT,Jaiprakash Associates Ltd.,ind_prs09092009
+nifty50,2009-10-22,out,NATIONALUM,NATIONALUM,National Aluminium Co. Ltd.,ind_prs09092009
+nifty50,2009-10-22,out,TATACOMM,TATACOMM,Tata Communications Ltd.,ind_prs09092009
+nifty50,2010-04-08,in,KOTAKBANK,KOTAKBANK,Kotak Mahindra Bank Ltd.,ind_prs24022010
+nifty50,2010-04-08,out,GRASIM,GRASIM,Grasim Industries Ltd.,ind_prs24022010
+nifty50,2010-10-01,in,BAJAJ-AUTO,BAJAJ-AUTO,Bajaj Auto Ltd.,ind_prs18082010
+nifty50,2010-10-01,in,DRREDDY,DRREDDY,Dr. Reddy's Laboratories Ltd.,ind_prs18082010
+nifty50,2010-10-01,in,VEDL,SESAGOA,Sesa Goa Ltd.,ind_prs18082010
+nifty50,2010-10-01,out,ABB,ABB,ABB Ltd.,ind_prs18082010
+nifty50,2010-10-01,out,IDEA,IDEA,Idea Cellular Ltd.,ind_prs18082010
+nifty50,2010-10-01,out,UNITECH,UNITECH,Unitech Ltd.,ind_prs18082010
+nifty50,2011-03-25,in,GRASIM,GRASIM,Grasim Industries Ltd.,ind_prs10022011
+nifty50,2011-03-25,out,SUZLON,SUZLON,Suzlon Energy Ltd.,ind_prs10022011
+nifty50,2011-10-10,in,COALINDIA,COALINDIA,Coal India Ltd.,ind_prs25082011
+nifty50,2011-10-10,out,RELCAPITAL,RELCAPITAL,Reliance Capital Ltd.,ind_prs25082011
+nifty50,2012-04-27,in,ASIANPAINT,ASIANPAINT,Asian Paints Ltd.,ind_prs14032012
+nifty50,2012-04-27,in,BANKBARODA,BANKBARODA,Bank of Baroda,ind_prs14032012
+nifty50,2012-04-27,out,RCOM,RCOM,Reliance Communications Ltd.,ind_prs14032012
+nifty50,2012-04-27,out,RPOWER,RPOWER,Reliance Power Ltd.,ind_prs14032012
+nifty50,2012-09-28,in,LUPIN,LUPIN,Lupin Ltd.,ind_prs16082012
+nifty50,2012-09-28,in,ULTRACEMCO,ULTRACEMCO,UltraTech Cement Ltd.,ind_prs16082012
+nifty50,2012-09-28,out,SAIL,SAIL,Steel Authority of India Ltd.,ind_prs16082012
+nifty50,2012-09-28,out,STER,STER,Sterlite Industries (India) Ltd.,ind_prs16082012
+nifty50,2013-04-01,in,INDUSINDBK,INDUSINDBK,IndusInd Bank Ltd.,ind_prs13022013
+nifty50,2013-04-01,in,NMDC,NMDC,NMDC Ltd.,ind_prs13022013
+nifty50,2013-04-01,out,SIEMENS,SIEMENS,Siemens Ltd.,ind_prs13022013
+nifty50,2013-04-01,out,WIPRO,WIPRO,Wipro Ltd.,ind_prs13022013
+nifty50,2013-09-27,in,WIPRO,WIPRO,Wipro Ltd.,ind_prs27082013
+nifty50,2013-09-27,out,RELINFRA,RELINFRA,Reliance Infrastructure Ltd.,ind_prs27082013
+nifty50,2014-03-28,in,TECHM,TECHM,Tech Mahindra Ltd.,ind_prs27022014
+nifty50,2014-03-28,in,UNITDSPR,MCDOWELL-N,United Spirits Ltd.,ind_prs27022014
+nifty50,2014-03-28,out,JPASSOCIAT,JPASSOCIAT,Jaiprakash Associates Ltd.,ind_prs27022014
+nifty50,2014-03-28,out,RANBAXY,RANBAXY,Ranbaxy Laboratories Ltd.,ind_prs27022014
+nifty50,2014-09-19,in,ZEEL,ZEEL,Zee Entertainment Enterprises Ltd.,ind_prs20082014
+nifty50,2014-09-19,out,UNITDSPR,MCDOWELL-N,United Spirits Ltd.,ind_prs20082014
+nifty50,2015-03-27,in,IDEA,IDEA,Idea Cellular Ltd.,ind_prs20022015
+nifty50,2015-03-27,in,YESBANK,YESBANK,Yes Bank Ltd.,ind_prs20022015
+nifty50,2015-03-27,out,DLF,DLF,DLF Ltd.,ind_prs20022015
+nifty50,2015-03-27,out,JINDALSTEL,JINDALSTEL,Jindal Steel & Power Ltd.,ind_prs20022015
+nifty50,2015-05-29,in,BOSCHLTD,BOSCHLTD,Bosch Ltd.,ind_prs29042015
+nifty50,2015-05-29,out,IDFC,IDFC,IDFC Ltd.,ind_prs29042015
+nifty50,2015-09-28,in,ADANIPORTS,ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,ind_prs12082015
+nifty50,2015-09-28,out,NMDC,NMDC,NMDC Ltd.,ind_prs12082015
+nifty50,2016-04-01,in,AUROPHARMA,AUROPHARMA,Aurobindo Pharma Ltd.,ind_prs22022016_2
+nifty50,2016-04-01,in,EICHERMOT,EICHERMOT,Eicher Motors Ltd.,ind_prs22022016_2
+nifty50,2016-04-01,in,INDUSTOWER,INFRATEL,Bharti Infratel Ltd.,ind_prs22022016_2
+nifty50,2016-04-01,in,TATAMTRDVR,TATAMTRDVR,Tata Motors Ltd. (DVR) *,ind_prs22022016_2
+nifty50,2016-04-01,out,CAIRN,CAIRN,Cairn India Ltd.,ind_prs22022016_2
+nifty50,2016-04-01,out,PNB,PNB,Punjab National Bank,ind_prs22022016_2
+nifty50,2016-04-01,out,VEDL,VEDL,Vedanta Ltd.,ind_prs22022016_2
+nifty50,2017-03-31,in,IOC,IOC,Indian Oil Corporation Ltd.,ind_prs16022017
+nifty50,2017-03-31,in,SAMMAANCAP,IBULHSGFIN,Indiabulls Housing Finance Ltd.,ind_prs16022017
+nifty50,2017-03-31,out,BHEL,BHEL,Bharat Heavy Electricals Ltd.,ind_prs16022017
+nifty50,2017-03-31,out,IDEA,IDEA,Idea Cellular Ltd.,ind_prs16022017
+nifty50,2017-05-26,in,VEDL,VEDL,Vedanta Ltd.,ind_prs27042017
+nifty50,2017-05-26,out,GRASIM,GRASIM,Grasim Industries Ltd.,ind_prs27042017
+nifty50,2017-09-29,in,BAJFINANCE,BAJFINANCE,Bajaj Finance Ltd.,ind_prs28082017
+nifty50,2017-09-29,in,HINDPETRO,HINDPETRO,Hindustan Petroleum Corporation Ltd.,ind_prs28082017
+nifty50,2017-09-29,in,UPL,UPL,UPL Ltd.,ind_prs28082017
+nifty50,2017-09-29,out,ACC,ACC,ACC Ltd.,ind_prs28082017
+nifty50,2017-09-29,out,BANKBARODA,BANKBARODA,Bank of Baroda,ind_prs28082017
+nifty50,2017-09-29,out,TATAMTRDVR,TATAMTRDVR,Tata Motors Ltd DVR,ind_prs28082017
+nifty50,2017-09-29,out,TATAPOWER,TATAPOWER,Tata Power Co. Ltd.,ind_prs28082017
+nifty50,2018-04-02,in,BAJAJFINSV,BAJAJFINSV,Bajaj Finserv Ltd.,ind_prs21022018
+nifty50,2018-04-02,in,GRASIM,GRASIM,Grasim Industries Ltd.,ind_prs21022018
+nifty50,2018-04-02,in,TITAN,TITAN,Titan Company Ltd.,ind_prs21022018
+nifty50,2018-04-02,out,AMBUJACEM,AMBUJACEM,Ambuja Cements Ltd.,ind_prs21022018
+nifty50,2018-04-02,out,AUROPHARMA,AUROPHARMA,Aurobindo Pharma Ltd.,ind_prs21022018
+nifty50,2018-04-02,out,BOSCHLTD,BOSCHLTD,Bosch Ltd.,ind_prs21022018
+nifty50,2018-09-28,in,JSWSTEEL,JSWSTEEL,JSW Steel Ltd.,ind_prs28082018
+nifty50,2018-09-28,out,LUPIN,LUPIN,Lupin Ltd.,ind_prs28082018
+nifty50,2019-03-29,in,BRITANNIA,BRITANNIA,Britannia Industries Ltd.,ind_prs25022019
+nifty50,2019-03-29,out,HINDPETRO,HINDPETRO,Hindustan Petroleum Corporation Ltd.,ind_prs25022019
+nifty50,2019-09-27,in,NESTLEIND,NESTLEIND,Nestle India Ltd.,ind_prs28082019
+nifty50,2019-09-27,out,SAMMAANCAP,IBULHSGFIN,Indiabulls Housing Finance Ltd.,ind_prs28082019
+nifty50,2020-03-19,in,SHREECEM,SHREECEM,Shree Cement Ltd.,ind_prs16032020
+nifty50,2020-03-19,out,YESBANK,YESBANK,Yes Bank Ltd.,ind_prs16032020
+nifty50,2020-07-31,in,HDFCLIFE,HDFCLIFE,HDFC Life Insurance Company Ltd.,ind_prs02072020_1
+nifty50,2020-07-31,out,VEDL,VEDL,Vedanta Ltd.,ind_prs02072020_1
+nifty50,2020-09-25,in,DIVISLAB,DIVISLAB,Divi's Laboratories Ltd.,ind_prs20082020
+nifty50,2020-09-25,in,SBILIFE,SBILIFE,SBI Life Insurance Company Ltd.,ind_prs20082020
+nifty50,2020-09-25,out,INDUSTOWER,INFRATEL,Bharti Infratel Ltd.,ind_prs20082020
+nifty50,2020-09-25,out,ZEEL,ZEEL,Zee Entertainment Enterprises Ltd.,ind_prs20082020
+nifty50,2021-03-31,in,TATACONSUM,TATACONSUM,Tata Consumer Products Ltd.,ind_prs23022021
+nifty50,2021-03-31,out,GAIL,GAIL,GAIL (India) Ltd.,ind_prs23022021
+nifty50,2022-03-31,in,APOLLOHOSP,APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,ind_prs24022022_1
+nifty50,2022-03-31,out,IOC,IOC,Indian Oil Corporation Ltd.,ind_prs24022022_1
+nifty50,2022-09-30,in,ADANIENT,ADANIENT,Adani Enterprises Ltd.,ind_prs01092022
+nifty50,2022-09-30,out,SHREECEM,SHREECEM,Shree Cement Ltd.,ind_prs01092022
+nifty50,2023-07-13,in,LTM,LTIM,LTIMindtree Ltd.,ind_prs04072023
+nifty50,2023-07-13,out,HDFC,HDFC,Housing Development Finance Corporation Ltd.,ind_prs04072023
+nifty50,2024-03-28,in,SHRIRAMFIN,SHRIRAMFIN,Shriram Finance Ltd.,ind_prs28022024
+nifty50,2024-03-28,out,UPL,UPL,UPL Ltd.,ind_prs28022024
+nifty50,2024-09-30,in,BEL,BEL,Bharat Electronics Ltd.,ind_prs23082024
+nifty50,2024-09-30,in,TRENT,TRENT,Trent Ltd.,ind_prs23082024
+nifty50,2024-09-30,out,DIVISLAB,DIVISLAB,Divi's Laboratories Ltd.,ind_prs23082024
+nifty50,2024-09-30,out,LTM,LTIM,LTIMindtree Ltd.,ind_prs23082024
+nifty50,2025-03-28,in,ETERNAL,ZOMATO,Zomato Ltd.,ind_prs21022025
+nifty50,2025-03-28,in,JIOFIN,JIOFIN,Jio Financial Services Ltd.,ind_prs21022025
+nifty50,2025-03-28,out,BPCL,BPCL,Bharat Petroleum Corporation Ltd.,ind_prs21022025
+nifty50,2025-03-28,out,BRITANNIA,BRITANNIA,Britannia Industries Ltd.,ind_prs21022025
+nifty50,2025-09-30,in,INDIGO,INDIGO,InterGlobe Aviation Ltd.,ind_prs22082025
+nifty50,2025-09-30,in,MAXHEALTH,MAXHEALTH,Max Healthcare Institute Ltd.,ind_prs22082025
+nifty50,2025-09-30,out,HEROMOTOCO,HEROMOTOCO,Hero MotoCorp Ltd.,ind_prs22082025
+nifty50,2025-09-30,out,INDUSINDBK,INDUSINDBK,IndusInd Bank Ltd.,ind_prs22082025
+nifty50,2026-09-30,in,BSE,BSE,BSE Ltd.,ind_prs10082026
+nifty50,2026-09-30,out,WIPRO,WIPRO,Wipro Ltd.,ind_prs10082026
+niftymidcap150,2016-10-24,in,CROMPTON,CROMPTON,Crompton Greaves Consumer Electricals Ltd.,ind_prs17102016
+niftymidcap150,2016-10-24,out,HAVELLS,HAVELLS,Havells India Ltd.,ind_prs17102016
+niftymidcap150,2017-01-23,in,RBLBANK,RBLBANK,RBL Bank Ltd.,ind_prs16012017
+niftymidcap150,2017-01-23,out,MFSL,MFSL,Max Financial Services Ltd.,ind_prs16012017
+niftymidcap150,2017-03-31,in,APOLLOHOSP,APOLLOHOSP,Apollo Hospitals Enterprises Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,in,BHARATFORG,BHARATFORG,Bharat Forge Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,in,CASTROLIND,CASTROLIND,Castrol India Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,in,ENDURANCE,ENDURANCE,Endurance Technologies Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,in,LTM,LTI,Larsen & Toubro Infotech Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,in,LTTS,LTTS,L&T Technology Services Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,in,MANAPPURAM,MANAPPURAM,Manappuram Finance Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,in,MOTILALOFS,MOTILALOFS,Motilal Oswal Financial Services Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,in,QUESS,QUESS,Quess Corp Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,INOXWIND,INOXWIND,Inox Wind Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,JETAIRWAYS,JETAIRWAYS,Jet Airways (India) Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,JUSTDIAL,JUSTDIAL,Justdial Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,NETWORK18,NETWORK18,Network18 Media & Investments Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,PERSISTENT,PERSISTENT,Persistent Systems Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,PETRONET,PETRONET,Petronet LNG Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,RECLTD,RECLTD,Rural Electrification Corporation Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,SADBHAV,SADBHAV,Sadbhav Engineering Ltd.,ind_prs16022017
+niftymidcap150,2017-03-31,out,TATAELXSI,TATAELXSI,Tata Elxsi Ltd.,ind_prs16022017
+niftymidcap150,2017-05-26,in,FRETAIL,FRETAIL,Future Retail Ltd.,ind_prs27042017
+niftymidcap150,2017-05-26,in,MGL,MGL,Mahanagar Gas Ltd.,ind_prs27042017
+niftymidcap150,2017-05-26,in,PNBHOUSING,PNBHOUSING,PNB Housing Finance Ltd.,ind_prs27042017
+niftymidcap150,2017-05-26,out,ABIRLANUVO,ABIRLANUVO,Aditya Birla Nuvo Ltd.,ind_prs27042017
+niftymidcap150,2017-05-26,out,SUNTV,SUNTV,Sun TV Network Ltd.,ind_prs27042017
+niftymidcap150,2017-05-26,out,TUBEINVEST,TUBEINVEST,Tube Investments of India Ltd.,ind_prs27042017
+niftymidcap150,2017-06-23,in,KRBL,KRBL,KRBL Ltd.,ind_prs15062017
+niftymidcap150,2017-06-23,out,IIFL,IIFL,IIFL Holdings Ltd.,ind_prs15062017
+niftymidcap150,2017-09-29,in,ADANIENSOL,ADANITRANS,Adani Transmission Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,DIVISLAB,DIVISLAB,Divi's Laboratories Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,FINCABLES,FINCABLES,Finolex Cables Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,JMFINANCIL,JMFINANCIL,JM Financial Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,MFSL,MFSL,Max Financial Services Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,MFSL,MFSL,Max Financial Services Ltd.,ind_prs29082017
+niftymidcap150,2017-09-29,in,SUNDRMFAST,SUNDRMFAST,Sundram Fasteners Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,UBL,UBL,United Breweries Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,VBL,VBL,Varun Beverages Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,VGUARD,VGUARD,V-Guard Industries Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,in,VIJAYABANK,VIJAYABANK,Vijaya Bank,ind_prs28082017
+niftymidcap150,2017-09-29,out,BAJAJCON,BAJAJCORP,Bajaj Corp Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,CYIENT,CYIENT,Cyient Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,ECLERX,ECLERX,eClerx Services Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,GESHIP,GESHIP,Great Eastern Shipping Co. Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,HINDCOPPER,HINDCOPPER,Hindustan Copper Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,HONAUT,HONAUT,Honeywell Automation India Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,JAGRAN,JAGRAN,Jagran Prakashan Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,MRF,MRF,MRF Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,RELAXO,RELAXO,Relaxo Footwears Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,RELCAPITAL,RELCAPITAL,Reliance Capital Ltd.,ind_prs28082017
+niftymidcap150,2017-09-29,out,RELCAPITAL,RELCAPITAL,Reliance Capital Ltd.,ind_prs29082017
+niftymidcap150,2017-10-30,in,HUDCO,HUDCO,Housing & Urban Development Corporation Ltd.,ind_prs16102017
+niftymidcap150,2017-10-30,out,FRETAIL,FRETAIL,Future Retail Ltd.,ind_prs16102017
+niftymidcap150,2017-11-13,in,AUBANK,AUBANK,AU Small Finance Bank Ltd.,ind_prs03112017
+niftymidcap150,2017-11-13,out,SUNDARMFIN,SUNDARMFIN,Sundaram Finance Ltd.,ind_prs03112017
+niftymidcap150,2018-02-05,in,CHOLAHLDNG,TIFIN,TI Financial Holdings Ltd.,ind_prs08012018
+niftymidcap150,2018-02-05,in,HATSUN,HATSUN,Hatsun Agro Product Ltd.,ind_prs08012018
+niftymidcap150,2018-02-05,in,RELCAPITAL,RELCAPITAL,Reliance Capital Ltd.,ind_prs08012018
+niftymidcap150,2018-02-05,out,CESC,CESC,CESC Ltd.,ind_prs08012018
+niftymidcap150,2018-02-05,out,FORTIS,FORTIS,Fortis Healthcare Ltd.,ind_prs08012018
+niftymidcap150,2018-02-05,out,STAR,STAR,Strides Shasun Ltd.,ind_prs08012018
+niftymidcap150,2018-04-02,in,AVANTIFEED,AVANTIFEED,Avanti Feeds Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,DBL,DBL,Dilip Buildcon Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,DHANI,IBVENTURES,Indiabulls Ventures Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,EMBDL,IBREALEST,Indiabulls Real Estate Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,FCONSUMER,FCONSUMER,Future Consumer Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,GLAXO,GLAXO,Glaxosmithkline Pharmaceuticals Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,GLENMARK,GLENMARK,Glenmark Pharmaceuticals Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,GODREJAGRO,GODREJAGRO,Godrej Agrovet Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,GSKCONS,GSKCONS,GlaxoSmithkline Consumer Healthcare Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,HONAUT,HONAUT,Honeywell Automation India Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,ICICIGI,ICICIGI,ICICI Lombard General Insurance Company Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,IIFL,IIFL,IIFL Holdings Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,STLTECH,STRTECH,Sterlite Technologies Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,TATAPOWER,TATAPOWER,Tata Power Co. Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,in,TORNTPHARM,TORNTPHARM,Torrent Pharmaceuticals Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,ADANIENT,ADANIENT,Adani Enterprises Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,DALMIABHA,DALMIABHA,Dalmia Bharat Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,DBCORP,DBCORP,D.B.Corp Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,GPPL,GPPL,Gujarat Pipavav Port Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,IOB,IOB,Indian Overseas Bank,ind_prs21022018
+niftymidcap150,2018-04-02,out,IPCALAB,IPCALAB,Ipca Laboratories Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,JYOTHYLAB,JYOTHYLAB,Jyothy Laboratories Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,LALPATHLAB,LALPATHLAB,Dr. Lal Path Labs Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,LTF,L&TFH,L&T Finance Holdings Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,NH,NH,Narayana Hrudayalaya Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,RCOM,RCOM,Reliance Communications Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,SYNDIBANK,SYNDIBANK,Syndicate Bank,ind_prs21022018
+niftymidcap150,2018-04-02,out,VIJAYABANK,VIJAYABANK,Vijaya Bank,ind_prs21022018
+niftymidcap150,2018-04-02,out,VTL,VTL,Vardhman Textiles Ltd.,ind_prs21022018
+niftymidcap150,2018-04-02,out,WELSPUNLIV,WELSPUNIND,Welspun India Ltd.,ind_prs21022018
+niftymidcap150,2018-06-29,in,FRETAIL,FRETAIL,Future Retail Ltd.,ind_prs24052018
+niftymidcap150,2018-06-29,in,KIOCL,KIOCL,KIOCL Ltd.,ind_prs24052018
+niftymidcap150,2018-06-29,out,ARVIND,ARVIND,Arvind Ltd.,ind_prs24052018
+niftymidcap150,2018-06-29,out,TATACOMM,TATACOMM,Tata Communications Ltd.,ind_prs24052018
+niftymidcap150,2018-09-28,in,ASTRAL,ASTRAL,Astral Poly Technik Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,CUMMINSIND,CUMMINSIND,Cummins India Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,EMAMILTD,EMAMILTD,Emami Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,ESCORTS,ESCORTS,Escorts Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,GRAPHITE,GRAPHITE,Graphite India Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,HAL,HAL,Hindustan Aeronautics Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,HEGAM,HEG,H.E.G. Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,ISEC,ISEC,ICICI Securities Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,NAM-INDIA,RNAM,Reliance Nippon Life Asset Management Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,PFC,PFC,Power Finance Corporation Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,PNB,PNB,Punjab National Bank,ind_prs28082018
+niftymidcap150,2018-09-28,in,RECLTD,RECLTD,Rural Electrification Corporation Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,in,SUNDARMFIN,SUNDARMFIN,Sundaram Finance Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,BIOCON,BIOCON,Biocon Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,EMBDL,IBREALEST,Indiabulls Real Estate Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,GFLLIMITED,GUJFLUORO,Gujarat Fluorochemicals Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,ICICIGI,ICICIGI,ICICI Lombard General Insurance Company Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,IDFC,IDFC,IDFC Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,IRB,IRB,IRB Infrastructure Developers Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,JSWDULUX,AKZOINDIA,Akzo Nobel India Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,KAJARIACER,KAJARIACER,Kajaria Ceramics Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,KARURVYSYA,KARURVYSYA,Karur Vysya Bank Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,SCHAEFFLER,SCHAEFFLER,Schaeffler India Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,SUZLON,SUZLON,Suzlon Energy Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,TTKPRESTIG,TTKPRESTIG,TTK Prestige Ltd.,ind_prs28082018
+niftymidcap150,2018-09-28,out,WOCKPHARMA,WOCKPHARMA,Wockhardt Ltd.,ind_prs28082018
+niftymidcap150,2018-12-28,in,AARTIIND,AARTIIND,Aarti Industries Ltd.,ind_prs14122018
+niftymidcap150,2018-12-28,in,BBTC,BBTC,Bombay Burmah Trading Corporation Ltd.,ind_prs14122018
+niftymidcap150,2018-12-28,in,VARROC,VARROC,Varroc Engineering Ltd.,ind_prs14122018
+niftymidcap150,2018-12-28,out,ABREL,CENTURYTEX,Century Textile & Industries Ltd.,ind_prs14122018
+niftymidcap150,2018-12-28,out,BHARATFIN,BHARATFIN,Bharat Financial Inclusion Ltd.,ind_prs14122018
+niftymidcap150,2018-12-28,out,IIFL,IIFL,IIFL Holdings Ltd.,ind_prs14122018
+niftymidcap150,2019-03-29,in,ABCAPITAL,ABCAPITAL,Aditya Birla Capital Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,ATUL,ATUL,Atul Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,BEL,BEL,Bharat Electronics Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,ERIS,ERIS,Eris Lifesciences Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,GFLLIMITED,GUJFLUORO,Gujarat Fluorochemicals Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,IPCALAB,IPCALAB,Ipca Laboratories Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,LICHSGFIN,LICHSGFIN,LIC Housing Finance Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,OIL,OIL,Oil India Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,RELAXO,RELAXO,Relaxo Footwears Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,in,SUNTV,SUNTV,Sun TV Network Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,AARTIIND,AARTIIND,Aarti Industries Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,AVANTIFEED,AVANTIFEED,Avanti Feeds Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,BAJAJHLDNG,BAJAJHLDNG,Bajaj Holdings & Investment Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,DIVISLAB,DIVISLAB,Divi's Laboratories Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,GVT&D,GET&D,GE T&D India Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,PAGEIND,PAGEIND,Page Industries Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,PCJEWELLER,PCJEWELLER,PC Jeweller Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,TV18BRDCST,TV18BRDCST,TV18 Broadcast Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,UBL,UBL,United Breweries Ltd.,ind_prs25022019
+niftymidcap150,2019-03-29,out,VAKRANGEE,VAKRANGEE,Vakrangee Ltd.,ind_prs25022019
+niftymidcap150,2019-06-28,in,DALBHARAT,DALBHARAT,Dalmia Bharat Ltd.,ind_prs13062019
+niftymidcap150,2019-06-28,out,GFLLIMITED,GUJFLUORO,Gujarat Fluorochemicals Ltd.,ind_prs13062019
+niftymidcap150,2019-09-27,in,AAVAS,AAVAS,Aavas Financiers Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,ABBOTINDIA,ABBOTINDIA,Abbott India Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,ALBK,ALBK,Allahabad Bank,ind_prs28082019
+niftymidcap150,2019-09-27,in,ATGL,ADANIGAS,Adani Gas Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,BAYERCROP,BAYERCROP,Bayer Cropscience Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,BHEL,BHEL,Bharat Heavy Electricals Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,CESC,CESC,CESC Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,CORPBANK,CORPBANK,Corporation Bank,ind_prs28082019
+niftymidcap150,2019-09-27,in,FORTIS,FORTIS,Fortis Healthcare Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,IOB,IOB,Indian Overseas Bank,ind_prs28082019
+niftymidcap150,2019-09-27,in,MRF,MRF,MRF Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,ORIENTBANK,ORIENTBANK,Oriental Bank of Commerce,ind_prs28082019
+niftymidcap150,2019-09-27,in,SAIL,SAIL,Steel Authority of India Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,in,TTKPRESTIG,TTKPRESTIG,TTK Prestige Ltd.,ind_prs17092019
+niftymidcap150,2019-09-27,in,UCOBANK,UCOBANK,UCO Bank,ind_prs28082019
+niftymidcap150,2019-09-27,in,VINATIORGA,VINATIORGA,Vinati Organics Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,BERGEPAINT,BERGEPAINT,Berger Paints India Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,DBL,DBL,Dilip Buildcon Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,DHFL,DHFL,Dewan Housing Finance Corporation Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,DISHTV,DISHTV,Dish TV India Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,FINCABLES,FINCABLES,Finolex Cables Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,GRUH,GRUH,Gruh Finance Ltd.*,ind_prs28082019
+niftymidcap150,2019-09-27,out,GSKCONS,GSKCONS,GlaxoSmithkline Consumer Healthcare Ltd.*,ind_prs28082019
+niftymidcap150,2019-09-27,out,JMFINANCIL,JMFINANCIL,JM Financial Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,KIOCL,KIOCL,KIOCL Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,PFC,PFC,Power Finance Corporation Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,PNB,PNB,Punjab National Bank,ind_prs28082019
+niftymidcap150,2019-09-27,out,RELCAPITAL,RELCAPITAL,Reliance Capital Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,RELINFRA,RELINFRA,Reliance Infrastructure Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,RPOWER,RPOWER,Reliance Power Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,SPARC,SPARC,Sun Pharma Advanced Research Company Ltd.,ind_prs28082019
+niftymidcap150,2019-09-27,out,THOMASCOOK,THOMASCOOK,Thomas Cook (India) Ltd.,ind_prs17092019
+niftymidcap150,2019-12-27,in,AARTIIND,AARTIIND,Aarti Industries Ltd.,ind_prs16122019
+niftymidcap150,2019-12-27,in,LALPATHLAB,LALPATHLAB,Dr. Lal Path Labs Ltd.,ind_prs16122019
+niftymidcap150,2019-12-27,in,POLYCAB,POLYCAB,Polycab India Ltd.,ind_prs16122019
+niftymidcap150,2019-12-27,in,SCHAEFFLER,SCHAEFFLER,Schaeffler India Ltd.,ind_prs16122019
+niftymidcap150,2019-12-27,out,ALBK,ALBK,Allahabad Bank,ind_prs16122019
+niftymidcap150,2019-12-27,out,CORPBANK,CORPBANK,Corporation Bank,ind_prs16122019
+niftymidcap150,2019-12-27,out,ORIENTBANK,ORIENTBANK,Oriental Bank of Commerce,ind_prs16122019
+niftymidcap150,2019-12-27,out,TATACHEM,TATACHEM,Tata Chemicals Ltd.,ind_prs16122019
+niftymidcap150,2020-03-19,in,ADANIGREEN,ADANIGREEN,Adani Green Energy Ltd.,ind_prs16032020
+niftymidcap150,2020-03-19,out,ADANIENSOL,ADANITRANS,Adani Transmission Ltd.,ind_prs16032020
+niftymidcap150,2020-06-26,in,360ONE,IIFLWAM,IIFL Wealth Management Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,ABB,ABB,ABB India Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,ASHOKLEY,ASHOKLEY,Ashok Leyland Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,COFORGE,NIITTECH,NIIT Technologies Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,CREDITACC,CREDITACC,CreditAccess Grameen Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,IDEA,IDEA,Vodafone Idea Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,IRCTC,IRCTC,Corporation Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,JKCEMENT,JKCEMENT,J.K. Cement Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,JSWDULUX,AKZOINDIA,Akzo Nobel India Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,LTF,L&TFH,L&T Finance Holdings Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,NIACL,NIACL,The New India Assurance Company Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,SAMMAANCAP,IBULHSGFIN,Indiabulls Housing Finance Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,SUMICHEM,SUMICHEM,Sumitomo Chemical India Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,TATACOMM,TATACOMM,Tata Communications Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,in,UNOMINDA,MINDAIND,Minda Industries Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,ABBOTINDIA,ABBOTINDIA,Abbott India Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,CIEINDIA,MAHINDCIE,Mahindra CIE Automotive Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,ENGINERSIN,ENGINERSIN,Engineers India Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,FCONSUMER,FCONSUMER,Future Consumer Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,GRAPHITE,GRAPHITE,Graphite India Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,HEGAM,HEG,H.E.G. Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,IGL,IGL,Indraprastha Gas Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,INDIANB,INDIANB,Indian Bank,ind_prs10062020
+niftymidcap150,2020-06-26,out,KRBL,KRBL,KRBL Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,MUTHOOTFIN,MUTHOOTFIN,Muthoot Finance Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,NAUKRI,NAUKRI,Info Edge (India) Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,NBCC,NBCC,NBCC (India) Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,STLTECH,STRTECH,Sterlite Technologies Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,TORNTPHARM,TORNTPHARM,Torrent Pharmaceuticals Ltd.,ind_prs10062020
+niftymidcap150,2020-06-26,out,VARROC,VARROC,Varroc Engineering Ltd.,ind_prs10062020
+niftymidcap150,2020-09-25,in,ADANIENT,ADANIENT,Adani Enterprises Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,ASTRAZEN,ASTRAZEN,AstraZenca Pharma India Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,ITI,ITI,ITI Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,JMFINANCIL,JMFINANCIL,JM Financial Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,METROPOLIS,METROPOLIS,Metropolis Healthcare Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,NAVINFLUOR,NAVINFLUOR,Navin Fluorine International Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,NHPC,NHPC,NHPC Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,PAGEIND,PAGEIND,Page Industries Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,SFL,SFL,Sheela Foam Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,SHRIRAMFIN,SRTRANSFIN,Shriram Transport Finance Co. Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,TATACHEM,TATACHEM,Tata Chemicals Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,TIINDIA,TIINDIA,Tube Investments of India Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,YESBANK,YESBANK,Yes Bank Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,ZEEL,ZEEL,Zee Entertainment Enterprises Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,in,ZYDUSWELL,ZYDUSWELL,Zydus Wellness Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,ADANIGREEN,ADANIGREEN,Adani Green Energy Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,ADANIPOWER,ADANIPOWER,Adani Power Ltd.*,ind_prs20082020
+niftymidcap150,2020-09-25,out,ALKEM,ALKEM,Alkem Laboratories Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,BLUEDART,BLUEDART,Blue Dart Express Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,CENTRALBK,CENTRALBK,Central Bank of India,ind_prs20082020
+niftymidcap150,2020-09-25,out,EIHOTEL,EIHOTEL,EIH Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,HEXAWARE,HEXAWARE,Hexaware Technologies Ltd.*,ind_prs20082020
+niftymidcap150,2020-09-25,out,IDBI,IDBI,IDBI Bank Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,IOB,IOB,Indian Overseas Bank,ind_prs20082020
+niftymidcap150,2020-09-25,out,JUBLPHARMA,JUBILANT,Jubilant Life Sciences Ltd.#,ind_prs20082020
+niftymidcap150,2020-09-25,out,LTM,LTI,Larsen & Toubro Infotech Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,PNBHOUSING,PNBHOUSING,PNB Housing Finance Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,QUESS,QUESS,Quess Corp Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,TATACONSUM,TATACONSUM,Tata Consumer Products Ltd.,ind_prs20082020
+niftymidcap150,2020-09-25,out,UCOBANK,UCOBANK,UCO Bank,ind_prs20082020
+niftymidcap150,2021-03-31,in,BANKBARODA,BANKBARODA,Bank of Baroda,ind_prs23022021
+niftymidcap150,2021-03-31,in,COHANCE,SUVENPHAR,Suven Pharmaceuticals Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,CONCOR,CONCOR,Container Corporation of India Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,DEEPAKNTR,DEEPAKNTR,Deepak Nitrite Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,DIXON,DIXON,Dixon Technologies (India) Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,GICRE,GICRE,General Insurance Corporation of India,ind_prs23022021
+niftymidcap150,2021-03-31,in,HINDZINC,HINDZINC,Hindustan Zinc Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,IDBI,IDBI,IDBI Bank Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,INDIAMART,INDIAMART,Indiamart Intermesh Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,LAURUSLABS,LAURUSLABS,Laurus Labs Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,MAXHEALTH,MAXHEALTH,Max Healthcare Institute Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,OFSS,OFSS,Oracle Financial Services Software Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,PERSISTENT,PERSISTENT,Persistent Systems Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,PFC,PFC,Power Finance Corporation Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,PGHL,PGHL,Procter & Gamble Health Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,in,TATAELXSI,TATAELXSI,Tata Elxsi Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,ADANIENT,ADANIENT,Adani Enterprises Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,APOLLOHOSP,APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,EDELWEISS,EDELWEISS,Edelweiss Financial Services Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,ERIS,ERIS,Eris Lifesciences Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,FRETAIL,FRETAIL,Future Retail Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,HUDCO,HUDCO,Housing & Urban Development Corporation Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,JUBLFOOD,JUBLFOOD,Jubilant Foodworks Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,MRF,MRF,MRF Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,MRPL,MRPL,Mangalore Refinery & Petrochemicals Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,NATIONALUM,NATIONALUM,National Aluminium Co. Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,NLCINDIA,NLCINDIA,NLC India Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,SFL,SFL,Sheela Foam Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,SHRIRAMCIT,SHRIRAMCIT,Shriram City Union Finance Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,SYMPHONY,SYMPHONY,Symphony Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,YESBANK,YESBANK,Yes Bank Ltd.,ind_prs23022021
+niftymidcap150,2021-03-31,out,ZFCVINDIA,WABCOINDIA,WABCO India Ltd.,ind_prs23022021
+niftymidcap150,2021-09-30,in,ABBOTINDIA,ABBOTINDIA,Abbott India Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,AFFLE,AFFLE,Affle (India) Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,ALKEM,ALKEM,Alkem Laboratories Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,ALKYLAMINE,ALKYLAMINE,Alkyl Amines Chemicals Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,APLAPOLLO,APLAPOLLO,APL Apollo Tubes Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,BLUEDART,BLUEDART,Blue Dart Express Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,HINDCOPPER,HINDCOPPER,Hindustan Copper Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,INDIANB,INDIANB,Indian Bank,ind_prs15092021
+niftymidcap150,2021-09-30,in,IRFC,IRFC,Indian Railway Finance Corporation Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,KAJARIACER,KAJARIACER,Kajaria Ceramics Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,LINDEINDIA,LINDEINDIA,Linde India Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,LODHA,LODHA,Macrotech Developers Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,MRF,MRF,MRF Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,NATIONALUM,NATIONALUM,National Aluminium Co. Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,PETRONET,PETRONET,Petronet LNG Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,UBL,UBL,United Breweries Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,VAIBHAVGBL,VAIBHAVGBL,Vaibhav Global Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,in,ZFCVINDIA,WABCOINDIA,WABCO India Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,360ONE,IIFLWAM,IIFL Wealth Management Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,ASTRAZEN,ASTRAZEN,AstraZenca Pharma India Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,BANKBARODA,BANKBARODA,Bank of Baroda,ind_prs15092021
+niftymidcap150,2021-09-30,out,BBTC,BBTC,Bombay Burmah Trading Corporation Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,CESC,CESC,CESC Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,CHOLAFIN,CHOLAFIN,Cholamandalam Investment and Finance Co. Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,CREDITACC,CREDITACC,CreditAccess Grameen Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,GODREJAGRO,GODREJAGRO,Godrej Agrovet Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,IDBI,IDBI,IDBI Bank Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,JINDALSTEL,JINDALSTEL,Jindal Steel & Power Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,JMFINANCIL,JMFINANCIL,JM Financial Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,JSWDULUX,AKZOINDIA,Akzo Nobel India Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,PGHL,PGHL,Procter & Gamble Health Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,PIIND,PIIND,PI Industries Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,SAIL,SAIL,Steel Authority of India Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,SAMMAANCAP,IBULHSGFIN,Indiabulls Housing Finance Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,SJVN,SJVN,SJVN Ltd.,ind_prs15092021
+niftymidcap150,2021-09-30,out,VGUARD,VGUARD,V-Guard Industries Ltd.,ind_prs15092021
+niftymidcap150,2021-10-29,in,SONACOMS,SONACOMS,Sona BLW Precision Forgings Ltd.,ind_prs22102021
+niftymidcap150,2021-10-29,out,GMRAIRPORT,GMRINFRA,GMR Infrastructure Ltd.,ind_prs22102021
+niftymidcap150,2022-03-31,in,AUROPHARMA,AUROPHARMA,Aurobindo Pharma Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,CGPOWER,CGPOWER,CG Power and Industrial Solutions Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,CLEAN,CLEAN,Clean Science and Technology Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,FLUOROCHEM,FLUOROCHEM,Gujarat Fluorochemicals Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,GRINDWELL,GRINDWELL,Grindwell Norton Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,HAPPSTMNDS,HAPPSTMNDS,Happiest Minds Technologies Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,HINDPETRO,HINDPETRO,Hindustan Petroleum Corporation Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,IDBI,IDBI,IDBI Bank Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,IEX,IEX,Indian Energy Exchange Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,IGL,IGL,Indraprastha Gas Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,JINDALSTEL,JINDALSTEL,Jindal Steel & Power Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,NUVOCO,NUVOCO,Nuvoco Vistas Corporation Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,POLICYBZR,POLICYBZR,PB Fintech Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,STARHEALTH,STARHEALTH,Star Health and Allied Insurance Company Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,TRIDENT,TRIDENT,Trident Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,TTML,TTML,Tata Teleservices (Maharashtra) Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,in,YESBANK,YESBANK,Yes Bank Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,ARE&M,AMARAJABAT,Amara Raja Batteries Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,CASTROLIND,CASTROLIND,Castrol India Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,CHOLAHLDNG,CHOLAHLDNG,Cholamandalam Financial Holdings Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,COHANCE,SUVENPHAR,Suven Pharmaceuticals Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,CUB,CUB,City Union Bank Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,DHANI,DHANI,Dhani Services Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,GILLETTE,GILLETTE,Gillette India Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,HINDCOPPER,HINDCOPPER,Hindustan Copper Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,ITI,ITI,ITI Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,MGL,MGL,Mahanagar Gas Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,MINDTREE,MINDTREE,MindTree Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,MOTILALOFS,MOTILALOFS,Motilal Oswal Financial Services Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,RBLBANK,RBLBANK,RBL Bank Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,SRF,SRF,SRF Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,TTKPRESTIG,TTKPRESTIG,TTK Prestige Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,VAIBHAVGBL,VAIBHAVGBL,Vaibhav Global Ltd.,ind_prs24022022_1
+niftymidcap150,2022-03-31,out,ZYDUSWELL,ZYDUSWELL,Zydus Wellness Ltd.,ind_prs24022022_1
+niftymidcap150,2022-05-04,in,GMRAIRPORT,GMRINFRA,GMR Infrastructure Ltd.,ind_prs05042022
+niftymidcap150,2022-05-04,out,AARTIIND,AARTIIND,Aarti Industries Ltd.,ind_prs05042022
+niftymidcap150,2022-08-08,in,DELHIVERY,DELHIVERY,Delhivery Ltd.,ind_prs11072022
+niftymidcap150,2022-08-08,out,TATAPOWER,TATAPOWER,Tata Power Co. Ltd.*,ind_prs11072022
+niftymidcap150,2022-09-30,in,AWL,AWL,Adani Wilmar Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,DEVYANI,DEVYANI,Devyani International Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,JUBLFOOD,JUBLFOOD,Jubilant Foodworks Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,KPRMILL,KPRMILL,K.P.R. Mill Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,LUPIN,LUPIN,Lupin Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,MANYAVAR,MANYAVAR,Vedant Fashions Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,MSUMI,MSUMI,Motherson Sumi Wiring India Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,PATANJALI,PATANJALI,Patanjali Foods Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,PNB,PNB,Punjab National Bank,ind_prs01092022
+niftymidcap150,2022-09-30,in,POONAWALLA,POONAWALLA,Poonawalla Fincorp Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,SAIL,SAIL,Steel Authority of India Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,in,ZYDUSLIFE,ZYDUSLIFE,Zydus Lifesciences Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,APOLLOTYRE,APOLLOTYRE,Apollo Tyres Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,ATGL,ATGL,Adani Total Gas Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,BEL,BEL,Bharat Electronics Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,EXIDEIND,EXIDEIND,Exide Industries Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,GLENMARK,GLENMARK,Glenmark Pharmaceuticals Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,HAL,HAL,Hindustan Aeronautics Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,IDBI,IDBI,IDBI Bank Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,IRCTC,IRCTC,Indian Railway Catering and Tourism Corporation Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,MANAPPURAM,MANAPPURAM,Manappuram Finance Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,METROPOLIS,METROPOLIS,Metropolis Healthcare Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,MPHASIS,MPHASIS,MphasiS Ltd.,ind_prs01092022
+niftymidcap150,2022-09-30,out,NUVOCO,NUVOCO,Nuvoco Vistas Corporation Ltd.,ind_prs01092022
+niftymidcap150,2023-03-31,in,AARTIIND,AARTIIND,Aarti Industries Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,ADANIPOWER,ADANIPOWER,Adani Power Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,APOLLOTYRE,APOLLOTYRE,Apollo Tyres Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,BANDHANBNK,BANDHANBNK,Bandhan Bank Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,BIOCON,BIOCON,Biocon Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,FINEORG,FINEORG,Fine Organic Industries Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,GLAND,GLAND,Gland Pharma Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,METROBRAND,METROBRAND,Metro Brands Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,MPHASIS,MPHASIS,MphasiS Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,NMDC,NMDC,NMDC Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,PAYTM,PAYTM,One 97 Communications Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,PEL,PEL,Piramal Enterprises Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,in,TIMKEN,TIMKEN,Timken India Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,ABB,ABB,ABB India Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,APLLTD,APLLTD,Alembic Pharmaceuticals Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,AWL,AWL,Adani Wilmar Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,CANBK,CANBK,Canara Bank,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,GSPL,GSPL,Gujarat State Petronet Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,HATSUN,HATSUN,Hatsun Agro Product Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,IEX,IEX,Indian Energy Exchange Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,INDIAMART,INDIAMART,Indiamart Intermesh Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,NATCOPHARM,NATCOPHARM,NATCO Pharma Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,NATIONALUM,NATIONALUM,National Aluminium Co. Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,PAGEIND,PAGEIND,Page Industries Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,SANOFI,SANOFI,Sanofi India Ltd.,ind_prs17022023_1
+niftymidcap150,2023-03-31,out,VBL,VBL,Varun Beverages Ltd.,ind_prs17022023_1
+niftymidcap150,2023-07-13,in,MANKIND,MANKIND,Mankind Pharma Ltd.,ind_prs04072023
+niftymidcap150,2023-07-13,out,JINDALSTEL,JINDALSTEL,Jindal Steel & Power Ltd.*,ind_prs04072023
+niftymidcap150,2023-09-29,in,ACC,ACC,ACC Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,BDL,BDL,Bharat Dynamics Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,CARBORUNIV,CARBORUNIV,Carborundum Universal Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,FACT,FACT,Fertilisers and Chemicals Travancore Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,HDFCAMC,HDFCAMC,HDFC Asset Management Company Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,INDUSTOWER,INDUSTOWER,Indus Towers Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,JSL,JSL,Jindal Stainless Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,KPITTECH,KPITTECH,KPIT Technologies Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,MAHABANK,MAHABANK,Bank of Maharashtra,ind_prs17082023
+niftymidcap150,2023-09-29,in,MAZDOCK,MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,NYKAA,NYKAA,FSN E-Commerce Ventures Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,PAGEIND,PAGEIND,Page Industries Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,in,RVNL,RVNL,Rail Vikas Nigam Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,AAVAS,AAVAS,Aavas Financiers Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,AFFLE,AFFLE,Affle (India) Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,ALKYLAMINE,ALKYLAMINE,Alkyl Amines Chemicals Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,CLEAN,CLEAN,Clean Science and Technology Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,FINEORG,FINEORG,Fine Organic Industries Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,HAPPSTMNDS,HAPPSTMNDS,Happiest Minds Technologies Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,NAM-INDIA,NAM-INDIA,Nippon Life India Asset Management Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,PNB,PNB,Punjab National Bank,ind_prs17082023
+niftymidcap150,2023-09-29,out,SHRIRAMFIN,SHRIRAMFIN,Shriram Finance Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,TRENT,TRENT,Trent Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,TTML,TTML,Tata Teleservices (Maharashtra) Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,TVSMOTOR,TVSMOTOR,TVS Motor Company Ltd.,ind_prs17082023
+niftymidcap150,2023-09-29,out,ZYDUSLIFE,ZYDUSLIFE,Zydus Lifesciences Ltd.,ind_prs17082023
+niftymidcap150,2024-03-28,in,AWL,AWL,Adani Wilmar Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,BSE,BSE,BSE Ltd.,ind_prs19032024
+niftymidcap150,2024-03-28,in,IDBI,IDBI,IDBI Bank Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,JSWINFRA,JSWINFRA,JSW Infrastructure Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,KALYANKJIL,KALYANKJIL,Kalyan Jewellers India Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,KEI,KEI,KEI Industries Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,LLOYDSME,LLOYDSME,Lloyds Metals And Energy Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,MUTHOOTFIN,MUTHOOTFIN,Muthoot Finance Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,PGHH,PGHH,Procter & Gamble Hygiene & Health Care Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,PIIND,PIIND,PI Industries Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,SJVN,SJVN,SJVN Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,SUZLON,SUZLON,Suzlon Energy Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,TATATECH,TATATECH,Tata Technologies Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,in,UPL,UPL,UPL Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,AARTIIND,AARTIIND,Aarti Industries Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,ADANIPOWER,ADANIPOWER,Adani Power Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,BLUEDART,BLUEDART,Blue Dart Express Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,CROMPTON,CROMPTON,Crompton Greaves Consumer Electricals Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,IRFC,IRFC,Indian Railway Finance Corporation Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,NAVINFLUOR,NAVINFLUOR,Navin Fluorine International Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,PFC,PFC,Power Finance Corporation Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,PFIZER,PFIZER,Pfizer Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,RAJESHEXPO,RAJESHEXPO,Rajesh Exports Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,RECLTD,RECLTD,REC Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,RELAXO,RELAXO,Relaxo Footwears Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,TRIDENT,TRIDENT,Trident Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,VINATIORGA,VINATIORGA,Vinati Organics Ltd.,ind_prs28022024
+niftymidcap150,2024-03-28,out,WHIRLPOOL,WHIRLPOOL,Whirlpool of India Ltd.,ind_prs28022024
+niftymidcap150,2024-09-30,in,BERGEPAINT,BERGEPAINT,Berger Paints India Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,BHARTIHEXA,BHARTIHEXA,Bharti Hexacom Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,COCHINSHIP,COCHINSHIP,Cochin Shipyard Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,COLPAL,COLPAL,Colgate Palmolive (India) Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,EXIDEIND,EXIDEIND,Exide Industries Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,HUDCO,HUDCO,Housing & Urban Development Corporation Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,IOB,IOB,Indian Overseas Bank,ind_prs23082024
+niftymidcap150,2024-09-30,in,IRB,IRB,IRB Infrastructure Developers Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,IREDA,IREDA,Indian Renewable Energy Development Agency Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,MARICO,MARICO,Marico Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,MEDANTA,MEDANTA,Global Health Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,MRPL,MRPL,Mangalore Refinery & Petrochemicals Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,NAM-INDIA,NAM-INDIA,Nippon Life India Asset Management Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,NLCINDIA,NLCINDIA,NLC India Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,POWERINDIA,POWERINDIA,Hitachi Energy India Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,SBICARD,SBICARD,SBI Cards and Payment Services Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,SRF,SRF,SRF Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,in,TATAINVEST,TATAINVEST,Tata Investment Corporation Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,ATUL,ATUL,Atul Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,BATAINDIA,BATAINDIA,Bata India Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,BHEL,BHEL,Bharat Heavy Electricals Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,DEVYANI,DEVYANI,Devyani International Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,ISEC,ISEC,ICICI Securities Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,JSWENERGY,JSWENERGY,JSW Energy Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,KAJARIACER,KAJARIACER,Kajaria Ceramics Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,KANSAINER,KANSAINER,Kansai Nerolac Paints Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,LALPATHLAB,LALPATHLAB,Dr. Lal Path Labs Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,LAURUSLABS,LAURUSLABS,Laurus Labs Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,LODHA,LODHA,Macrotech Developers Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,MANYAVAR,MANYAVAR,Vedant Fashions Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,NHPC,NHPC,NHPC Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,PEL,PEL,Piramal Enterprises Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,RAMCOCEM,RAMCOCEM,The Ramco Cements Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,SUMICHEM,SUMICHEM,Sumitomo Chemical India Ltd.,ind_prs23082024
+niftymidcap150,2024-09-30,out,UNIONBANK,UNIONBANK,Union Bank of India,ind_prs23082024
+niftymidcap150,2024-09-30,out,ZEEL,ZEEL,Zee Entertainment Enterprises Ltd.,ind_prs23082024
+niftymidcap150,2025-03-28,in,360ONE,360ONE,360 ONE WAM Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,APARINDS,APARINDS,Apar Industries Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,ATGL,ATGL,Adani Total Gas Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,BHEL,BHEL,Bharat Heavy Electricals Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,BLUESTARCO,BLUESTARCO,Blue Star Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,GLENMARK,GLENMARK,Glenmark Pharmaceuticals Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,GVT&D,GVT&D,GE Vernova T&D India Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,IRCTC,IRCTC,Indian Railway Catering and Tourism Corporation Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,MOTILALOFS,MOTILALOFS,Motilal Oswal Financial Services Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,NATIONALUM,NATIONALUM,National Aluminium Co. Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,NHPC,NHPC,NHPC Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,NTPCGREEN,NTPCGREEN,NTPC Green Energy Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,OLAELEC,OLAELEC,Ola Electric Mobility Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,PREMIERENE,PREMIERENE,Premier Energies Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,UNIONBANK,UNIONBANK,Union Bank of India,ind_prs21022025
+niftymidcap150,2025-03-28,in,VMM,VMM,Vishal Mega Mart Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,in,WAAREEENER,WAAREEENER,Waaree Energies Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,BAYERCROP,BAYERCROP,Bayer Cropscience Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,CARBORUNIV,CARBORUNIV,Carborundum Universal Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,CGPOWER,CGPOWER,CG Power and Industrial Solutions Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,DELHIVERY,DELHIVERY,Delhivery Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,FACT,FACT,Fertilisers and Chemicals Travancore Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,GRINDWELL,GRINDWELL,Grindwell Norton Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,IDBI,IDBI,IDBI Bank Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,INDHOTEL,INDHOTEL,Indian Hotels Co. Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,IOB,IOB,Indian Overseas Bank,ind_prs21022025
+niftymidcap150,2025-03-28,out,METROBRAND,METROBRAND,Metro Brands Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,PGHH,PGHH,Procter & Gamble Hygiene & Health Care Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,POONAWALLA,POONAWALLA,Poonawalla Fincorp Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,SKFINDIA,SKFINDIA,SKF India Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,SUNDRMFAST,SUNDRMFAST,Sundram Fasteners Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,TATACHEM,TATACHEM,Tata Chemicals Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,TIMKEN,TIMKEN,Timken India Ltd.,ind_prs21022025
+niftymidcap150,2025-03-28,out,ZFCVINDIA,ZFCVINDIA,ZF Commercial Vehicle Control Systems India Ltd.,ind_prs21022025
+niftymidcap150,2025-09-30,in,DABUR,DABUR,Dabur India Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,FACT,FACT,Fertilisers and Chemicals Travancore Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,GODFRYPHLP,GODFRYPHLP,Godfrey Phillips India Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,HEROMOTOCO,HEROMOTOCO,Hero MotoCorp Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,HEXT,HEXT,Hexaware Technologies Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,ICICIPRULI,ICICIPRULI,ICICI Prudential Life Insurance Company Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,IDBI,IDBI,IDBI Bank Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,INDUSINDBK,INDUSINDBK,IndusInd Bank Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,IOB,IOB,Indian Overseas Bank,ind_prs22082025
+niftymidcap150,2025-09-30,in,ITCHOTELS,ITCHOTELS,ITC Hotels Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,PGHH,PGHH,Procter & Gamble Hygiene & Health Care Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,SWIGGY,SWIGGY,Swiggy Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,in,UCOBANK,UCOBANK,UCO Bank,ind_prs22082025
+niftymidcap150,2025-09-30,out,ABFRL,ABFRL,Aditya Birla Fashion and Retail Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,BANDHANBNK,BANDHANBNK,Bandhan Bank Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,EMAMILTD,EMAMILTD,Emami Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,GLAND,GLAND,Gland Pharma Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,HINDZINC,HINDZINC,Hindustan Zinc Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,MAXHEALTH,MAXHEALTH,Max Healthcare Institute Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,MAZDOCK,MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,MRPL,MRPL,Mangalore Refinery & Petrochemicals Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,MSUMI,MSUMI,Motherson Sumi Wiring India Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,OLAELEC,OLAELEC,Ola Electric Mobility Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,SOLARINDS,SOLARINDS,Solar Industries India Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,STARHEALTH,STARHEALTH,Star Health and Allied Insurance Company Ltd.,ind_prs22082025
+niftymidcap150,2025-09-30,out,SUNTV,SUNTV,Sun TV Network Ltd.,ind_prs22082025
+niftymidcap150,2026-03-30,in,AIIL,AIIL,Authum Investment & Infrastructure Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,ANTHEM,ANTHEM,Anthem Biosciences Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,BAJAJHFL,BAJAJHFL,Bajaj Housing Finance Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,GROWW,GROWW,Billionbrains Garage Ventures Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,HAVELLS,HAVELLS,Havells India Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,HDBFS,HDBFS,HDB Financial Services Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,ICICIAMC,ICICIAMC,Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,ICICIGI,ICICIGI,ICICI Lombard General Insurance Company Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,JSWENERGY,JSWENERGY,JSW Energy Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,LAURUSLABS,LAURUSLABS,Laurus Labs Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,LENSKART,LENSKART,Lenskart Solutions Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,LGEINDIA,LGEINDIA,LG Electronics India Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,LICI,LICI,Life Insurance Corporation of India,ind_prs23022026
+niftymidcap150,2026-03-30,in,MCX,MCX,Multi Commodity Exchange of India Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,NAUKRI,NAUKRI,Info Edge (India) Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,in,RADICO,RADICO,Radico Khaitan Ltd,ind_prs23022026
+niftymidcap150,2026-03-30,out,CUMMINSIND,CUMMINSIND,Cummins India Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,DEEPAKNTR,DEEPAKNTR,Deepak Nitrite Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,FACT,FACT,Fertilisers and Chemicals Travancore Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,GUJENERGY,GUJGASLTD,Gujarat Gas Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,HDFCAMC,HDFCAMC,HDFC Asset Management Company Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,IDBI,IDBI,IDBI Bank Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,IGL,IGL,Indraprastha Gas Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,IOB,IOB,Indian Overseas Bank,ind_prs23022026
+niftymidcap150,2026-03-30,out,IRB,IRB,IRB Infrastructure Developers Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,MUTHOOTFIN,MUTHOOTFIN,Muthoot Finance Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,PGHH,PGHH,Procter & Gamble Hygiene & Health Care Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,SONACOMS,SONACOMS,Sona BLW Precision Forgings Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,SYNGENE,SYNGENE,Syngene International Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,TATATECH,TATATECH,Tata Technologies Ltd.,ind_prs23022026
+niftymidcap150,2026-03-30,out,UCOBANK,UCOBANK,UCO Bank,ind_prs23022026
+niftymidcap150,2026-03-30,out,UNIONBANK,UNIONBANK,Union Bank of India,ind_prs23022026
+niftymidcap150,2026-09-30,in,ASTERDM,ASTERDM,Aster DM Quality Care Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,EMBASSY,EMBASSY,Embassy Office Parks REIT,ind_prs10082026
+niftymidcap150,2026-09-30,in,FACT,FACT,Fertilisers and Chemicals Travancore Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,HINDCOPPER,HINDCOPPER,Hindustan Copper Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,INDHOTEL,INDHOTEL,Indian Hotels Co. Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,IOB,IOB,Indian Overseas Bank,ind_prs10082026
+niftymidcap150,2026-09-30,in,LODHA,LODHA,Lodha Developers Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,MEESHO,MEESHO,Meesho Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,NH,NH,Narayana Hrudayalaya Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,PIRAMALFIN,PIRAMALFIN,Piramal Finance Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,RECLTD,RECLTD,REC Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,SHREECEM,SHREECEM,Shree Cement Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,in,UNITDSPR,UNITDSPR,United Spirits Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,3MINDIA,3MINDIA,3M India Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,ACC,ACC,ACC Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,APOLLOTYRE,APOLLOTYRE,Apollo Tyres Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,AWL,AWL,AWL Agri Business Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,BSE,BSE,BSE Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,HONAUT,HONAUT,Honeywell Automation India Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,IDEA,IDEA,Vodafone Idea Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,KPITTECH,KPITTECH,KPIT Technologies Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,NIACL,NIACL,The New India Assurance Company Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,POLYCAB,POLYCAB,Polycab India Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,POWERINDIA,POWERINDIA,Hitachi Energy India Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,SJVN,SJVN,SJVN Ltd.,ind_prs10082026
+niftymidcap150,2026-09-30,out,TATAELXSI,TATAELXSI,Tata Elxsi Ltd.,ind_prs10082026

@@ -1,0 +1,53 @@
+{
+ "_comment": "Hand-checked corporate-action inputs for research/py/nse_build.py prices. 'drop' removes a parsed NSE record (symbol, ex, kind, why); 'add' adds one NSE's records miss (symbol, ex, kind, det, why; a demerger may carry det.factor); 'real_moves' records large daily moves left in the adjusted series that are genuine trading, with the evidence.",
+ "drop": [],
+ "add": [
+  {
+   "symbol": "SUNTV",
+   "ex": "2007-07-23",
+   "kind": "split",
+   "det": {
+    "from": 10,
+    "to": 5
+   },
+   "why": "NSE's record reads 'Agm/Spl/Bon-1:1/Div-20%': a split with no ratio plus a 1:1 bonus. The record's face value is Rs 5 (Rs 10 before), and the raw price fell 75% that day, which the bonus alone (50%) does not explain."
+  }
+ ],
+ "real_moves": [
+  {
+   "symbol": "SATYAMCOMP",
+   "date": "2009-01-09",
+   "why": "Satyam's chairman disclosed the accounting fraud on 2009-01-07; the stock fell 78% on the 7th and kept falling. Intraday on heavy volume."
+  },
+  {
+   "symbol": "SATYAMCOMP",
+   "date": "2009-01-12",
+   "why": "Rebound after the government moved to replace Satyam's board (2009-01-09 evening)."
+  },
+  {
+   "symbol": "JPASSOCIAT",
+   "date": "2009-05-18",
+   "why": "2009-05-18 general-election result day: the whole market hit its upper circuit and trading was halted (Nifty +17.7%)."
+  },
+  {
+   "symbol": "RELCAPITAL",
+   "date": "2009-05-18",
+   "why": "2009-05-18 general-election result day, market-wide upper circuit."
+  },
+  {
+   "symbol": "RPL",
+   "date": "2009-05-18",
+   "why": "2009-05-18 general-election result day, market-wide upper circuit."
+  },
+  {
+   "symbol": "ISEC",
+   "date": "2020-03-23",
+   "why": "COVID crash: Nifty 50 fell 12.98% on 2020-03-23; ISEC closed at its 20% lower circuit."
+  },
+  {
+   "symbol": "ITI",
+   "date": "2020-04-13",
+   "why": "Closed at its 20% upper circuit (close equals high, 3.4 times the previous day's volume); no corporate action that month."
+  }
+ ]
+}

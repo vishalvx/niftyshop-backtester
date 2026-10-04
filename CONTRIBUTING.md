@@ -6,13 +6,13 @@ We welcome contributions to improve the backtester's performance, indicators, an
 
 ### Prerequisites
 * Go 1.24 or higher installed.
-* Python 3 and `curl` (for downloading data and the Python reference simulator).
+* Python 3 and `curl` (for downloading data and the Python reference simulator), and poppler's `pdftotext` for the NSE press releases.
 
 ### Run the Backtester
 1. Download price and index data into `.research-data/` as described in the [README](README.md#download-data).
 2. Run a backtest with the research CLI:
    ```bash
-   go run ./cmd/research score -universe nifty50 -start 2008-02-01 -end 2025-08-31 -lag 1 -variants nsx
+   go run ./cmd/research score -universe nifty50 -start 2008-02-01 -end 2026-09-30 -variants nsx
    ```
 3. Regenerate the long-run study tables:
    ```bash
@@ -24,6 +24,7 @@ We welcome contributions to improve the backtester's performance, indicators, an
 Make sure all unit tests pass before submitting changes:
 ```bash
 go test ./...
+python3 -m unittest research/py/test_nse_build.py
 ```
 
 ## Pull Request Guidelines

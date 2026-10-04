@@ -113,3 +113,138 @@ func panel_opts(dir, weights, alias, quarantineDate string) Options {
 		Quarantine: map[string]string{"QQQ.NS": quarantineDate},
 		Adjust:     map[string][]Adj{"ADJ.NS": {{Date: time.Date(2020, 1, 1, 0, 0, 0, 0, time.UTC).AddDate(0, 0, 41).Format("2006-01-02"), Factor: 0.5}}}}
 }
+
+func TestSpellMembership(t *testing.T) {
+	dir := t.TempDir()
+	w := filepath.Join(dir, "m.csv")
+	os.WriteFile(w, []byte("symbol,from,to,added_by,removed_by\nAAA,2020-01-01,2020-03-30,start,r1\nAAA,2020-06-29,,r2,\nBBB,2020-03-30,,r1,\n"), 0o644)
+	m, err := LoadMembership(w)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !m.Exact() {
+		t.Fatal("a symbol,from,to file must load as exact spells")
+	}
+	d := func(s string) time.Time { x, _ := time.Parse("2006-01-02", s); return x }
+	cases := []struct {
+		sym, date string
+		want      bool
+	}{
+		{"AAA", "2019-12-31", false}, // before the list starts
+		{"AAA", "2020-01-01", true},  // first day of a spell counts
+		{"AAA", "2020-03-27", true},
+		{"AAA", "2020-03-30", false}, // `to` is exclusive: the replacement takes effect that day
+		{"BBB", "2020-03-30", true},
+		{"AAA", "2020-06-29", true}, // rejoined, open-ended
+		{"AAA", "2026-01-01", true},
+	}
+	for _, c := range cases {
+		if got := m.IsMember(c.sym, d(c.date), 0); got != c.want {
+			t.Errorf("%s on %s: got %v want %v", c.sym, c.date, got, c.want)
+		}
+	}
+	if got := m.Members(d("2020-04-01"), 0); len(got) != 1 || got[0] != "BBB" {
+		t.Errorf("members on 2020-04-01: %v", got)
+	}
+	os.WriteFile(w, []byte("symbol,from,to\nAAA,2020-03-30,2020-03-30\n"), 0o644)
+	if _, err := LoadMembership(w); err == nil {
+		t.Error("a spell that ends the day it starts must be rejected")
+	}
+}
+
+// nseFixture writes two always-traded stocks plus one that joins mid-way, and a spell file of a two-member index.
+func nseFixture(t *testing.T) (dir, members string) {
+	t.Helper()
+	dir = t.TempDir()
+	start := time.Date(2020, 1, 1, 0, 0, 0, 0, time.UTC)
+	flat := func(n int, base float64) []float64 {
+		out := make([]float64, n)
+		for i := range out {
+			out[i] = base
+		}
+		return out
+	}
+	writeBars(t, dir, "AAA", flat(80, 100), start)
+	writeBars(t, dir, "B&B", flat(80, 50), start) // '&' is stored as _and_ on disk
+	writeBars(t, dir, "CCC", flat(80, 20), start)
+	os.WriteFile(filepath.Join(dir, "AAA_div.csv"), []byte("Date,Dividend\n2020-03-02,2.5\n"), 0o644)
+	members = filepath.Join(dir, "m.csv")
+	os.WriteFile(members, []byte("symbol,from,to\nAAA,2020-01-01,\nB&B,2020-01-01,2020-03-02\nCCC,2020-03-02,\n"), 0o644)
+	os.Rename(filepath.Join(dir, "B&B.csv"), filepath.Join(dir, "B_and_B.csv"))
+	return dir, members
+}
+
+func nseOpts(dir, members string) Options {
+	return Options{DataDir: dir, WeightsFile: members, Universe: "test", Source: "nse", MAWindow: 20,
+		AliasFile: filepath.Join(dir, "none.json"), Check: &Check{Size: 2},
+		Start: time.Date(2020, 2, 3, 0, 0, 0, 0, time.UTC), End: time.Date(2020, 4, 10, 0, 0, 0, 0, time.UTC)}
+}
+
+func TestBuildNSESourcePassesChecks(t *testing.T) {
+	dir, members := nseFixture(t)
+	p, _, err := Build(nseOpts(dir, members))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if p.Series["B&B"] == nil || p.Series["B&B"].Source != "nse" || p.Series["AAA"].Ticker != "AAA" {
+		t.Fatalf("nse series not loaded under their own symbols: %+v", p.Series["B&B"])
+	}
+	if p.Series["AAA"].Div["2020-03-02"] != 2.5 {
+		t.Errorf("dividend file not read: %v", p.Series["AAA"].Div)
+	}
+	for _, d := range p.Days["2020-03-02"] {
+		if d.Symbol == "B&B" && d.IsConstituent {
+			t.Error("B&B left on 2020-03-02 but is still a constituent that day")
+		}
+		if d.Symbol == "CCC" && !d.IsConstituent {
+			t.Error("CCC joined on 2020-03-02 but is not a constituent that day")
+		}
+	}
+}
+
+func TestBuildChecksFailTheRun(t *testing.T) {
+	cases := []struct {
+		name  string
+		edit  func(dir, members string, o *Options)
+		error string
+	}{
+		{"wrong member count", func(dir, members string, o *Options) { o.Check.Size = 3 }, "has 2 members, want 3"},
+		{"a dated exception is honoured", func(dir, members string, o *Options) {
+			o.Check.Size = 3
+			o.Check.Exceptions = []SizeException{{From: o.Start, To: o.End.AddDate(0, 0, 1), Size: 2}}
+		}, ""},
+		{"member without a price file", func(dir, members string, o *Options) { os.Remove(filepath.Join(dir, "CCC.csv")) }, "no price file"},
+		{"member without a bar on a trading day", func(dir, members string, o *Options) {
+			b, _ := os.ReadFile(filepath.Join(dir, "CCC.csv"))
+			lines := strings.Split(string(b), "\n")
+			var kept []string
+			for _, l := range lines {
+				if !strings.HasPrefix(l, "2020-03-10") {
+					kept = append(kept, l)
+				}
+			}
+			os.WriteFile(filepath.Join(dir, "CCC.csv"), []byte(strings.Join(kept, "\n")), 0o644)
+		}, "2020-03-10: member CCC has no price bar"},
+		{"lag on exact dates", func(dir, members string, o *Options) { o.MembershipLag = 1 }, "does not apply to exact membership dates"},
+		{"month snapshots", func(dir, members string, o *Options) {
+			os.WriteFile(members, []byte("DATE,AAA,CCC\n2020-01-31,1,1\n"), 0o644)
+		}, "need a membership-spell file"},
+	}
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			dir, members := nseFixture(t)
+			o := nseOpts(dir, members)
+			c.edit(dir, members, &o)
+			_, _, err := Build(o)
+			if c.error == "" {
+				if err != nil {
+					t.Fatalf("unexpected error: %v", err)
+				}
+				return
+			}
+			if err == nil || !strings.Contains(err.Error(), c.error) {
+				t.Fatalf("want error containing %q, got %v", c.error, err)
+			}
+		})
+	}
+}

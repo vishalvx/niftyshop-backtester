@@ -6,7 +6,8 @@ set -e
 R=${R:-/tmp/research_final}
 V="mom-plain-top10-6m,mom-plain-top20-6m-ma200,mom-plain-top10-1m-ma200,mom-plain-top20-1m,mom-nse-top10-6m-ma200,mom-nse-top20-6m,mom-nse-top10-1m,mom-nse-top20-1m-ma200"
 CASH6="mom-plain-top20-6m-ma200-cash6,mom-plain-top10-1m-ma200-cash6,mom-nse-top10-6m-ma200-cash6,mom-nse-top20-1m-ma200-cash6"
-W=(-universe nifty50 -start 2008-02-01 -end 2025-08-31 -lag 1)
+# The study ran on the month snapshots and Yahoo prices (universe nifty50yahoo); nifty50 now uses the official NSE data.
+W=(-universe nifty50yahoo -start 2008-02-01 -end 2025-08-31 -lag 1)
 FUND=(-fund NIFTY200_MOMENTUM_30 -fund-fee 0.002)
 O=research/out/momentum-n50
 mkdir -p $O/cash6
@@ -21,4 +22,4 @@ $R wfvariants $W -variants "$V" -trials 248 > $O/wf_trials248.md
 $R score $W -variants "$V" -stages cost,tax-dated,tax-today -out $O -log "" > $O/score.txt
 $R score $W -variants "$V" -stages tax-today -bench NIFTY200_MOMENTUM_30 -bench-fee 0.002 -out $O -log "" > $O/score_vs_fund.txt
 # Keep verdicts and the start-year table from the window CSV.
-python3 research/py/momentum_tables.py $O/lottery_nifty50_5y.csv $O/cash6/lottery_nifty50_5y.csv > $O/tables.md
+python3 research/py/momentum_tables.py $O/lottery_nifty50yahoo_5y.csv $O/cash6/lottery_nifty50yahoo_5y.csv > $O/tables.md

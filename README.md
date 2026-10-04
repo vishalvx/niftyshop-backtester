@@ -3,7 +3,7 @@
 A Go backtester for the mechanical **NiftyShop** mean-reversion equity strategy on Indian stock indices.
 
 ## Features
-* **Point-in-time index membership**: trades only stocks that were in the index that month, with an optional one-month lag (`-lag 1`) so no membership is known before it was published.
+* **Point-in-time index membership**: trades only stocks that were in the index on the day, from NSE's official lists with exact effective dates (Nifty 50 from 2008, Nifty Midcap 150 from 2016), priced from NSE's official daily prices including delisted and renamed members. A run stops if a day has the wrong member count or an unpriced member.
 * **Confirmed rule set**: the `nsx` and `nsx-lot` presets follow the rules the maintainer confirmed in October 2026 and are the baseline; other presets cover the written spec, exit variants and momentum rotations (`rotation-n50`, `mom-...`).
 * **Costs and tax**: dated Indian brokerage, STT, stamp duty and capital-gains tax, reported in stages (`gross`, `cost`, `tax-dated`, `tax-today`).
 * **Total-return benchmarks**: every result is compared with the index's total-return series (TRI), not its price series.
@@ -15,21 +15,36 @@ A Go backtester for the mechanical **NiftyShop** mean-reversion equity strategy 
 
 ### Prerequisites
 * Go 1.24.0 or higher.
-* Python 3 and `curl` (for downloading price and index data).
+* Python 3 and `curl` (for downloading price and index data), and poppler's `pdftotext` (`brew install poppler`) for the NSE press releases.
 
 ### Download data
-Prices and index series are not in the repository. Download them into `.research-data/` (gitignored):
+Prices and index series are not in the repository. Download them into `.research-data/` (gitignored).
+
+Official NSE data for the `nifty50` and `niftymidcap150` universes (about 400 MB, 20 to 40 minutes; on a Mac wrap it in `caffeinate -i` so the machine does not sleep):
+```bash
+python3 research/py/nse_fetch.py            # bhavcopies, corporate actions, press releases, constituent lists, archived lists
+python3 research/py/nse_build.py prices     # .research-data/nse/prices/<SYMBOL>.csv, checked for missed corporate actions
+python3 research/py/fetch_tri.py "NIFTY 50" "NIFTY MIDCAP 150"
+```
+`nse_build.py members` rebuilds the committed member lists from the same download; see [research/nse/README.md](research/nse/README.md).
+
+Yahoo data for the long-run study's `nifty50yahoo` and `nifty50static` universes:
 ```bash
 python3 research/py/fetch_yahoo.py $(tr '\n' ' ' < research/symbols_literal.txt) TMPV.NS LTF.NS UNITDSPR.NS INDUSTOWER.NS SAMMAANCAP.NS BAJAJ-AUTO.NS
 python3 research/py/fetch_tri.py "NIFTY 50" "NIFTY 500"
 ```
 
 ### Run a backtest
-Score the confirmed rules on the Nifty 50 from its first membership snapshot, against the Nifty 50 TRI:
+Score the confirmed rules on the Nifty 50 from its first tradable month, against the Nifty 50 TRI:
 ```bash
-go run ./cmd/research score -universe nifty50 -start 2008-02-01 -end 2025-08-31 -lag 1 -variants nsx,nsx-lot
+go run ./cmd/research score -universe nifty50 -start 2008-02-01 -end 2026-09-30 -variants nsx,nsx-lot
 ```
-`-universe` is `nifty50` (point-in-time members) or `nifty50static` (the August 2025 members held fixed, a survivorship-bias probe). Other subcommands (`lottery`, `jitter`, `wfvariants`, `sweep`, ...) are listed in [cmd/research/main.go](cmd/research/main.go).
+`-universe` is one of:
+* `nifty50` and `niftymidcap150`: point-in-time members with exact dates and official NSE prices. The run stops if any day has the wrong member count or a member without a price.
+* `nifty50yahoo`: the month snapshots and Yahoo prices the long-run study used (nine members never priced). Use it to reproduce the study or to measure what the data change moves.
+* `nifty50static`: the August 2025 Nifty 50 members held fixed, a survivorship-bias probe.
+
+Other subcommands (`lottery`, `jitter`, `wfvariants`, `sweep`, ...) are listed in [cmd/research/main.go](cmd/research/main.go).
 
 ### Reproduce the long-run study
 ```bash
