@@ -9,12 +9,11 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("usage: research <repro|...> [flags]")
+		fmt.Println("usage: research <score|run|lottery|...> [flags]")
 		os.Exit(2)
 	}
 	cmd := os.Args[1]
 	fs := flag.NewFlagSet(cmd, flag.ExitOnError)
-	legacy := fs.String("legacy-dir", "internal/data/stocks", "stale cache directory (repro only)")
 	data := fs.String("data", ".research-data/yahoo", "clean Yahoo directory")
 	cache := fs.String("cache", ".research-data/yahoo_cache", "fallback cache directory")
 	c := common{}
@@ -27,7 +26,7 @@ func main() {
 	fs.StringVar(&c.LogPath, "log", "research/out/experiment-log.jsonl", "experiment log")
 	fs.Float64Var(&c.Rf, "rf", 0.06, "annual risk-free rate for Sharpe/Sortino/alpha")
 	fs.StringVar(&c.Bench, "bench", "", "benchmark TRI file stem (default: the universe's own index), e.g. NIFTY_50")
-	variants := fs.String("variants", "legacy,cam-s1-5", "comma separated presets")
+	variants := fs.String("variants", "nsx,nsx-lot", "comma separated presets")
 	stages := fs.String("stages", "gross,cost,tax-dated,tax-today", "stages to run")
 	tuneFrom := fs.String("tune-from", "2008-01-01", "tuning window start")
 	tuneTo := fs.String("tune-to", "2016-12-31", "tuning window end")
@@ -51,8 +50,6 @@ func main() {
 		err = cmdSweepLottery(c, *config, *horizon, *stages)
 	case "sweep":
 		err = cmdSweep(c, *config, *stages)
-	case "grid":
-		err = cmdGrid(c, *horizon, *stages)
 	case "walkforward":
 		err = cmdWalkForward(c, *trainY, *testY, *score, *stages, *robust)
 	case "jitter":
@@ -75,8 +72,6 @@ func main() {
 		err = cmdScore(c, *variants, *divs, *stages, *export)
 	case "run":
 		err = cmdRun(c, *variants, *divs, *stages)
-	case "repro":
-		err = cmdRepro(*legacy, *data, *cache)
 	default:
 		err = fmt.Errorf("unknown command %q", cmd)
 	}

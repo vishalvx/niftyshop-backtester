@@ -79,10 +79,6 @@ type Options struct {
 	Quarantine    map[string]string // ticker -> first date (YYYY-MM-DD) from which data is trusted
 	Adjust        map[string][]Adj  // ticker -> hand adjustments (nil = DefaultAdjust, empty map = none)
 	ExtraSymbols  []string          // extra symbols to load even if not in weights file
-	// LegacyGlobDir reproduces internal/data.GetAllStock: every *.csv in the directory is read, the symbol is the file name
-	// up to the first '_', and for duplicate symbols the lexically LAST file silently wins. Used only to reproduce
-	// historical engine results; never for research runs.
-	LegacyGlobDir string
 }
 
 // DefaultQuarantine lists known unadjusted corporate-action breaks in Yahoo's Close series.
@@ -291,27 +287,8 @@ func Build(o Options) (*Panel, *Membership, error) {
 		}
 		src := "yahoo"
 		path := filepath.Join(o.DataDir, strings.ReplaceAll(ticker, "&", "_and_")+".csv")
-		var bars []Bar
-		var err error
-		if o.LegacyGlobDir != "" {
-			files, _ := filepath.Glob(filepath.Join(o.LegacyGlobDir, "*.csv"))
-			sort.Strings(files)
-			path = ""
-			for _, f := range files {
-				if strings.Split(filepath.Base(f), "_")[0] == sym+".NS" {
-					path = f // last wins, exactly like the engine
-				}
-			}
-			src = "legacy-glob"
-			if path == "" {
-				err = os.ErrNotExist
-			} else {
-				bars, err = readBars(path)
-			}
-		} else {
-			bars, err = readBars(path)
-		}
-		if (err != nil || len(bars) == 0) && o.LegacyGlobDir == "" {
+		bars, err := readBars(path)
+		if err != nil || len(bars) == 0 {
 			if o.CacheDir != "" {
 				path = filepath.Join(o.CacheDir, strings.ReplaceAll(ticker, "&", "_and_")+".csv")
 				bars, err = readBars(path)

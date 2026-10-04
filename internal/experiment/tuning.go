@@ -34,20 +34,6 @@ func TrialSet() []Trial {
 	var ts []Trial
 	ts = append(ts, withRules("base-legacy", "base", nil, func(r *sim.Rules) {}))
 	ts = append(ts, withRules("base-spec", "base", nil, func(r *sim.Rules) { r.ExitBasis, r.AvgBasis, r.MaxStocks = "avgcost", "lastlot", 5 }))
-	// The existing 39-point pivot grid.
-	systems := []struct {
-		n string
-		l []string
-	}{{"classic", []string{"S1", "S2", "S3", "closest"}}, {"fibonacci", []string{"S1", "S2", "S3", "closest"}}, {"camarilla", []string{"S1", "S2", "S3", "S4", "closest"}}}
-	for _, pool := range []int{5, 10, 15} {
-		for _, s := range systems {
-			for _, l := range s.l {
-				id := fmt.Sprintf("pivot-%s-%s-%d", s.n, l, pool)
-				sys, lvl, pl := s.n, l, pool
-				ts = append(ts, withRules(id, "pivot", map[string]float64{"pool": float64(pl)}, func(r *sim.Rules) { r.Pivot = &sim.PivotRule{System: sys, Level: lvl, Pool: pl} }))
-			}
-		}
-	}
 	// Stop-loss on the whole position, measured from average cost (legacy semantics keep per-lot targets).
 	for _, sl := range []float64{0.10, 0.15, 0.20, 0.30} {
 		v := sl

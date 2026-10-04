@@ -1,1 +1,0 @@
-{"name": "vpivot-camarilla-s1-5", "base": "legacy", "rules": {"dividends": true, "pivot": {"system": "camarilla", "level": "S1", "pool": 5}}}

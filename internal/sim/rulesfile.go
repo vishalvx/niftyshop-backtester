@@ -7,7 +7,7 @@ import (
 	"sort"
 )
 
-// Preset returns a named base rule set: legacy (what the engine does), spec (what strategy.md says), app-approx / app-exact / app-vpivot-* (rule sets of a live screener app, see below), rotation-n50.
+// Preset returns a named base rule set: legacy (what the engine does), spec (what strategy.md says), app-approx / app-exact (rule sets of a live screener app, see below), rotation-n50.
 func Preset(name string) (Rules, error) {
 	switch name {
 	case "", "legacy":
@@ -39,21 +39,8 @@ func Preset(name string) (Rules, error) {
 		r.Name = name
 		r.Rotation = &RotationRule{LookbackMonths: []int{6, 12}, TopN: 10, RebalanceMonths: []int{1, 7}}
 		return r, nil
-	case "app-vpivot-nifty50", "app-vpivot-midcap50":
-		// The app's two V-Pivot screeners: 5% target, position size capital/5 (not /10), 3 lots, 1 buy a day.
-		r := LegacyRules()
-		r.Name = name
-		r.ExitBasis, r.AvgBasis = "avgcost", "lastlot"
-		r.CapitalDivider = 5
-		r.MaxLots, r.MaxStocks, r.MaxBuysPerDay = 3, 5, 1
-		if name == "app-vpivot-nifty50" {
-			r.Pivot = &PivotRule{System: "camarilla", Level: "S1", Pool: 5}
-		} else {
-			r.Pivot = &PivotRule{System: "fibonacci", Level: "S1", Pool: 15}
-		}
-		return r, nil
 	}
-	return Rules{}, fmt.Errorf("sim: unknown preset %q (want legacy|spec|app-exact|rotation-n50|app-approx|app-vpivot-nifty50|app-vpivot-midcap50)", name)
+	return Rules{}, fmt.Errorf("sim: unknown preset %q (want legacy|spec|app-exact|rotation-n50|app-approx)", name)
 }
 
 // RulesFile is the on-disk form of one rule set: a preset plus overrides, e.g.
