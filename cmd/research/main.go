@@ -35,7 +35,7 @@ func main() {
 	testTo := fs.String("test-to", "2025-08-31", "test window end")
 	score := fs.String("score", "sharpe", "selection score: sharpe|calmar|cagr")
 	robust := fs.Bool("robust", false, "score = median over 9 start dates")
-	outDir := fs.String("out", "research/out", "output directory")
+	outDir := fs.String("out", "research/out", "output directory (run and score write month-by-month tables under <out>/monthly)")
 	trainY := fs.Int("train-years", 6, "walk-forward training years")
 	testY := fs.Int("test-years", 2, "walk-forward test years")
 	config := fs.String("config", "research/rules/sweep-exit-grid.json", "sweep definition file")
@@ -72,9 +72,9 @@ func main() {
 	case "audit":
 		err = cmdAudit(c)
 	case "score":
-		err = cmdScore(c, *variants, *divs, *stages, *export)
+		err = cmdScore(c, *variants, *divs, *stages, *export, *outDir)
 	case "run":
-		err = cmdRun(c, *variants, *divs, *stages)
+		err = cmdRun(c, *variants, *divs, *stages, *outDir)
 	case "repro":
 		err = cmdRepro(*legacy, *data, *cache)
 	default:

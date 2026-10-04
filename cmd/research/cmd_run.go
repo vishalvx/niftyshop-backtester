@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 
 	"github.com/vishalvx/back-tester/internal/experiment"
@@ -131,13 +132,14 @@ func presetByName(n string) (experiment.Spec, error) {
 }
 
 // cmdRun runs named presets over a window at all four stages and prints a metrics table.
-func cmdRun(c common, variants string, dividends bool, stages string) error {
+func cmdRun(c common, variants string, dividends bool, stages, out string) error {
 	env, mem, err := buildEnv(c)
 	if err != nil {
 		return err
 	}
 	fmt.Printf("window %s: %d trading days, %d symbols with data, %d without (%v)\n", env.Window, len(env.Panel.Dates), len(env.Panel.Series), len(env.Panel.Missing), env.Panel.Missing)
 	_ = mem
+	dir := monthlyDir(c, out, env)
 	printHeader()
 	var first, last = env.Panel.Dates[0], env.Panel.Dates[len(env.Panel.Dates)-1]
 	for _, name := range strings.Split(variants, ",") {
@@ -155,18 +157,24 @@ func cmdRun(c common, variants string, dividends bool, stages string) error {
 				return err
 			}
 			printRow(o)
+			if _, err := writeMonthly(dir, env, o); err != nil {
+				return err
+			}
 		}
 	}
 	benchRows(env, first, last)
+	fmt.Fprintln(os.Stderr, "monthly tables:", dir)
 	return nil
 }
 
 // cmdScore prints full scorecards (and exports CSVs for verification) for one preset at the given stages.
-func cmdScore(c common, variants string, dividends bool, stages, export string) error {
+func cmdScore(c common, variants string, dividends bool, stages, export, out string) error {
 	env, _, err := buildEnv(c)
 	if err != nil {
 		return err
 	}
+	dir := monthlyDir(c, out, env)
+	defer fmt.Fprintln(os.Stderr, "monthly tables:", dir)
 	for _, variant := range strings.Split(variants, ",") {
 		spec, err := presetByName(strings.TrimSpace(variant))
 		if err != nil {
@@ -182,6 +190,9 @@ func cmdScore(c common, variants string, dividends bool, stages, export string) 
 				return err
 			}
 			printScorecard(o)
+			if _, err := writeMonthly(dir, env, o); err != nil {
+				return err
+			}
 			if export != "" {
 				if err := exportOutcome(export, o); err != nil {
 					return err
