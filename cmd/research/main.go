@@ -26,6 +26,9 @@ func main() {
 	fs.StringVar(&c.LogPath, "log", "research/out/experiment-log.jsonl", "experiment log")
 	fs.Float64Var(&c.Rf, "rf", 0.06, "annual risk-free rate for Sharpe/Sortino/alpha")
 	fs.StringVar(&c.Bench, "bench", "", "benchmark TRI file stem (default: the universe's own index), e.g. NIFTY_50")
+	fs.Float64Var(&c.BenchFee, "bench-fee", 0, "yearly fee taken off the benchmark, e.g. 0.002 for a fund with a 0.20% expense ratio")
+	fund := fs.String("fund", "", "lottery: a second benchmark TRI file stem, e.g. NIFTY200_MOMENTUM_30, held as a fund")
+	fundFee := fs.Float64("fund-fee", 0, "lottery: yearly fee taken off the -fund series, e.g. 0.002")
 	variants := fs.String("variants", "nsx,nsx-lot", "comma separated presets")
 	stages := fs.String("stages", "gross,cost,tax-dated,tax-today", "stages to run")
 	tuneFrom := fs.String("tune-from", "2008-01-01", "tuning window start")
@@ -43,6 +46,12 @@ func main() {
 	trials := fs.Int("trials", 207, "number of trials the deflated Sharpe ratio is charged for")
 	divs := fs.Bool("dividends", true, "credit dividends on held shares")
 	fs.Parse(os.Args[2:])
+	set := map[string]bool{}
+	fs.Visit(func(f *flag.Flag) { set[f.Name] = true })
+	lotteryStages := "gross,cost,tax-dated" // the lottery's own default, so earlier tables reproduce
+	if set["stages"] {
+		lotteryStages = *stages
+	}
 	c.Data, c.Cache = *data, *cache
 	var err error
 	switch cmd {
@@ -61,7 +70,7 @@ func main() {
 	case "refscore":
 		err = cmdRefScore(c, *variants, []int{3, 5, 10})
 	case "lottery":
-		err = cmdLottery(c, *variants, *horizon, *outDir)
+		err = cmdLottery(c, *variants, *horizon, *outDir, lotteryStages, *fund, *fundFee)
 	case "tune":
 		err = cmdTune(c, *tuneFrom, *tuneTo, *testFrom, *testTo, *score, *robust, *outDir)
 	case "debug":

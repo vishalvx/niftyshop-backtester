@@ -63,6 +63,9 @@ type Panel struct {
 	Days     map[string][]Day // YYYY-MM-DD -> stocks that traded, sorted by DiffSMA desc (ties by symbol)
 	Series   map[string]*Series
 	Missing  []string // universe symbols with no usable price history
+	// Market is the universe's own price index (Date and Close only), full history, for market filters. Panel.Build
+	// does not fill it; the caller loads it when a rule needs it.
+	Market []Bar
 }
 
 // Options controls panel construction.

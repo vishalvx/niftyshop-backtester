@@ -3,8 +3,8 @@
 A Go backtester for the mechanical **NiftyShop** mean-reversion equity strategy on Indian stock indices.
 
 ## Features
-* **Point-in-time index membership**: trades only stocks that were in the index that month, with an optional one-month lag (`-lag 1`) so no membership is known before it was published.
-* **Confirmed rule set**: the `nsx` and `nsx-lot` presets follow the rules the maintainer confirmed in October 2026 and are the baseline; other presets cover the written spec, exit variants and a momentum rotation (`rotation-n50`).
+* **Point-in-time index membership**: trades only stocks that were in the index on the day, from NSE's official lists with exact effective dates (Nifty 50 from 2008, Nifty Midcap 150 from 2016), priced from NSE's official daily prices including delisted and renamed members. A run stops if a day has the wrong member count or an unpriced member.
+* **Confirmed rule set**: the `nsx` and `nsx-lot` presets follow the rules the maintainer confirmed in October 2026 and are the baseline; other presets cover the written spec, exit variants and momentum rotations (`rotation-n50`, `mom-...`).
 * **Costs and tax**: dated Indian brokerage, STT, stamp duty and capital-gains tax, reported in stages (`gross`, `cost`, `tax-dated`, `tax-today`).
 * **Total-return benchmarks**: every result is compared with the index's total-return series (TRI), not its price series.
 * **Robustness checks**: start-date lotteries, capital jitter, walk-forward tests and the deflated Sharpe ratio.
@@ -66,6 +66,7 @@ The tag [`findings-2026-10`](https://github.com/vishalvx/niftyshop-backtester/tr
 ## Documentation
 * **Strategy Rules**: See [strategy.md](strategy.md) for details on entry, exit, and averaging criteria.
 * **Long-run findings**: See [reports/long-run-findings.md](reports/long-run-findings.md). The complete backtest from the start of each index finds that no variant clears 15% a year after costs and tax and none reliably beats its own index after tax; earlier figures in `reports/report.md`, `reports/pivot_comparison_report.md` and `nifty-shop-v-pivot.md` do not reproduce and are marked as superseded.
+* **Momentum findings**: See [reports/momentum-nifty50-findings.md](reports/momentum-nifty50-findings.md). Eight momentum rotations on the Nifty 50, frozen in advance: the best match or beat the Nifty 50 index after costs and tax, but every one trails a Nifty200 Momentum 30 index fund by 4.5 points a year or more, so none is kept.
 * **Architecture**: See [CONTEXT.md](CONTEXT.md) for the packages and the data each index has. The original engine (`cmd/backtester`) was retired in October 2026: it did not follow the written rules and its published numbers came from a data-loader bug.
 * **Contributing**: Check [CONTRIBUTING.md](CONTRIBUTING.md) to set up development and submit code changes.
 
