@@ -39,8 +39,8 @@ func TestSweepExpandsCartesianProduct(t *testing.T) {
 }
 
 func TestLoadRulesFile(t *testing.T) {
-	r, err := LoadRulesFile("../../research/rules/vpivot-camarilla-s1-5.json")
-	if err != nil || r.Name != "vpivot-camarilla-s1-5" || r.Pivot == nil || r.Pivot.System != "camarilla" || !r.Dividends {
+	r, err := LoadRulesFile("../../research/rules/standard-spec.json")
+	if err != nil || r.Name != "standard-spec" || r.ExitBasis != "avgcost" || !r.Dividends {
 		t.Fatalf("%+v %v", r, err)
 	}
 }

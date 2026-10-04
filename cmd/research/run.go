@@ -24,10 +24,7 @@ type universe struct {
 var universes = map[string]universe{
 	"nifty50": {"nifty50", "internal/data/nifty50_weights.csv", ".research-data/indices/NIFTY_50_TRI.json"},
 	// Survivorship-bias probe (inbox 006): the Nifty 50 members of Aug 2025 held fixed for every month of 2018-2025.
-	"nifty50static":      {"nifty50static", "research/rules/nifty50_static_2025-08_weights.csv", ".research-data/indices/NIFTY_50_TRI.json"},
-	"niftymidcap50":      {"niftymidcap50", "internal/data/niftymidcap50_weights.csv", ".research-data/indices/NIFTY_MIDCAP_50_TRI.json"},
-	"niftysmallcap50":    {"niftysmallcap50", "internal/data/niftysmallcap50_weights.csv", ".research-data/indices/NIFTY_SMALLCAP_50_TRI.json"},
-	"nifty500momentum50": {"nifty500momentum50", "internal/data/nifty500momentum50_weights.csv", ".research-data/indices/NIFTY500_MOMENTUM_50_TRI.json"},
+	"nifty50static": {"nifty50static", "research/rules/nifty50_static_2025-08_weights.csv", ".research-data/indices/NIFTY_50_TRI.json"},
 }
 
 type common struct {

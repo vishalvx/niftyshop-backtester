@@ -405,7 +405,7 @@ func TestLotCapProperty(t *testing.T) {
 	presets := []string{
 		"spec-cap3", "spec-lot3",
 		"spec-cap3:camarilla:S1:5", "spec-lot3:camarilla:S1:5", "spec-cap3:fibonacci:S1:15", "spec-lot3:fibonacci:S1:15",
-		"app-exact", "app-vpivot-nifty50", "app-vpivot-midcap50",
+		"app-exact",
 	}
 	const seeds = 40
 	type cover struct{ maxOpen, capReached, sells, buys int }
@@ -523,7 +523,7 @@ func TestLotCapFallingFourPercentTwelveDays(t *testing.T) {
 	p := lotcapPath(closes, diff)
 	for _, name := range []string{
 		"spec-cap3", "spec-lot3", "spec-cap3:camarilla:S1:5", "spec-lot3:fibonacci:S1:15",
-		"app-exact", "app-approx", "app-vpivot-nifty50", "app-vpivot-midcap50",
+		"app-exact", "app-approx",
 	} {
 		res, err := Run(p, lotcapRules(t, name))
 		if err != nil {
@@ -694,7 +694,6 @@ func TestLotCapMatchesIndependentReference(t *testing.T) {
 		{"spec-cap3:camarilla:S1:5", "cap3:camarilla:S1:5"}, {"spec-lot3:camarilla:S1:5", "lot3:camarilla:S1:5"},
 		{"spec-cap3:fibonacci:S1:15", "cap3:fibonacci:S1:15"}, {"spec-lot3:fibonacci:S1:15", "lot3:fibonacci:S1:15"},
 		{"app-exact", "app"},
-		{"app-vpivot-nifty50", "app-vpivot:camarilla:S1:5"}, {"app-vpivot-midcap50", "app-vpivot:fibonacci:S1:15"},
 	}
 	total := 0
 	for seed := int64(1); seed <= 6; seed++ {
