@@ -14,7 +14,7 @@ func main() {
 	}
 	cmd := os.Args[1]
 	fs := flag.NewFlagSet(cmd, flag.ExitOnError)
-	data := fs.String("data", ".research-data/yahoo", "clean Yahoo directory")
+	data := fs.String("data", "", "price directory (default: .research-data/nse/prices for nse universes, .research-data/yahoo for yahoo ones)")
 	cache := fs.String("cache", ".research-data/yahoo_cache", "fallback cache directory")
 	c := common{}
 	fs.StringVar(&c.Universe, "universe", "nifty50", "universe")

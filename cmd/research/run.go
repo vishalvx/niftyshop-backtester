@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"os/exec"
@@ -17,14 +18,50 @@ import (
 
 type universe struct {
 	Name    string
-	Weights string
+	Weights string // membership file: spells (symbol,from,to,...) or month snapshots (DATE,SYM1,...)
+	Source  string // price source: "nse" (official bhavcopy, research/py/nse_build.py) or "yahoo"
+	Size    int    // exact member count checked on every trading day (0 = unchecked)
 	TRI     string
 }
 
+// The nse universes are the point-in-time lists rebuilt from NSE Indices press releases, priced from the official
+// bhavcopy. A run on them fails if any trading day has the wrong member count or a member without a price bar.
+// The yahoo universes reproduce the October 2026 long-run findings (month snapshots, Yahoo prices, nine Nifty 50 members
+// never priced) and are kept to measure how much the data change moves a result.
 var universes = map[string]universe{
-	"nifty50": {"nifty50", "internal/data/nifty50_weights.csv", ".research-data/indices/NIFTY_50_TRI.json"},
+	"nifty50":        {"nifty50", "internal/data/nifty50_members.csv", "nse", 50, ".research-data/indices/NIFTY_50_TRI.json"},
+	"niftymidcap150": {"niftymidcap150", "internal/data/niftymidcap150_members.csv", "nse", 150, ".research-data/indices/NIFTY_MIDCAP_150_TRI.json"},
+	"nifty50yahoo":   {"nifty50yahoo", "internal/data/nifty50_weights.csv", "yahoo", 0, ".research-data/indices/NIFTY_50_TRI.json"},
 	// Survivorship-bias probe (inbox 006): the Nifty 50 members of Aug 2025 held fixed for every month of 2018-2025.
-	"nifty50static": {"nifty50static", "research/rules/nifty50_static_2025-08_weights.csv", ".research-data/indices/NIFTY_50_TRI.json"},
+	"nifty50static": {"nifty50static", "research/rules/nifty50_static_2025-08_weights.csv", "yahoo", 0, ".research-data/indices/NIFTY_50_TRI.json"},
+}
+
+// defaultData is where each price source's files live unless -data says otherwise.
+var defaultData = map[string]string{"nse": ".research-data/nse/prices", "yahoo": ".research-data/yahoo"}
+
+// sizeExceptions reads the dated periods in which NSE carried a different member count than the index's nominal size,
+// from the same hand-checked file the member lists are built with.
+func sizeExceptions(universe string) ([]panel.SizeException, error) {
+	b, err := os.ReadFile("research/nse/members_overrides.json")
+	if err != nil {
+		return nil, err
+	}
+	var ov struct {
+		SizeExceptions []struct {
+			Index, From, To string
+			Size            int
+		} `json:"size_exceptions"`
+	}
+	if err := json.Unmarshal(b, &ov); err != nil {
+		return nil, fmt.Errorf("research/nse/members_overrides.json: %v", err)
+	}
+	var out []panel.SizeException
+	for _, x := range ov.SizeExceptions {
+		if x.Index == universe {
+			out = append(out, panel.SizeException{From: mustDate(x.From), To: mustDate(x.To), Size: x.Size})
+		}
+	}
+	return out, nil
 }
 
 type common struct {
@@ -65,8 +102,21 @@ func buildEnv(c common) (*experiment.Env, *panel.Membership, error) {
 		return nil, nil, fmt.Errorf("unknown universe %q", c.Universe)
 	}
 	start, end := mustDate(c.Start), mustDate(c.End)
-	p, mem, err := panel.Build(panel.Options{DataDir: c.Data, CacheDir: c.Cache, AliasFile: "research/symbol_aliases.json",
-		WeightsFile: u.Weights, Universe: u.Name, Start: start, End: end, MAWindow: 20, MembershipLag: c.Lag})
+	data := c.Data
+	if data == "" {
+		data = defaultData[u.Source]
+	}
+	var check *panel.Check
+	if u.Size > 0 {
+		ex, err := sizeExceptions(u.Name)
+		if err != nil {
+			return nil, nil, err
+		}
+		check = &panel.Check{Size: u.Size, Exceptions: ex}
+	}
+	p, mem, err := panel.Build(panel.Options{DataDir: data, CacheDir: c.Cache, AliasFile: "research/symbol_aliases.json",
+		WeightsFile: u.Weights, Universe: u.Name, Start: start, End: end, MAWindow: 20, MembershipLag: c.Lag,
+		Source: u.Source, Check: check})
 	if err != nil {
 		return nil, nil, err
 	}

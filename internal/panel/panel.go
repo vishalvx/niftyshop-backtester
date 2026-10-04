@@ -79,6 +79,34 @@ type Options struct {
 	Quarantine    map[string]string // ticker -> first date (YYYY-MM-DD) from which data is trusted
 	Adjust        map[string][]Adj  // ticker -> hand adjustments (nil = DefaultAdjust, empty map = none)
 	ExtraSymbols  []string          // extra symbols to load even if not in weights file
+	// Source is "yahoo" (default: <SYMBOL>.NS files from research/py/fetch_yahoo.py, with aliases, quarantines and hand
+	// adjustments applied here) or "nse" (<SYMBOL>.csv files from research/py/nse_build.py: official bhavcopy bars already
+	// stitched across renames and back-adjusted, so none of the Yahoo repairs apply).
+	Source string
+	// Check, when set, makes Build fail instead of running on data that cannot support an honest result.
+	Check *Check
+}
+
+// Check lists what Build verifies for every trading day of the window when Options.Check is set.
+type Check struct {
+	Size       int             // exact member count of the index
+	Exceptions []SizeException // dated periods when NSE carried a different count
+}
+
+// SizeException records a period [From, To) in which the index had Size securities (the Nifty 50 had 51 while it held the
+// Tata Motors DVR share).
+type SizeException struct {
+	From, To time.Time
+	Size     int
+}
+
+func (c *Check) sizeOn(t time.Time) int {
+	for _, x := range c.Exceptions {
+		if !t.Before(x.From) && t.Before(x.To) {
+			return x.Size
+		}
+	}
+	return c.Size
 }
 
 // DefaultQuarantine lists known unadjusted corporate-action breaks in Yahoo's Close series.
@@ -161,15 +189,28 @@ func readDiv(path string) map[string]float64 {
 	return out
 }
 
-// Membership maps month key (YYYY-MM) -> symbol set, replicating internal/data.LoadHistoricalConstituents.
+// Membership answers "was this symbol an index member on this day?" from either of two file formats:
+//   - month snapshots, "DATE,SYM1,SYM2,..." with weights (the retired engine's weights files): a snapshot applies to its
+//     whole calendar month, as internal/data.LoadHistoricalConstituents did;
+//   - membership spells, "symbol,from,to,added_by,removed_by" (internal/data/*_members.csv, rebuilt from NSE Indices press
+//     releases by research/py/nse_build.py): a symbol is a member from `from` up to but not including `to` (empty = today).
 type Membership struct {
-	Months  map[string]map[string]bool
-	Keys    []string
+	Months  map[string]map[string]bool // snapshot files only
+	Keys    []string                   // snapshot files only
 	Symbols []string
+	Spells  map[string][]Spell // spell files only
 }
 
-// LoadMembership reads a weights CSV the same way the production loader does: rows sharing a calendar month
-// are unioned, any positive value counts as membership.
+// Spell is one continuous membership of a symbol; To is exclusive and zero while it is still a member.
+type Spell struct {
+	From, To time.Time
+}
+
+// Exact reports whether the file gives exact effective dates (spells) rather than month snapshots.
+func (m *Membership) Exact() bool { return m.Spells != nil }
+
+// LoadMembership reads either format (see Membership). Snapshot rows sharing a calendar month are unioned and any
+// positive value counts as membership, the same way the production loader did.
 func LoadMembership(path string) (*Membership, error) {
 	f, err := os.Open(path)
 	if err != nil {
@@ -184,6 +225,9 @@ func LoadMembership(path string) (*Membership, error) {
 		return nil, fmt.Errorf("weights file %s has too few rows", path)
 	}
 	hdr := recs[0]
+	if hdr[0] == "symbol" {
+		return loadSpells(path, recs)
+	}
 	m := &Membership{Months: map[string]map[string]bool{}}
 	uniq := map[string]bool{}
 	for _, row := range recs[1:] {
@@ -217,9 +261,46 @@ func LoadMembership(path string) (*Membership, error) {
 	return m, nil
 }
 
-// IsMember mirrors cmd/backtester/main.go: exact month, else the closest earlier month, else false.
-// lag shifts the lookup key back by that many months (use 1 to avoid using a snapshot taken after the date).
+func loadSpells(path string, recs [][]string) (*Membership, error) {
+	m := &Membership{Spells: map[string][]Spell{}}
+	for i, row := range recs[1:] {
+		if len(row) < 3 {
+			return nil, fmt.Errorf("%s line %d: want symbol,from,to", path, i+2)
+		}
+		from, err := parseDate(row[1])
+		if err != nil {
+			return nil, fmt.Errorf("%s line %d: %v", path, i+2, err)
+		}
+		var to time.Time
+		if row[2] != "" {
+			if to, err = parseDate(row[2]); err != nil {
+				return nil, fmt.Errorf("%s line %d: %v", path, i+2, err)
+			}
+			if !to.After(from) {
+				return nil, fmt.Errorf("%s line %d: %s leaves on %s, not after it joins on %s", path, i+2, row[0], row[2], row[1])
+			}
+		}
+		if len(m.Spells[row[0]]) == 0 {
+			m.Symbols = append(m.Symbols, row[0])
+		}
+		m.Spells[row[0]] = append(m.Spells[row[0]], Spell{From: from, To: to})
+	}
+	sort.Strings(m.Symbols)
+	return m, nil
+}
+
+// IsMember answers for one day. For a snapshot file it mirrors cmd/backtester/main.go: the exact month, else the closest
+// earlier month, else false; lag shifts the month back (1 avoids using a month-end snapshot taken after the date).
+// For a spell file the answer is exact and lag must be 0: NSE announces every change weeks before it takes effect.
 func (m *Membership) IsMember(symbol string, t time.Time, lag int) bool {
+	if m.Spells != nil {
+		for _, s := range m.Spells[symbol] {
+			if !t.Before(s.From) && (s.To.IsZero() || t.Before(s.To)) {
+				return true
+			}
+		}
+		return false
+	}
 	key := time.Date(t.Year(), t.Month()-time.Month(lag), 1, 0, 0, 0, 0, time.UTC).Format("2006-01") // first of the month, so a 31st cannot overflow into the same month
 	if set, ok := m.Months[key]; ok {
 		return set[symbol]
@@ -229,6 +310,17 @@ func (m *Membership) IsMember(symbol string, t time.Time, lag int) bool {
 		return false
 	}
 	return m.Months[m.Keys[i-1]][symbol]
+}
+
+// Members lists the symbols that were members on day t, sorted.
+func (m *Membership) Members(t time.Time, lag int) []string {
+	var out []string
+	for _, s := range m.Symbols {
+		if m.IsMember(s, t, lag) {
+			out = append(out, s)
+		}
+	}
+	return out
 }
 
 func loadAliases(path string) map[string]string {
@@ -268,10 +360,18 @@ func Build(o Options) (*Panel, *Membership, error) {
 		symbols = append(symbols, mem.Symbols...)
 	}
 	symbols = append(symbols, o.ExtraSymbols...)
+	nse := o.Source == "nse"
+	if o.Source != "" && o.Source != "yahoo" && !nse {
+		return nil, nil, fmt.Errorf("unknown price source %q (want yahoo or nse)", o.Source)
+	}
 	aliases := loadAliases(o.AliasFile)
 	quarantine := o.Quarantine
 	if quarantine == nil {
 		quarantine = DefaultQuarantine
+	}
+	if nse {
+		aliases, quarantine = map[string]string{}, map[string]string{}
+		o.CacheDir = ""
 	}
 
 	p := &Panel{Universe: o.Universe, Start: o.Start, End: o.End, Days: map[string][]Day{}, Series: map[string]*Series{}}
@@ -281,11 +381,13 @@ func Build(o Options) (*Panel, *Membership, error) {
 			continue
 		}
 		seen[sym] = true
-		ticker := sym + ".NS"
+		ticker, src := sym+".NS", "yahoo"
+		if nse {
+			ticker, src = sym, "nse"
+		}
 		if a, ok := aliases[sym]; ok {
 			ticker = a
 		}
-		src := "yahoo"
 		path := filepath.Join(o.DataDir, strings.ReplaceAll(ticker, "&", "_and_")+".csv")
 		bars, err := readBars(path)
 		if err != nil || len(bars) == 0 {
@@ -311,7 +413,7 @@ func Build(o Options) (*Panel, *Membership, error) {
 		}
 		div := readDiv(strings.TrimSuffix(path, ".csv") + "_div.csv")
 		adjs := o.Adjust
-		if adjs == nil {
+		if adjs == nil && !nse {
 			adjs = DefaultAdjust
 		}
 		for _, a := range adjs[ticker] {
@@ -385,5 +487,54 @@ func Build(o Options) (*Panel, *Membership, error) {
 	}
 	sort.Slice(p.Dates, func(i, j int) bool { return p.Dates[i].Before(p.Dates[j]) })
 	sort.Strings(p.Missing)
+	if o.Check != nil {
+		if err := check(p, mem, o); err != nil {
+			return nil, nil, err
+		}
+	}
 	return p, mem, nil
+}
+
+// check fails the build when a run would silently trade a wrong universe: a member with no price file, a day whose member
+// count is not the index's, or a member with no bar on a day the market traded.
+func check(p *Panel, mem *Membership, o Options) error {
+	if mem == nil || !mem.Exact() {
+		return fmt.Errorf("%s: member checks need a membership-spell file (symbol,from,to), not month snapshots", o.Universe)
+	}
+	if o.MembershipLag != 0 {
+		return fmt.Errorf("%s: -lag %d does not apply to exact membership dates (NSE announces each change weeks before it "+
+			"takes effect); use -lag 0", o.Universe, o.MembershipLag)
+	}
+	if len(p.Missing) > 0 {
+		return fmt.Errorf("%s: %d members have no price file in %s: %s (run research/py/nse_build.py prices)",
+			o.Universe, len(p.Missing), o.DataDir, strings.Join(p.Missing, ", "))
+	}
+	if len(p.Dates) == 0 {
+		return fmt.Errorf("%s: no trading days with prices between %s and %s", o.Universe, o.Start.Format("2006-01-02"), o.End.Format("2006-01-02"))
+	}
+	var problems []string
+	for _, t := range p.Dates {
+		ds := t.Format("2006-01-02")
+		members := mem.Members(t, 0)
+		if want := o.Check.sizeOn(t); len(members) != want {
+			problems = append(problems, fmt.Sprintf("%s has %d members, want %d", ds, len(members), want))
+		}
+		traded := map[string]bool{}
+		for _, d := range p.Days[ds] {
+			traded[d.Symbol] = true
+		}
+		for _, s := range members {
+			if !traded[s] {
+				problems = append(problems, fmt.Sprintf("%s: member %s has no price bar", ds, s))
+			}
+		}
+	}
+	if len(problems) == 0 {
+		return nil
+	}
+	shown := problems
+	if len(shown) > 10 {
+		shown = shown[:10]
+	}
+	return fmt.Errorf("%s: %d member-list or price problems, for example:\n  %s", o.Universe, len(problems), strings.Join(shown, "\n  "))
 }

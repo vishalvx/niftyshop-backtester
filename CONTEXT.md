@@ -6,10 +6,16 @@ This project is a Go-based backtester evaluating the mechanical NiftyShop mean-r
 
 `go run ./cmd/research <subcommand> -universe <id> -start <date> -end <date>` picks the member list with `-universe`. The window must sit inside the list's range, because the CLI does not move `-start` for you.
 
-| Universe | CLI identifier | Members CSV | Range | Benchmark |
-| :--- | :--- | :--- | :--- | :--- |
-| **Nifty 50**, point-in-time | `nifty50` | `internal/data/nifty50_weights.csv` | Jan 2008 to Aug 2025 (first tradable month Feb 2008) | Nifty 50 TRI |
-| **Nifty 50**, Aug 2025 members held fixed (survivorship-bias probe) | `nifty50static` | `research/rules/nifty50_static_2025-08_weights.csv` | Jan 2018 to Aug 2025 | Nifty 50 TRI |
+| Universe | CLI identifier | Members | Prices | Range | Benchmark |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Nifty 50**, point-in-time | `nifty50` | `internal/data/nifty50_members.csv` | NSE bhavcopy | 1 Jan 2008 to the day the list was rebuilt (first tradable month Feb 2008) | Nifty 50 TRI |
+| **Nifty Midcap 150**, point-in-time | `niftymidcap150` | `internal/data/niftymidcap150_members.csv` | NSE bhavcopy | 30 Sep 2016 to the day the list was rebuilt | Nifty Midcap 150 TRI |
+| **Nifty 50** as the long-run study ran it | `nifty50yahoo` | `internal/data/nifty50_weights.csv` (month snapshots) | Yahoo | Jan 2008 to Aug 2025 | Nifty 50 TRI |
+| **Nifty 50**, Aug 2025 members held fixed (survivorship-bias probe) | `nifty50static` | `research/rules/nifty50_static_2025-08_weights.csv` | Yahoo | Jan 2018 to Aug 2025 | Nifty 50 TRI |
+
+**Official lists and prices (`nifty50`, `niftymidcap150`).** The member files give exact join and leave dates (`symbol,from,to,added_by,removed_by`, `to` exclusive, empty while still a member), rebuilt from NSE Indices press releases and checked against every archived copy of NSE's own list. Prices are NSE's daily bhavcopy, stitched across symbol changes and back-adjusted for splits, bonuses, rights issues and demergers; symbols are the company's latest NSE symbol, and companies that merged or delisted keep their last one (HDFC, SATYAMCOMP). A run fails if any trading day in the window has the wrong member count or a member without a price bar, and `-lag` must be 0 (NSE announces each change weeks before it takes effect). How the data is built, and where each hand-checked decision is recorded: [`research/nse/README.md`](research/nse/README.md).
+
+**Study data (`nifty50yahoo`, `nifty50static`).** Month-end snapshots and Yahoo prices, kept so the October 2026 findings reproduce (`research/run_complete.sh`). Nine Nifty 50 members have no Yahoo prices there and are skipped, which tilts results upward.
 
 The Nifty Midcap 50, Nifty Smallcap 50 and Nifty500 Momentum 50 lists were removed in October 2026 because they were stale or made up; they are at the `findings-2026-10` tag.
 
@@ -18,14 +24,14 @@ The Nifty Midcap 50, Nifty Smallcap 50 and Nifty500 Momentum 50 lists were remov
 ## 2. Core Architecture & Key Packages
 
 * **`cmd/research`** ([main.go](cmd/research/main.go)): the command-line entrypoint. Each subcommand (`score`, `lottery`, `jitter`, `wfvariants`, `sweep`, `audit`, ...) builds a data panel for one universe and window, runs named rule presets and prints tables.
-* **`internal/panel`** ([panel.go](internal/panel/panel.go)): loads one canonical Yahoo CSV per ticker with dividends, applies symbol aliases and quarantines, and builds month-by-month index membership from the constituents CSVs.
+* **`internal/panel`** ([panel.go](internal/panel/panel.go)): loads one price CSV per symbol with dividends (NSE files as built, or Yahoo files with symbol aliases, quarantines and hand adjustments), reads either membership format, and runs the member-count and price checks.
 * **`internal/sim`** ([sim.go](internal/sim/sim.go)): the day-by-day NiftyShop simulator. `Rules` holds every rule variant; `LegacyRules()` reproduces the retired original engine, `SpecRules()` the written strategy.
 * **`internal/experiment`**: rule presets, cost and tax stages, start-date lotteries, walk-forward and the deflated Sharpe ratio.
 * **`internal/costs`**: dated Indian brokerage, STT, stamp duty and capital-gains tax.
 * **`internal/bench`**: total-return index (TRI) benchmarks.
 * **`internal/analytics`**: strategy metrics (CAGR, drawdown, Sharpe, Sortino, alpha and more).
 * **`internal/indicators`**: Simple Moving Average and pivot support levels (Classic, Fibonacci, Camarilla). The pivot levels feed the simulator's dormant `pivot` rule, which no preset uses.
-* **`research/`**: study scripts, rule files and an independent Python reference simulator (`research/py/ref_sim.py`).
+* **`research/`**: study scripts, rule files, an independent Python reference simulator (`research/py/ref_sim.py`), and the NSE data pipeline (`research/py/nse_fetch.py`, `research/py/nse_build.py`, hand-checked inputs and audit tables in `research/nse/`).
 
 The original engine (`cmd/backtester`, `internal/engine`, `internal/metrics`, `internal/portfolio`, `internal/config`, the `internal/data` loader, `run_all.sh` and `run_pivot_comparison.py`) was deleted in October 2026. It did not follow the written rules, counted every sale as a win, and its published numbers came from a data-loader bug.
 

@@ -11,7 +11,8 @@ Modes
                   (fresh lot: fill x 1.06; averaged lot: new weighted average cost x 1.06), 3% below the latest lot, 3 lots, 1 buy a day, /10, 10 stocks.
   app-vpivot:SYS:LVL:POOL   the app V-Pivot screeners: +5% synced to every lot, slot = capital / 5, 5 stocks, 3 lots, 1 buy a day.
 Unspecified in the sources and chosen here the same natural way as the Go code: ties in the ranking go to the alphabetically first
-symbol; with several averaging candidates the most recently bought stock goes first; a slot is floor(slot / close) shares.
+symbol; with several averaging candidates the most recently bought stock goes first; a slot is floor(slot / close) shares,
+and a fresh entry whose single share costs more than a slot passes to the next candidate.
 """
 import csv, sys, math, collections
 
@@ -168,7 +169,7 @@ for date in dates:
             break
         qty = math.floor(slot / d['close'])
         if qty <= 0:
-            break
+            continue  # one share costs more than a slot (MRF in the Midcap 150): try the next most oversold stock
         seq += 1
         lot = dict(date=date, price=d['close'], qty=qty, seq=seq, target=d['close'] * (1 + target))
         held[d['sym']] = [lot]
