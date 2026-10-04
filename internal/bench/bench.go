@@ -78,6 +78,21 @@ func At(p []analytics.Point, d time.Time) (float64, bool) {
 	return p[i-1].Value, true
 }
 
+// LessFee returns the series with a yearly fee taken out day by day, the way a fund's expense ratio lowers its value
+// against the index it tracks: each value is scaled by (1-fee)^(years since the first point). Over any span of y years
+// the return is the index's times (1-fee)^y.
+func LessFee(p []analytics.Point, fee float64) []analytics.Point {
+	if len(p) == 0 || fee == 0 {
+		return p
+	}
+	out := make([]analytics.Point, len(p))
+	for i, x := range p {
+		years := x.Date.Sub(p[0].Date).Hours() / (24 * 365.25)
+		out[i] = analytics.Point{Date: x.Date, Value: x.Value * math.Pow(1-fee, years)}
+	}
+	return out
+}
+
 // Result is the valuation of buying the index on start and holding to end.
 type Result struct {
 	Start, End time.Time

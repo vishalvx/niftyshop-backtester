@@ -34,7 +34,7 @@ The original engine (`cmd/backtester`, `internal/engine`, `internal/metrics`, `i
 ## 3. Strategy Configurations
 
 1. **NiftyShop** (`nsx`, `nsx-lot`, the baseline): buy the Nifty 50 member furthest below its 20-day average, add lots on further falls (at most 3 per stock), sell at +5% (whole position for `nsx`, each lot for `nsx-lot`), sell a stock that leaves the index. `legacy`, `spec`, `spec-cap3`, `spec-lot3`, `app-approx`, `app-exact` and `exit:` cover the retired engine, the written spec and exit variants.
-2. **Momentum rotation** (`rotation-n50`): the 10 members with the best mean of 6- and 12-month return, equal weight, swapped on the first trading day of January and July.
+2. **Momentum rotation** (`rotation-n50`): the 10 members with the best mean of 6- and 12-month return, equal weight, swapped on the first trading day of January and July. The `mom-<plain|nse>-top<N>-<6m|1m>[-ma<days>]` presets vary the score (plain, or NSE's volatility-adjusted z-score), the names held, the swap months and a market filter on the Nifty 50 price index; `mom-plain-top10-6m` is `rotation-n50`. Study plan: [`research/studies/momentum-nifty50.md`](research/studies/momentum-nifty50.md); findings: [`reports/momentum-nifty50-findings.md`](reports/momentum-nifty50-findings.md) (no variant kept: none beats a Nifty200 Momentum 30 fund); reproduce with `research/run_momentum.sh`.
 
 The NiftyShop V-Pivot variants and the 39-point pivot grid search were removed in October 2026; none beat its own index after tax. They are at the `findings-2026-10` tag.
 
